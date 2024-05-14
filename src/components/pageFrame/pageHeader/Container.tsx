@@ -1,0 +1,11 @@
+import PageHeaderLogo from "./Logo";
+import PageHeaderNavContainer from "./nav/Container";
+
+export default function PageHeader() {
+  return (
+    <header className="page-header" id="pageHeader">
+      <PageHeaderLogo />
+      <PageHeaderNavContainer />
+    </header>
+  );
+}
