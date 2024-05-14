@@ -1,34 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# UNIAI 홈페이지
 
-## Getting Started
+---
 
-First, run the development server:
+## 1. 프로젝트 실행
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+### 1-1. 패키지 설치
+
+- 터미널에 다음을 입력
+
+```
+npm i
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 1-2. 개발서버 구동
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 터미널에 다음을 입력
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+npm run dev
+```
 
-## Learn More
+- <http://localhost/>으로 접속
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 2. 프로젝트 환경 구성
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Node.js v20.13.1
+- Next.js v14.2.3 - App Router
+- create-next-app([참조](https://nextjs.org/docs/getting-started/installation))으로 시작
+- 기타 버전 관리는 [package.json](https://github.com/uniai-corp/homepage/blob/front_dev/package.json) 참조
 
-## Deploy on Vercel
+### 2-1. 프론트엔드 활용 기술
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### 코어
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Next.js v14 - App Router
+- TypeScript
+
+#### 상태관리
+
+- Jotai (UI 상태관리)
+
+#### 스타일링
+
+- pretendard 폰트 패키지 적용
+- SASS (모든 CSS 문법은 SASS로 함)
+- TailwindCSS (프로토타이핑 단계에서 사용)
+
+#### 인터렉션
+
+- gsap
+- swiper.js
+
+#### 패키지 관리
+
+- npm
+
+#### 컨벤션
+
+- ESLint (문법 체크) - v9 버전업 예정, eslint.config.js 작성 필요
+- Prettier (코드 스타일)
+
+---

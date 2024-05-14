@@ -4,17 +4,17 @@
   "useTabs": false,
   "tabWidth": 2,
   "trailingComma": "all",
-  "printWidth": 120,
+  "printWidth": 80,
   "overrides": [
     {
-      "files": "**/*.{ts,tsx}",
+      "files": "**/*.{ts,tsx,js,jsx}",
       "options": {
         "singleAttributePerLine": false,
         "arrowParens": "avoid"
       }
     },
     {
-      "files": "**/*.scss",
+      "files": "**/*.{scss,css}",
       "options": {
         "singleAttributePerLine": false,
         "proseWrap": "preserve",
