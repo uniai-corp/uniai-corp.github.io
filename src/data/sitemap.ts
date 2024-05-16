@@ -9,11 +9,6 @@ const sitemap = [
     name: "솔루션",
     href: "/solution",
   },
-  {
-    key: `uniai/cs`,
-    name: "고객지원",
-    href: "/cs",
-  },
 ];
 
 export default sitemap;

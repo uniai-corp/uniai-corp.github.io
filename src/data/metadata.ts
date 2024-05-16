@@ -19,8 +19,10 @@ export const nextjs_metadata: Metadata = {
   description: site.desc,
   keywords: [
     "인공지능",
+    "가금류",
     "양계",
     "양계장",
+    "축사",
     "스마트",
     "스마트팜",
     "유니아이",

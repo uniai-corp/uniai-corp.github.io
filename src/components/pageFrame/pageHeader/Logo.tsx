@@ -6,7 +6,12 @@ export default function PageHeaderLogo() {
     <h1 className="page-header-logo">
       <Link href="/">
         <figure>
-          <Image src="/img/logo.svg" alt="UNIAi" width={144} height={40} />
+          <Image
+            src="/img/common/logo_header.svg"
+            alt="UNiAI"
+            width={144}
+            height={40}
+          />
         </figure>
       </Link>
     </h1>

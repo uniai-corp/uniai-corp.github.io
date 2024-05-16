@@ -7,7 +7,7 @@ export default function PageFooter() {
       <PageFooterUpper />
       <PageFooterLower />
       <div className="copyright">
-        <p>Copyright &copy; UNIAi. All Right Reserved.</p>
+        <p>Copyright &copy; UNiAI. All Right Reserved.</p>
       </div>
     </footer>
   );
