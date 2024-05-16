@@ -44,31 +44,37 @@ export const nextjs_metadata: Metadata = {
     },
   },
   // 오픈그래프
-  // openGraph: {
-  //   type: "website",
-  //   locale: "ko-KR",
-  //   url: "/",
-  //   title: site.title,
-  //   description: site.desc,
-  //   images: [
-  //     {
-  //       url: "/",
-  //       alt: site.title,
-  //     },
-  //   ],
-  // },
+  openGraph: {
+    type: "website",
+    locale: "ko-KR",
+    url: "https://www.uniai.co.kr/",
+    title: site.title,
+    description: site.desc,
+    images: [
+      {
+        url: "/img/seo/thumbnail.jpg",
+        alt: site.title,
+      },
+    ],
+  },
   // favicon
   icons: {
     icon: [
       { url: "/favicon/favicon.ico" },
-      // { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      // { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/favicon-48x48.png", sizes: "48x48", type: "image/png" },
       // { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-      // {
-      //   url: "/favicon/android-icon-192x192.png",
-      //   sizes: "192x192",
-      //   type: "image/png",
-      // },
+      {
+        url: "/favicon/android-icon-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "/favicon/android-icon-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
     ],
     shortcut: ["/favicon/favicon.ico"],
     // apple: [
@@ -120,13 +126,13 @@ export const nextjs_metadata: Metadata = {
     // ],
   },
   // 검색 방지
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-    googleBot: {
-      index: false,
-      follow: false,
-    },
-  },
+  // robots: {
+  //   index: false,
+  //   follow: false,
+  //   nocache: true,
+  //   googleBot: {
+  //     index: false,
+  //     follow: false,
+  //   },
+  // },
 };
