@@ -9,7 +9,7 @@ export default function PageFooter() {
         <PageFooterUpper />
         <PageFooterLower />
         <div className="copyright">
-          <p>Copyright &copy; UNiAI. All Right Reserved.</p>
+          <p>Copyright &copy; UNiAI. All Rights Reserved.</p>
         </div>
       </PageSectionWrapper>
     </footer>

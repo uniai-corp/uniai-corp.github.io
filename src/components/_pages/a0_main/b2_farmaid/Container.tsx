@@ -20,7 +20,7 @@ export default function PageMainFarmaid() {
       </figure>
       <h2>팜에이드 플랫폼</h2>
       <div className="link-container">
-        <Link className="link-btn" href="https://farmaid.kr/">
+        <Link className="radius-button link-button" href="https://farmaid.kr/">
           <span>바로가기</span>
         </Link>
       </div>

@@ -1,0 +1,20 @@
+.radius-button {
+  width: fit-content;
+  height: 42px;
+  border-radius: 21px;
+  display: flex;
+  align-items: center;
+  span {
+    font-size: 20px;
+    line-height: 1em;
+    color: #fff;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  &.inquiry-button {
+    background: var(--blue-inquiry);
+  }
+  &.link-button {
+    background: var(--blue-farmaid);
+  }
+}

@@ -1,11 +1,20 @@
 :root {
-  --page-header-height: 100px;
+  --page-wrapper-padding: 30px;
+  --page-header-height: 60px;
+  @media only screen and (min-width: 768px) {
+    --page-wrapper-padding: 50px;
+    --page-header-height: 80px;
+  }
+  @media only screen and (min-width: 1280px) {
+    --page-wrapper-padding: 30px;
+    --page-header-height: 100px;
+  }
 }
 
 .page-section-wrapper {
   width: 100%;
   max-width: 1400px;
-  padding: 0 30px;
+  padding: 0 var(--page-wrapper-padding);
   margin: 0 auto;
 }
 
@@ -14,51 +23,159 @@
   height: var(--page-header-height);
   border-bottom: 1px solid #bbb;
   background: #fff;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   z-index: 1000;
-  .page-header-wrapper {
+}
+.page-header-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.page-nav-container {
+  height: 100%;
+}
+.page-nav-menu-container {
+  height: calc(100% - var(--page-header-height));
+  background: #fff;
+  position: fixed;
+  top: var(--page-header-height);
+  left: 100%;
+  z-index: 1000;
+  transform: translateX(-100%);
+  ul {
     width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
   }
-  .page-header-nav-open-button {
-    display: none;
+  li {
+    width: 100%;
+    margin: 50px 0;
   }
-  .nav-container {
-    height: 100%;
+  .nav-button {
+    width: 100%;
+    height: 53px;
+    padding: 0 var(--page-wrapper-padding);
+    text-align: left;
+    span {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1em;
+    }
   }
-  .nav-menu-container {
+  @media only screen and (min-width: 768px) {
+    .nav-button {
+      span {
+        font-size: 24px;
+      }
+    }
+  }
+  .inquiry-button-item {
+    width: auto;
+    padding: 0 var(--page-wrapper-padding);
+    margin: 0;
+  }
+  .inquiry-button {
+    height: 48px;
+    border-radius: 24px;
+    padding: 0 13px 0 20px;
+    span {
+      font-size: 20px;
+    }
+    figure {
+      width: 20px;
+      height: 20px;
+      margin-left: 13px;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .inquiry-button {
+      height: 53px;
+      border-radius: 27px;
+      span {
+        font-size: 24px;
+      }
+    }
+  }
+}
+[viewport-device="desktop"] {
+  .page-nav-menu-container {
+    position: static;
+    transform: none;
     height: 100%;
     ul {
       width: 100%;
       height: 100%;
       display: flex;
-      li {
-        height: 100%;
-        padding: 0 50px;
-        display: flex;
-        align-items: center;
-        position: relative;
-        &.selected {
-          &:after {
-            content: "현재 페이지";
-            display: block;
-            width: 100%;
-            height: 6px;
-            font-size: 0;
-            background: var(--yellow);
-            position: absolute;
-            bottom: 0;
-            left: 0;
-          }
+    }
+    li {
+      width: 200px;
+      height: 100%;
+      padding-top: 6px;
+      margin: 0 25px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      &.selected {
+        &:after {
+          content: "현재 페이지";
+          display: block;
+          width: 100%;
+          height: 6px;
+          font-size: 0;
+          background: var(--yellow);
+          position: absolute;
+          bottom: 0;
+          left: 0;
         }
       }
     }
+    .nav-button {
+      width: 100%;
+      height: 100%;
+      span {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1em;
+      }
+    }
+  }
+}
+
+.page-header-nav-open-button {
+  width: var(--page-header-height);
+  height: var(--page-header-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  figure {
+    position: relative;
+    span {
+      position: absolute;
+      width: 22px;
+      height: 2px;
+      border-radius: 1px;
+      background: #000;
+      top: 50%;
+      left: 50%;
+    }
+  }
+  .top {
+    transform: translate(-50%, calc(-50% - 8px));
+  }
+  .mid {
+    transform: translate(-50%, -50%);
+  }
+  .btm {
+    transform: translate(-50%, calc(-50% + 8px));
+  }
+}
+[viewport-device="desktop"] {
+  .page-header-nav-open-button {
+    display: none;
   }
 }
 
@@ -66,10 +183,58 @@
   width: 100%;
   padding: 40px 0;
   border-top: 1px solid #c2c2c2;
+  background: #fff;
   .page-footer-section {
     width: 100%;
     margin-bottom: 40px;
     display: flex;
     justify-content: space-between;
+  }
+  .logo-box {
+    font-size: 0;
+    figcaption {
+      height: 37px;
+      margin-top: 15px;
+      font-size: 22px;
+      line-height: 1em;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .inquiry-button {
+    padding: 0 36px;
+    span {
+      font-size: 26px;
+    }
+  }
+  dl {
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    dt {
+      margin-right: 4px;
+      font-weight: 600;
+    }
+    dd {
+      font-weight: 400;
+    }
+  }
+  .company-info-item {
+    margin-bottom: 6px;
+  }
+  .address-info-item {
+    margin-bottom: 10px;
+    text-align: right;
+  }
+  .copyright {
+    font-size: 14px;
+    color: #666;
+    line-height: 21px;
+    font-weight: 400;
   }
 }

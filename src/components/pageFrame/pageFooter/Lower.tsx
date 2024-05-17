@@ -20,7 +20,7 @@ export default function PageFooterLower() {
         </dl>
       </div>
       <div className="footer-lower-item address-info">
-        <dl>
+        <dl className="address-info-item">
           <dt>본사</dt>
           <dd>
             <address>
@@ -28,7 +28,7 @@ export default function PageFooterLower() {
             </address>
           </dd>
         </dl>
-        <dl>
+        <dl className="address-info-item">
           <dt>성남지사</dt>
           <dd>
             <address>

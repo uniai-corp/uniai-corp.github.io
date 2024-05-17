@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 
 export const site = {
   desc: "인공지능 기술로 빅데이터 가치를 실현합니다.",
-  title: "UNIAi | 유니아이",
+  title: "UNiAI :: 유니아이",
 };
 
 export const nextjs_viewport: Viewport = {
@@ -38,9 +38,9 @@ export const nextjs_metadata: Metadata = {
   // metadataBase: new URL("/"), // 도메인 주소
   // 대체 접속 경로
   alternates: {
-    canonical: "/",
+    canonical: "https://www.uniai.co.kr/",
     languages: {
-      "en-US": "/",
+      "en-US": "https://www.uniai.co.kr/",
     },
   },
   // 오픈그래프
@@ -63,7 +63,6 @@ export const nextjs_metadata: Metadata = {
       { url: "/favicon/favicon.ico" },
       { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon/favicon-48x48.png", sizes: "48x48", type: "image/png" },
       // { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
       {
         url: "/favicon/android-icon-192x192.png",

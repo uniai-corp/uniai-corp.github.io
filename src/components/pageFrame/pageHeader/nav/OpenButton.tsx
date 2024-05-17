@@ -1,7 +1,11 @@
 export default function PageHeaderNavOpenButton() {
   return (
     <button className="page-header-nav-open-button" type="button">
-      모바일 메뉴 열기
+      <figure>
+        <span className="top"></span>
+        <span className="mid"></span>
+        <span className="btm"></span>
+      </figure>
     </button>
   );
 }

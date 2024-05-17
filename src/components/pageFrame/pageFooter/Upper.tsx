@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function PageFooterUpper() {
   return (
@@ -14,11 +13,6 @@ export default function PageFooterUpper() {
           />
           <figcaption>주식회사 유니아이</figcaption>
         </figure>
-      </div>
-      <div className="footer-upper-item inquiry-box">
-        <Link href="/cs" className="radius-button inquiry-button">
-          <span>문의하기</span>
-        </Link>
       </div>
     </div>
   );
