@@ -13,12 +13,13 @@ export default function PageMainVisualContainer() {
       </figure>
       <div className="cover">
         <h2>
-          <span>유니아이만의 인공지능 기술로</span>
+          <span>유니아이만의 인공지능 기술로 </span>
           <span>빅데이터 가치를 실현하다.</span>
         </h2>
         <p>
           Artificial Intelligence, Livestock IndustryBio, Smart Farm, Robotics
-          SystemMedical, Embedded System, Smart Inter-modal Transport
+          SystemMedical, <br />
+          Embedded System, Smart Inter-modal Transport
         </p>
       </div>
     </PageSectionContainer>
