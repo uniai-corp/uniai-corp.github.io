@@ -1,7 +1,23 @@
+import { Metadata } from "next";
+
+import PageAboutVisual from "@/components/_pages/a1_about/b0_visual/Container";
+import PageAboutCeo from "@/components/_pages/a1_about/b1_ceo/Container";
+import PageAboutVision from "@/components/_pages/a1_about/b2_vision/Container";
+import PageAboutPartners from "@/components/_pages/a1_about/b3_partners/Container";
+import PageAboutLocation from "@/components/_pages/a1_about/b4_location/Container";
+
+export const metadata: Metadata = {
+  title: "회사소개",
+};
+
 export default function PageAbout() {
   return (
     <>
-      <section className="about">회사소개 페이지</section>
+      <PageAboutVisual />
+      <PageAboutCeo />
+      <PageAboutVision />
+      <PageAboutPartners />
+      <PageAboutLocation />
     </>
   );
 }

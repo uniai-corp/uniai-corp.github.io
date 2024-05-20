@@ -1,10 +1,14 @@
+body {
+  background: #d2d3db;
+}
+
 address {
   font-style: normal;
 }
 
 figure {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: fit-content;
+  height: fit-content;
   font-size: 0;
 }

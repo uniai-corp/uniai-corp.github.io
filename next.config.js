@@ -8,6 +8,6 @@ const nextConfig = {
   sassOptions: {
     includesPaths: [path.join(__dirname, "styles")],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
