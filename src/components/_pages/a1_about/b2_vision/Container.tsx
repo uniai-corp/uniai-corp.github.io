@@ -23,9 +23,9 @@ export default function PageAboutVision() {
   ];
 
   return (
-    <PageSectionContainer className="page-about-vision">
+    <PageSectionContainer className="page-about-section page-about-vision">
       <PageSectionHeader>
-        <PageSectionHeaderTitleContainer title="vision" />
+        <PageSectionHeaderTitleContainer title="vision" deco={true} />
       </PageSectionHeader>
       <PageSectionWrapper>
         <div className="vision-container">

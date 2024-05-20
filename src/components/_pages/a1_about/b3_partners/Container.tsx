@@ -51,7 +51,7 @@ export default function PageAboutPartners() {
   };
 
   return (
-    <PageSectionContainer className="page-about-partners">
+    <PageSectionContainer className="page-about-section page-about-partners">
       <PageSectionHeader>
         <PageSectionHeaderTitleContainer
           title="partner"

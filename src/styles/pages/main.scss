@@ -1,29 +1,7 @@
-@mixin mainSection() {
-  height: 400px;
-  position: relative;
-  z-index: 10;
-  .bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -5;
-    width: 100%;
-    height: 100%;
-  }
-  .cover {
-    width: 100%;
-    height: 100%;
-    padding: 0 var(--page-wrapper-padding);
-  }
-  @media only screen and (min-width: 768px) {
-    height: 600px;
-  }
-  @media only screen and (min-width: 1280px) {
-    height: calc(100vh - var(--page-header-height));
-  }
-}
+@use "../components/section";
+
 .page-main-visual {
-  @include mainSection();
+  @include section.common-layout("full");
 
   .cover {
     display: flex;
@@ -84,7 +62,7 @@
 }
 
 .page-main-tech {
-  @include mainSection();
+  @include section.common-layout("full");
 }
 
 .page-main-tech-intro {

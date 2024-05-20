@@ -1,21 +1,11 @@
 :root {
-  --page-wrapper-padding: 30px;
   --page-header-height: 60px;
   @media only screen and (min-width: 768px) {
-    --page-wrapper-padding: 50px;
     --page-header-height: 80px;
   }
   @media only screen and (min-width: 1280px) {
-    --page-wrapper-padding: 30px;
     --page-header-height: 100px;
   }
-}
-
-.page-section-wrapper {
-  width: 100%;
-  max-width: 1400px;
-  padding: 0 var(--page-wrapper-padding);
-  margin: 0 auto;
 }
 
 #pageHeader {

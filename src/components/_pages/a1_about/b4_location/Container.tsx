@@ -6,9 +6,9 @@ import PageAboutLocationItem from "./Item";
 
 export default function PageAboutLocation() {
   return (
-    <PageSectionContainer className="page-about-location">
+    <PageSectionContainer className="page-about-section page-about-location">
       <PageSectionHeader>
-        <PageSectionHeaderTitleContainer title="location" />
+        <PageSectionHeaderTitleContainer title="location" deco={true} />
       </PageSectionHeader>
       <PageSectionWrapper>
         <div className="location-container">

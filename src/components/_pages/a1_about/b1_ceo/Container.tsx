@@ -1,27 +1,45 @@
-import Image from "next/image";
+import { getImageProps } from "next/image";
 
 import PageSectionContainer from "@/components/section/Container";
 import PageSectionHeader from "@/components/section/Header";
-import PageSectionHeaderTitleContainer from "@/components/section/Title";
 import PageSectionWrapper from "@/components/section/Wrapper";
 
 export default function PageAboutCeo() {
+  const common = { alt: "유니아이" };
+
+  const {
+    props: { srcSet: desktop },
+  } = getImageProps({
+    ...common,
+    width: 248,
+    height: 69,
+    src: "/img/about/ceo/logo_desktop.png",
+  });
+
+  const {
+    props: { srcSet: mobile, ...rest },
+  } = getImageProps({
+    ...common,
+    width: 166,
+    height: 46,
+    src: "/img/about/ceo/logo_mobile.png",
+  });
+
   return (
-    <PageSectionContainer className="page-about-ceo">
+    <PageSectionContainer className="page-about-section page-about-ceo">
       <PageSectionHeader>
-        <PageSectionHeaderTitleContainer
-          title={
-            <figure>
-              <Image
-                src="/img/about/ceo/title_logo.svg"
-                alt="UNiAI"
-                width={248}
-                height={69}
-              />
-              <figcaption>유니아이 대표이사 소개</figcaption>
-            </figure>
-          }
-        />
+        <figure>
+          <picture>
+            <source media="(min-width: 1280px)" srcSet={desktop} />
+            <source srcSet={mobile} />
+            <img
+              {...rest}
+              alt="유니아이"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </picture>
+          <figcaption>유니아이 대표이사 소개</figcaption>
+        </figure>
       </PageSectionHeader>
       <PageSectionWrapper>
         <h3>

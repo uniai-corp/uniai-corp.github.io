@@ -1,0 +1,86 @@
+@use "../components/section";
+
+.page-about-visual {
+  @include section.common-layout();
+  height: 300px;
+  @media only screen and (min-width: 768px) {
+    height: 360px;
+  }
+  @media only screen and (min-width: 1280px) {
+    height: 600px;
+  }
+  .cover {
+    color: white;
+    text-align: center;
+    word-break: keep-all;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      margin-bottom: 20px;
+      font-size: 32px;
+      line-height: 38px;
+      font-weight: 700;
+    }
+    p {
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 600;
+    }
+    .ci-origin {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      line-height: 60px;
+      strong {
+        font-weight: 700;
+      }
+      span {
+        font-weight: 300;
+        margin: 0 20px;
+      }
+    }
+    @media only screen and (min-width: 768px) {
+      h2 {
+        font-size: 40px;
+        line-height: 47px;
+        br {
+          display: none;
+        }
+      }
+      p {
+        font-size: 18px;
+        line-height: 21px;
+      }
+      .ci-origin {
+        font-size: 90px;
+        line-height: 107px;
+      }
+    }
+    @media only screen and (min-width: 1280px) {
+      h2 {
+        margin-bottom: 40px;
+        font-size: 50px;
+        line-height: 60px;
+      }
+      p {
+        margin-bottom: 40px;
+      }
+      .ci-origin {
+        font-size: 130px;
+        line-height: 155px;
+        span {
+          margin: 0 56px;
+        }
+      }
+    }
+  }
+}
+
+.page-about-ceo {
+  background: #f9f9f9;
+}
