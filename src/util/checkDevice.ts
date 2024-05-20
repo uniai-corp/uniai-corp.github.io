@@ -1,6 +1,9 @@
-import devicePatterns from "@/data/devicePatterns";
+import devicePatterns from "@/data/userAgent";
 import { NextResponse } from "next/server";
 
+/**
+ * 반응형 웹 breakpoint 감지
+ */
 const checkResponsiveDevice = (userAgent: string): BreakPointType => {
   const { mobile, tablet } = devicePatterns;
   const isTablet = tablet.some(agent => userAgent.includes(agent));
@@ -12,12 +15,18 @@ const checkResponsiveDevice = (userAgent: string): BreakPointType => {
   return "desktop";
 };
 
+/**
+ * 애플 디바이스 감지
+ */
 const checkAppleDevice = (userAgent: string): "true" | "false" => {
   const { apple } = devicePatterns;
   const isApple = apple.some(agent => userAgent.includes(agent));
   return isApple ? "true" : "false";
 };
 
+/**
+ * 감지된 기기 환경 저장
+ */
 export default function setViewportDeviceInfo(
   response: NextResponse,
   userAgent: string,

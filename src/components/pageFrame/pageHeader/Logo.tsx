@@ -10,7 +10,7 @@ export default function PageHeaderLogo() {
     ...common,
     width: 144,
     height: 40,
-    src: "/img/common/logo_header_desktop.svg",
+    src: "/img/common/logo_header_desktop.png",
   });
 
   const {
@@ -19,7 +19,7 @@ export default function PageHeaderLogo() {
     ...common,
     width: 108,
     height: 30,
-    src: "/img/common/logo_header_tablet.svg",
+    src: "/img/common/logo_header_tablet.png",
   });
 
   const {
@@ -28,7 +28,7 @@ export default function PageHeaderLogo() {
     ...common,
     width: 87,
     height: 24,
-    src: "/img/common/logo_header_mobile.svg",
+    src: "/img/common/logo_header_mobile.png",
   });
 
   return (
@@ -39,13 +39,11 @@ export default function PageHeaderLogo() {
             <source media="(min-width: 1280px)" srcSet={desktop} />
             <source media="(min-width: 768px)" srcSet={tablet} />
             <source srcSet={mobile} />
-            <img {...rest} alt="UNiAI" />
-            {/* <Image
-              src="/img/common/logo_header_mobile.svg"
+            <img
+              {...rest}
               alt="UNiAI"
-              width={87}
-              height={24}
-            /> */}
+              style={{ width: "100%", height: "auto" }}
+            />
           </picture>
         </figure>
       </Link>

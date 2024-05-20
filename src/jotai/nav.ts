@@ -5,4 +5,4 @@ import { atom } from "jotai";
  * @state
  * @return {boolean} isNavOpen
  */
-export const isNavOpen = atom(false);
+export const isNavOpenState = atom(false);

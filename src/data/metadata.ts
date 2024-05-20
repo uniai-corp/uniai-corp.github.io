@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 
 export const site = {
+  domain: "http://localhost:3000/", // "https://www.uniai.co.kr/",
+  domainAlt: "http://localhost:3000/", // "https://www.uniai.co.kr/",
   desc: "인공지능 기술로 빅데이터 가치를 실현합니다.",
   title: "UNiAI :: 유니아이",
 };
@@ -35,19 +37,19 @@ export const nextjs_metadata: Metadata = {
     telephone: false,
   },
   // SEO
-  // metadataBase: new URL("/"), // 도메인 주소
+  metadataBase: new URL(site.domain), // 도메인 주소
   // 대체 접속 경로
   alternates: {
-    canonical: "https://www.uniai.co.kr/",
+    canonical: site.domain,
     languages: {
-      "en-US": "https://www.uniai.co.kr/",
+      "en-US": site.domain,
     },
   },
   // 오픈그래프
   openGraph: {
     type: "website",
     locale: "ko-KR",
-    url: "https://www.uniai.co.kr/",
+    url: site.domain,
     title: site.title,
     description: site.desc,
     images: [
