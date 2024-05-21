@@ -1,23 +1,48 @@
+import { getImageProps } from "next/image";
+
 import PageSectionContainer from "@/components/section/Container";
 import PageSectionWrapper from "@/components/section/Wrapper";
-import Image from "next/image";
 import PageSolutionProductSummary from "./Summary";
 import PageSolutionProductFeature from "./Feature";
 
 export default function PageSolutionProduct() {
+  const common = { alt: "팜에이드" };
+
+  const {
+    props: { srcSet: desktop },
+  } = getImageProps({
+    ...common,
+    width: 540,
+    height: 63,
+    src: `/img/solution/product/logo_desktop.png`,
+  });
+
+  const {
+    props: { srcSet: mobile, ...rest },
+  } = getImageProps({
+    ...common,
+    width: 300,
+    height: 35,
+    src: `/img/solution/product/logo_mobile.png`,
+  });
+
   return (
-    <PageSectionContainer>
+    <PageSectionContainer className="page-solution-product">
       <PageSectionWrapper>
-        <div className="page-solution-product-container">
-          <header className="page-solution-product-header">
-            <h2>스마트 축사 통합 관제 시스템</h2>
+        <header className="page-solution-product-header">
+          <h2>스마트 축사 통합 관제 시스템</h2>
+          <div className="page-solution-product-logo">
             <figure>
-              <Image src="/img/solution/product/logo.svg" alt="팜에이드" width={540} height={63} />
+              <picture>
+                <source media="(min-width: 768px)" srcSet={desktop} />
+                <source srcSet={mobile} />
+                <img {...rest} alt="팜에이드" style={{ width: "100%", height: "auto" }} />
+              </picture>
             </figure>
-          </header>
-          <PageSolutionProductSummary />
-          <PageSolutionProductFeature />
-        </div>
+          </div>
+        </header>
+        <PageSolutionProductSummary />
+        <PageSolutionProductFeature />
       </PageSectionWrapper>
     </PageSectionContainer>
   );
