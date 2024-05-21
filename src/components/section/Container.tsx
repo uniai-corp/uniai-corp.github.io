@@ -8,8 +8,6 @@ export default function PageSectionContainer({
   children: ReactNode;
 }) {
   return (
-    <section className={`page-section-container ${className ? className : ""}`}>
-      {children}
-    </section>
+    <section className={`page-section-container ${className ? className : ""}`}>{children}</section>
   );
 }

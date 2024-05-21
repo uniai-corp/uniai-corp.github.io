@@ -30,9 +30,7 @@ export default function useResizeObserver<T extends HTMLElement>({
         ? window.document.documentElement
         : ref.current;
 
-    const observer = new ResizeObserver(
-      notDebounce ? onResizeObserve : onDebounceResizeObserve,
-    );
+    const observer = new ResizeObserver(notDebounce ? onResizeObserve : onDebounceResizeObserve);
 
     observer.observe(element);
 

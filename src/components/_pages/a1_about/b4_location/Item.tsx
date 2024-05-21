@@ -8,14 +8,14 @@ export default function PageAboutLocationItem({
   src: string;
 }) {
   return (
-    <div className="location-item">
-      <header className="location-header">
+    <div className="page-about-location-item">
+      <header className="page-about-location-item-header">
         <dl>
           <dt>{title}</dt>
           <dd>{address}</dd>
         </dl>
       </header>
-      <div className="location-contents">
+      <div className="page-about-location-item-contents">
         <iframe
           src={src}
           width="100%"

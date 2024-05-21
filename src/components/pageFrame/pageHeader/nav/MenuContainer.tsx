@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback } from "react";
-import { useAtomValue } from "jotai";
+import { useAtom } from "jotai";
 
 import PageHeaderNavItem from "./MenuItem";
 
@@ -16,14 +16,15 @@ export default function PageHeaderNavMenuContainer() {
   const pathName = usePathname();
   const router = useRouter();
 
-  const isNavOpen = useAtomValue(isNavOpenState);
+  const [isNavOpen, setNavOpen] = useAtom(isNavOpenState);
 
   const onClickNavButton = useCallback(
     (href: string) => {
       if (pathName === href || href === "") return;
+      setNavOpen(false);
       router.push(href);
     },
-    [pathName, router],
+    [pathName, router, setNavOpen],
   );
 
   return (

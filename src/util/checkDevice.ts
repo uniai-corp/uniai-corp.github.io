@@ -34,10 +34,7 @@ export default function setViewportDeviceInfo(
   const responseUpdate = response;
 
   // 접속 디바이스의 브레이크 포인트 체크
-  responseUpdate.headers.set(
-    "X-Responsive-Device",
-    checkResponsiveDevice(userAgent),
-  );
+  responseUpdate.headers.set("X-Responsive-Device", checkResponsiveDevice(userAgent));
 
   // 접속 디바이스의 애플 기기 여부 체크
   responseUpdate.headers.set("X-Apple-Device", checkAppleDevice(userAgent));
