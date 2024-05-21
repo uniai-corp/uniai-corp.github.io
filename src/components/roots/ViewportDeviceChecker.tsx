@@ -16,9 +16,7 @@ export default function ViewportDeviceChecker() {
   const setResponsiveDevice = useSetAtom(responsiveDeviceState);
 
   // 현재 화면 방향 상태 업데이트
-  const [viewportOrientation, setViewportOrientation] = useAtom(
-    viewportOrientationState,
-  );
+  const [viewportOrientation, setViewportOrientation] = useAtom(viewportOrientationState);
 
   // 현재 접속 기기가 애플기기인지의 여부
   const [isAppleDevice, setIsAppleDevice] = useAtom(isAppleDeviceState);
@@ -50,8 +48,7 @@ export default function ViewportDeviceChecker() {
     const orientation = window.matchMedia("(orientation: portrait)").matches
       ? "portrait"
       : "landscape";
-    if (viewportOrientation !== orientation)
-      setViewportOrientation(orientation);
+    if (viewportOrientation !== orientation) setViewportOrientation(orientation);
   }, [setViewportOrientation, viewportOrientation]);
 
   const getViewport = useCallback(
@@ -83,8 +80,7 @@ export default function ViewportDeviceChecker() {
     const viewport = getViewport(hardware);
 
     // HTML 속성 업데이트
-    const viewportAttr =
-      document.documentElement.getAttribute("viewport-device");
+    const viewportAttr = document.documentElement.getAttribute("viewport-device");
     if (viewport !== viewportAttr) {
       document.documentElement.setAttribute("viewport-device", viewport);
     }

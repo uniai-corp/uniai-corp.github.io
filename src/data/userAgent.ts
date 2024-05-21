@@ -1,10 +1,4 @@
-const apple: UserAgentDeviceType = [
-  "iPhone",
-  "iPad",
-  "iPod",
-  "Mac",
-  "macintosh",
-];
+const apple: UserAgentDeviceType = ["iPhone", "iPad", "iPod", "Mac", "macintosh"];
 const tablet: UserAgentDeviceType = ["Tablet", "iPad", "playbook", "silk"];
 const mobile: UserAgentDeviceType = [
   "Android",

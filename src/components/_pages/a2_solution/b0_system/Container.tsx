@@ -46,12 +46,7 @@ export default function PageSolutionSystem() {
       <PageSectionWrapper>
         <div className="solution-system-container">
           {system.map((d, i) => (
-            <PageSolutionSystemItem
-              key={d.key}
-              index={i}
-              title={d.title}
-              desc={d.desc}
-            />
+            <PageSolutionSystemItem key={d.key} index={i} title={d.title} desc={d.desc} />
           ))}
         </div>
       </PageSectionWrapper>

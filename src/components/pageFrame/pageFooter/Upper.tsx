@@ -28,11 +28,7 @@ export default function PageFooterUpper() {
           <picture>
             <source media="(min-width: 1280px)" srcSet={desktop} />
             <source srcSet={mobile} />
-            <img
-              {...rest}
-              alt="UNiAI"
-              style={{ width: "100%", height: "auto" }}
-            />
+            <img {...rest} alt="UNiAI" style={{ width: "100%", height: "auto" }} />
           </picture>
         </figure>
         <figcaption>주식회사 유니아이</figcaption>

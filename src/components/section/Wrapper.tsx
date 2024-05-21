@@ -7,9 +7,5 @@ export default function PageSectionWrapper({
   className?: string;
   children: ReactNode;
 }) {
-  return (
-    <div className={`page-section-wrapper ${className ? className : ""}`}>
-      {children}
-    </div>
-  );
+  return <div className={`page-section-wrapper ${className ? className : ""}`}>{children}</div>;
 }

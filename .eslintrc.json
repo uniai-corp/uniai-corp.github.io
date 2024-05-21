@@ -33,10 +33,7 @@
   ],
   "overrides": [
     {
-      "files": [
-        "**/__tests__/**/*.[jt]s?(x)",
-        "**/?(*.)+(spec|test).[jt]s?(x)"
-      ],
+      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
       "extends": ["plugin:testing-library/react"]
     }
   ],
@@ -53,7 +50,7 @@
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "prettier/prettier": [
       "error",
-      { "endOfLine": "auto" },
+      { "endOfLine": "auto", "printWidth": 100 },
       { "usePrettierrc": true }
     ],
     "no-unused-vars": "off",
@@ -63,10 +60,7 @@
     "no-prototype-builtins": "off",
     "prefer-const": "error",
     "array-callback-return": "off",
-    "react/jsx-filename-extension": [
-      2,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
-    ],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "react/jsx-one-expression-per-line": 0,
     "react/prefer-stateless-function": 0,
     "react/react-in-jsx-scope": "off",

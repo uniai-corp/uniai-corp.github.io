@@ -55,44 +55,28 @@ export default function PageAboutPartners() {
       <PageSectionHeader>
         <PageSectionHeaderTitleContainer
           title="partner"
-          subtitle="다양한 파트너사와 함께 성장하고 있는 주식회사 유니아이"
+          subtitle={
+            <>
+              다양한 파트너사와 함께 성장하고 있는 주식회사 <br />
+              유니아이
+            </>
+          }
           deco={true}
         />
       </PageSectionHeader>
-      <PageSectionWrapper>
-        <div className="partners-container">
-          <PageAboutPartnersCategoryList
-            title="가금협회"
-            list={partners.association}
-          />
-          <PageAboutPartnersCategoryList title="제품개발" list={partners.rnb} />
-          <PageAboutPartnersCategoryList
-            title="질병연구"
-            list={partners.disease}
-          />
-          <PageAboutPartnersCategoryList
-            title="가금계열사"
-            list={partners.distribution}
-          />
-          <PageAboutPartnersCategoryList
-            title="마케팅"
-            list={partners.marketing}
-          />
-          <PageAboutPartnersCategoryList
-            title="사료유통"
-            list={partners.feeds}
-          />
-          <PageAboutPartnersCategoryList
-            title="정부기관"
-            list={partners.govern}
-          />
-          <PageAboutPartnersCategoryList
-            title="산학협력"
-            list={partners.academic}
-          />
+      <div className="page-about-partners-container">
+        <PageSectionWrapper>
+          <PageAboutPartnersCategoryList title="가금협회" list={partners.association} />
+          <PageAboutPartnersCategoryList title="제품개발" list={partners.rnd} />
+          <PageAboutPartnersCategoryList title="질병연구" list={partners.disease} />
+          <PageAboutPartnersCategoryList title="가금계열사" list={partners.distribution} />
+          <PageAboutPartnersCategoryList title="마케팅" list={partners.marketing} />
+          <PageAboutPartnersCategoryList title="사료유통" list={partners.feeds} />
+          <PageAboutPartnersCategoryList title="정부기관" list={partners.govern} />
+          <PageAboutPartnersCategoryList title="산학협력" list={partners.academic} />
           <PageAboutPartnersCategoryList title="법률자문" list={partners.law} />
-        </div>
-      </PageSectionWrapper>
+        </PageSectionWrapper>
+      </div>
     </PageSectionContainer>
   );
 }

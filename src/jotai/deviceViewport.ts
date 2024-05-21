@@ -15,8 +15,7 @@ export const responsiveDeviceState = atom<ResponsiveDeviceStateType>({
  * @state
  * @return {ViewportOrientationStateType} portrait, landscape
  */
-export const viewportOrientationState =
-  atom<ViewportOrientationStateType>("portrait");
+export const viewportOrientationState = atom<ViewportOrientationStateType>("portrait");
 
 /**
  * 애플 디바이스 접속여부 상태

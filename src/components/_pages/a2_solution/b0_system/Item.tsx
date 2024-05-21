@@ -22,11 +22,7 @@ export default function PageSolutionSystemItem({
       </div>
       <div className="img-container">
         <figure>
-          <Image
-            src={`/img/solution/system/0${index}.png`}
-            alt={title}
-            fill={true}
-          />
+          <Image src={`/img/solution/system/0${index}.png`} alt={title} fill={true} />
         </figure>
       </div>
     </div>

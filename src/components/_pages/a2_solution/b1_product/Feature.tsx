@@ -74,12 +74,7 @@ export default function PageSolutionProductFeature() {
   );
 }
 
-function FeatureItem({
-  key,
-  category,
-  title,
-  features,
-}: SolutionProductFeatureDataType) {
+function FeatureItem({ key, category, title, features }: SolutionProductFeatureDataType) {
   return (
     <>
       <figure>

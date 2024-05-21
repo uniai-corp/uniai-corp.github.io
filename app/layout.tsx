@@ -1,10 +1,7 @@
 import { ReactNode } from "react";
 
 // SEO를 위한 메타데이터
-export {
-  nextjs_metadata as metadata,
-  nextjs_viewport as viewport,
-} from "@/data/metadata";
+export { nextjs_metadata as metadata, nextjs_viewport as viewport } from "@/data/metadata";
 
 // styles
 import "pretendard/dist/web/static/pretendard.css";

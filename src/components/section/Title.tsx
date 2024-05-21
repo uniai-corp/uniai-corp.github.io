@@ -12,15 +12,8 @@ export default function PageSectionHeaderTitleContainer({
   children?: ReactNode;
 }) {
   return (
-    <div
-      className="page-section-header-title-container"
-      title-deco={deco ? "true" : "false"}
-    >
-      {children ? (
-        children
-      ) : (
-        <h2 className="page-section-header-title">{title}</h2>
-      )}
+    <div className="page-section-header-title-container" title-deco={deco ? "true" : "false"}>
+      {children ? children : <h2 className="page-section-header-title">{title}</h2>}
       {subtitle && <p className="page-section-header-subtitle">{subtitle}</p>}
     </div>
   );
