@@ -1,13 +1,13 @@
-import Image from "next/image";
 import PageSectionContainer from "@/components/section/Container";
 import PageSectionWrapper from "@/components/section/Wrapper";
+import PageMainVisualBackground from "./Background";
+import PageMainVisualEarth from "./Earth";
 
 export default function PageMainVisualContainer() {
   return (
     <PageSectionContainer className="page-main-visual">
-      <figure className="bg">
-        <Image src="/img/common/section_placeholder.jpg" alt="메인 비주얼" fill={true} />
-      </figure>
+      <PageMainVisualBackground />
+      <PageMainVisualEarth />
       <div className="cover">
         <PageSectionWrapper>
           <h2>
