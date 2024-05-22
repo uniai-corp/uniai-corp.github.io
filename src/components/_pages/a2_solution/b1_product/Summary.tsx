@@ -3,28 +3,28 @@ import Image from "next/image";
 export default function PageSolutionProductSummary() {
   const summary: SolutionProductSummaryDataType[] = [
     {
-      key: "solution/product/summary/monitoring",
+      classifyKey: "solution/product/summary/monitoring",
       category: "monitoring",
       name: "축사 모니터링과 제어",
       width: 100,
       height: 96,
     },
     {
-      key: "solution/product/summary/disease",
+      classifyKey: "solution/product/summary/disease",
       category: "disease",
       name: "질병 예측과 진단",
       width: 80,
       height: 80,
     },
     {
-      key: "solution/product/summary/weight",
+      classifyKey: "solution/product/summary/weight",
       category: "weight",
       name: "AI 자동 체중 측정, 예측",
       width: 61,
       height: 68,
     },
     {
-      key: "solution/product/summary/analysis",
+      classifyKey: "solution/product/summary/analysis",
       category: "analysis",
       name: "생육정보 입력, 분석",
       width: 70,
@@ -43,9 +43,9 @@ export default function PageSolutionProductSummary() {
           <strong>한번에!</strong>
         </p>
       </header>
-      <ul>
+      <ul className="page-solution-product-summary-list">
         {summary.map(d => (
-          <li key={d.key}>
+          <li key={d.classifyKey}>
             <SummaryItem {...d} />
           </li>
         ))}
@@ -75,7 +75,7 @@ function SummaryItem({
           height={height}
         />
       </figure>
-      <span>{name}</span>
+      <h4>{name}</h4>
     </>
   );
 }

@@ -28,7 +28,7 @@ type SolutionSystemDataType = {
 } & SolutionSystemItemPropsType;
 
 type SolutionProductSummaryDataType = {
-  key: string;
+  classifyKey: string;
   category: string;
   name: string;
   width: number;
@@ -36,7 +36,7 @@ type SolutionProductSummaryDataType = {
 };
 
 type SolutionProductFeatureDataType = {
-  key: string;
+  classifyKey: string;
   category: string;
   title: string;
   features: string[];

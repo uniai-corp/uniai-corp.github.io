@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function PageSolutionProductFeature() {
   const feature: SolutionProductFeatureDataType[] = [
     {
-      key: "solution/product/feature/feeding",
+      classifyKey: "solution/product/feature/feeding",
       category: "feeding",
       title: "사양관리",
       features: [
@@ -16,7 +16,7 @@ export default function PageSolutionProductFeature() {
       ],
     },
     {
-      key: "solution/product/feature/weight",
+      classifyKey: "solution/product/feature/weight",
       category: "weight",
       title: "체중관리",
       features: [
@@ -29,7 +29,7 @@ export default function PageSolutionProductFeature() {
       ],
     },
     {
-      key: "solution/product/feature/disease",
+      classifyKey: "solution/product/feature/disease",
       category: "disease",
       title: "질병관리",
       features: [
@@ -44,7 +44,7 @@ export default function PageSolutionProductFeature() {
       ],
     },
     {
-      key: "solution/product/feature/control",
+      classifyKey: "solution/product/feature/control",
       category: "control",
       title: "통합제어",
       features: [
@@ -63,9 +63,9 @@ export default function PageSolutionProductFeature() {
       <header className="page-solution-product-feature-header">
         <h3>개별상품</h3>
       </header>
-      <ul>
+      <ul className="page-solution-product-feature-list">
         {feature.map(d => (
-          <li key={d.key}>
+          <li key={d.classifyKey}>
             <FeatureItem {...d} />
           </li>
         ))}
@@ -74,9 +74,9 @@ export default function PageSolutionProductFeature() {
   );
 }
 
-function FeatureItem({ key, category, title, features }: SolutionProductFeatureDataType) {
+function FeatureItem({ classifyKey, category, title, features }: SolutionProductFeatureDataType) {
   return (
-    <>
+    <div className="page-solution-product-feature-item">
       <figure>
         <Image
           src={`/img/solution/product/feature/${category}.png`}
@@ -84,13 +84,14 @@ function FeatureItem({ key, category, title, features }: SolutionProductFeatureD
           width={100}
           height={100}
         />
+        <figcaption>{title}</figcaption>
       </figure>
-      <dl>
-        <dt>{title}</dt>
+      <dl className="page-solution-product-feature-details">
+        <dt>주요기능</dt>
         {features.map((desc, i) => (
-          <dd key={`${key}/${i}`}>{desc}</dd>
+          <dd key={`${classifyKey}/${i}`}>{desc}</dd>
         ))}
       </dl>
-    </>
+    </div>
   );
 }

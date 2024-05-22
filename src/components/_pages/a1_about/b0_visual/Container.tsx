@@ -7,7 +7,7 @@ export default function PageAboutVisual() {
   return (
     <PageSectionContainer className="page-about-visual">
       <figure className="bg">
-        <Image src="/img/common/section_placeholder.jpg" alt="회사소개 비주얼" fill={true} />
+        <Image src="/img/about/visual.png" alt="회사소개 비주얼" fill={true} />
       </figure>
       <div className="cover">
         <PageSectionWrapper>
