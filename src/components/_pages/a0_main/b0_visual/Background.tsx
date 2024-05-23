@@ -29,6 +29,7 @@ export default function PageMainVisualBackground() {
   } = getImageProps({
     ...common,
     src: "/img/main/visual/bg_mobile.png",
+    priority: true,
   });
 
   return (
