@@ -1,3 +1,4 @@
+import SectionBackgroundImage from "@/components/section/BackgroundImage";
 import { getImageProps } from "next/image";
 
 export default function PageTechIntroBackground() {
@@ -30,8 +31,9 @@ export default function PageTechIntroBackground() {
     ...common,
     src: "/img/main/tech/intro/bg_mobile.png",
   });
+
   return (
-    <figure className="bg">
+    <SectionBackgroundImage>
       <picture>
         <source media="(min-width: 1340px)" srcSet={desktopLarge} />
         <source media="(min-width: 1280px)" srcSet={desktopMedium} />
@@ -39,6 +41,6 @@ export default function PageTechIntroBackground() {
         <source srcSet={mobile} />
         <img {...rest} alt="AI 기술 배경" />
       </picture>
-    </figure>
+    </SectionBackgroundImage>
   );
 }

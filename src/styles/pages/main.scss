@@ -1,5 +1,33 @@
 @use "../components/section";
 
+@mixin float-object-mixin($name: "", $amount: 4px) {
+  @if $name == "" {
+    @keyframes float-object {
+      0% {
+        transform: translateY(calc($amount * -1));
+      }
+      50% {
+        transform: translateY($amount);
+      }
+      100% {
+        transform: translateY(calc($amount * -1));
+      }
+    }
+  } @else {
+    @keyframes float-object#{"-"+$name} {
+      0% {
+        transform: translateY(calc($amount * -1));
+      }
+      50% {
+        transform: translateY($amount);
+      }
+      100% {
+        transform: translateY(calc($amount * -1));
+      }
+    }
+  }
+}
+
 .page-main-visual {
   @include section.common-layout("full");
 
@@ -29,21 +57,34 @@
     line-height: 38px;
     font-weight: 700;
     text-shadow: 7px 8px 6px rgba(0, 0, 0, 0.3);
+    span {
+      opacity: 0;
+      transform: translateY(100%);
+    }
   }
   p {
     font-size: 12px;
     color: white;
     line-height: 14px;
     font-weight: 400;
+    opacity: 0;
     br {
       display: none;
     }
   }
   @media only screen and (min-width: 768px) {
+    text-align: center;
+
     .bg-object-container {
       justify-content: center;
     }
-    text-align: center;
+
+    @include float-object-mixin("earth");
+    .bg-object {
+      opacity: 0;
+      animation: float-object-earth 3s ease-in-out infinite;
+    }
+
     h2 {
       margin-bottom: 50px;
       font-size: 56px;
@@ -78,6 +119,16 @@
 .page-main-tech-intro {
   text-align: center;
 
+  @include float-object-mixin("ai");
+  @include float-object-mixin("ai-keywords", -2px);
+
+  .bg-object {
+    opacity: 0;
+  }
+  .tech-intro-ai-keywords {
+    display: none;
+  }
+
   .cover {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -93,17 +144,25 @@
     line-height: 38px;
     font-weight: 700;
     word-break: keep-all;
+    opacity: 0;
+    transform: translateY(100%);
   }
   p {
     font-size: 16px;
     color: white;
     line-height: 19.2px;
     font-weight: 500;
-    br {
-      display: none;
+    span {
+      opacity: 0;
+      transform: translateY(100%);
     }
   }
   @media only screen and (min-width: 768px) {
+    .tech-intro-ai {
+      .bg-object {
+        animation: float-object-ai 3s ease-in-out infinite;
+      }
+    }
     .cover {
       padding-top: 70px;
       padding-bottom: 70px;
@@ -115,17 +174,27 @@
     p {
       font-size: 22px;
       line-height: 30px;
-      br {
-        display: inline;
+      span {
+        display: block;
       }
     }
   }
   @media only screen and (min-width: 1280px) {
     .bg-object {
-      height: 54vh;
       transform: translateY(40px);
       img {
         height: 100% !important;
+      }
+    }
+    .tech-intro-ai {
+      .bg-object {
+        height: 54vh;
+      }
+    }
+    .tech-intro-ai-keywords {
+      display: flex;
+      .bg-object {
+        animation: float-object-ai-keywords 3s ease-in-out infinite;
       }
     }
     .cover {
@@ -162,17 +231,21 @@
     background: white;
     position: relative;
     h2 {
-      width: fit-content;
-      height: var(--page-main-tech-title-height);
-      padding: 0 20px;
-      border-radius: calc(var(--page-main-tech-title-height) / 2);
-      background: #aaa;
-      display: flex;
-      align-items: center;
       position: absolute;
       top: 0;
       left: 50%;
       transform: translate(-50%, -50%);
+      .title-box {
+        width: fit-content;
+        height: var(--page-main-tech-title-height);
+        padding: 0 20px;
+        border-radius: calc(var(--page-main-tech-title-height) / 2);
+        background: #aaa;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(100%);
+      }
       span {
         font-size: 20px;
         color: white;
@@ -188,6 +261,8 @@
       font-size: 16px;
       line-height: 19.2px;
       font-weight: 500;
+      opacity: 0;
+      transform: translateY(-30%);
     }
   }
   @media only screen and (min-width: 768px) {
@@ -195,7 +270,9 @@
     height: 600px;
     .page-main-tech-contents {
       h2 {
-        padding: 0 50px;
+        .title-box {
+          padding: 0 50px;
+        }
         span {
           font-size: 32px;
         }
@@ -245,7 +322,9 @@
   background: white;
   .page-main-tech-contents {
     h2 {
-      background: #5b433e;
+      .title-box {
+        background: #5b433e;
+      }
     }
   }
   @media only screen and (min-width: 1280px) {
@@ -261,7 +340,9 @@
 .page-main-tech-transport {
   .page-main-tech-contents {
     h2 {
-      background: #0643c1;
+      .title-box {
+        background: #0643c1;
+      }
     }
   }
 }
@@ -282,12 +363,18 @@
     font-size: 20px;
     line-height: 28px;
     word-break: keep-all;
+    span {
+      opacity: 0;
+      transform: translateY(100%);
+    }
   }
   h2 {
     margin-bottom: var(--page-main-farmaid-logo-margin);
     font-size: 28px;
     line-height: 1em;
     font-weight: 600;
+    opacity: 0;
+    transform: translateY(-50%);
   }
   @media only screen and (min-width: 768px) {
     p {
@@ -310,10 +397,13 @@
 
   .service-logo {
     margin: var(--page-main-farmaid-logo-margin) auto;
+    opacity: 0;
   }
+
   .link-container {
     display: flex;
     justify-content: center;
+    opacity: 0;
     .link-button {
       width: 156px;
       height: 45px;

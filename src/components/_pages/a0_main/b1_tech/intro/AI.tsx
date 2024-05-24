@@ -1,6 +1,8 @@
 import { getImageProps } from "next/image";
 
-export default function PageTechIntroAI() {
+import SectionObjectImage from "@/components/section/ObjectImage";
+
+export default function PageTechIntroAI({ trigger }: { trigger: HTMLElement | null }) {
   const common = { alt: "AI" };
 
   const {
@@ -38,17 +40,37 @@ export default function PageTechIntroAI() {
     height: 337,
     src: "/img/main/tech/intro/ai_mobile.png",
   });
+
   return (
-    <div className="bg-object-container">
-      <figure className="bg-object">
-        <picture>
-          <source media="(min-width: 1340px)" srcSet={desktopLarge} />
-          <source media="(min-width: 1280px)" srcSet={desktopMedium} />
-          <source media="(min-width: 360px)" srcSet={tablet} />
-          <source srcSet={mobile} />
-          <img {...rest} alt="AI" style={{ width: "100%", height: "auto" }} />
-        </picture>
-      </figure>
-    </div>
+    <SectionObjectImage
+      className="tech-intro-ai"
+      trigger={trigger}
+      scrollAnimationOptions={[
+        {
+          optionKey: "main/tech/intro/ai",
+          target: null,
+          animation: [
+            {
+              duration: 1.6,
+              autoAlpha: 1,
+              delay: 0.4,
+              scrollTrigger: {
+                trigger,
+                start: "top 80%",
+                end: "top 80%",
+              },
+            },
+          ],
+        },
+      ]}
+    >
+      <picture>
+        <source media="(min-width: 1340px)" srcSet={desktopLarge} />
+        <source media="(min-width: 1280px)" srcSet={desktopMedium} />
+        <source media="(min-width: 360px)" srcSet={tablet} />
+        <source srcSet={mobile} />
+        <img {...rest} alt="AI" style={{ width: "100%", height: "auto" }} />
+      </picture>
+    </SectionObjectImage>
   );
 }
