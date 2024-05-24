@@ -1,3 +1,4 @@
+import SectionBackgroundImage from "@/components/section/BackgroundImage";
 import { getImageProps } from "next/image";
 
 export default function PageMainVisualBackground() {
@@ -33,7 +34,7 @@ export default function PageMainVisualBackground() {
   });
 
   return (
-    <figure className="bg">
+    <SectionBackgroundImage>
       <picture>
         <source media="(min-width: 1340px)" srcSet={desktopLarge} />
         <source media="(min-width: 1280px)" srcSet={desktopMedium} />
@@ -41,6 +42,6 @@ export default function PageMainVisualBackground() {
         <source srcSet={mobile} />
         <img {...rest} alt="유니아이 홈페이지" style={{ width: "100%", height: "100%" }} />
       </picture>
-    </figure>
+    </SectionBackgroundImage>
   );
 }

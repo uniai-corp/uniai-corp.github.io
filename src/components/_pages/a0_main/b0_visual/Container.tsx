@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import { useAtomValue } from "jotai";
 
 import PageSectionContainer from "@/components/section/Container";
 import PageSectionWrapper from "@/components/section/Wrapper";
@@ -10,43 +9,39 @@ import PageMainVisualEarth from "./Earth";
 
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 
-import { scrollContainer } from "@/jotai/scroll";
-
 export default function PageMainVisualContainer() {
-  const container = useAtomValue(scrollContainer);
-
   const sectionRef = useRef<HTMLElement | null>(null);
   const sloganUpperRef = useRef<HTMLSpanElement | null>(null);
   const sloganLowerRef = useRef<HTMLSpanElement | null>(null);
   const phraseRef = useRef<HTMLHeadingElement | null>(null);
 
   useScrollAnimation({
-    container,
+    refs: [sectionRef.current, sloganUpperRef.current],
     options: [
       {
         optionKey: "main/visual/slogan/upper",
         target: sloganUpperRef.current,
-        animation: [{ duration: 0.64, autoAlpha: 1, translateY: 0 }],
+        animation: [{ duration: 0.8, autoAlpha: 1, translateY: 0 }],
       },
     ],
   });
   useScrollAnimation({
-    container,
+    refs: [sectionRef.current, sloganLowerRef.current],
     options: [
       {
         optionKey: "main/visual/slogan/lower",
         target: sloganLowerRef.current,
-        animation: [{ duration: 0.64, autoAlpha: 1, translateY: 0, delay: 0.16 }],
+        animation: [{ duration: 0.8, autoAlpha: 1, translateY: 0, delay: 0.24 }],
       },
     ],
   });
   useScrollAnimation({
-    container,
+    refs: [sectionRef.current, phraseRef.current],
     options: [
       {
         optionKey: "main/visual/phrase",
         target: phraseRef.current,
-        animation: [{ duration: 1, autoAlpha: 1, delay: 0.56 }],
+        animation: [{ duration: 1.6, autoAlpha: 1, delay: 0.8 }],
       },
     ],
   });

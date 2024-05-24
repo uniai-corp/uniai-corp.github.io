@@ -13,6 +13,7 @@ import PageHeader from "@/components/pageFrame/pageHeader/Container";
 import PageFooter from "@/components/pageFrame/pageFooter/Container";
 import ViewportDeviceChecker from "@/components/roots/ViewportDeviceChecker";
 import PageContainer from "@/components/pageFrame/PageContainer";
+import PageScrollContainer from "@/components/pageFrame/PageScrollContainer";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -21,9 +22,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <JotaiProvider>
           <ViewportDeviceChecker />
           <PageContainer>
-            <PageHeader />
-            {children}
-            <PageFooter />
+            <PageScrollContainer>
+              <PageHeader />
+              {children}
+              <PageFooter />
+            </PageScrollContainer>
           </PageContainer>
         </JotaiProvider>
       </body>

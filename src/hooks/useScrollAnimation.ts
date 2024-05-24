@@ -1,9 +1,13 @@
+"use client";
+
 import { useCallback } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect";
+import { useAtomValue } from "jotai";
+import { scrollContainer } from "@/jotai/scroll";
 
 /**
  * GSAP ScrollTrigger 공통 전역옵션
@@ -15,23 +19,21 @@ export function useGsapRegister<ContainerElement extends HTMLElement>({
   container?: ContainerElement | null;
 }) {
   useIsomorphicLayoutEffect(() => {
+    if (typeof window === "undefined") return;
+
     gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-    const defaultOptions = {
+    // 스크롤 영역 기준 요소
+    ScrollTrigger.defaults({
+      scroller: container || window.document.documentElement,
       // 뷰포트 리사이즈에 대한 옵션
       invalidateOnRefresh: true,
       // onRefresh: () => ScrollTrigger.refresh(),
-    };
-
-    // 스크롤 영역 기준 요소
-    if (typeof container !== "undefined") {
-      Object.assign(defaultOptions, { scroller: container });
-    }
-
-    ScrollTrigger.defaults({
-      ...defaultOptions,
     });
-  }, []);
+    ScrollTrigger.normalizeScroll({
+      allowNestedScroll: true,
+    });
+  }, [container]);
 
   return null;
 }
@@ -41,6 +43,7 @@ export function useGsapRegister<ContainerElement extends HTMLElement>({
  * @hook
  * @param {object} props
  * @param {RefObject<HTMLElement | null>} props.container 스크롤 전체 영역
+ * @param {Array<HTMLElement | null>} props.refs element ref null 여부 체크를 위한 params
  * @param {boolean} [props.isTimeline] 타임라인 적용 여부
  * @param {ScrollTriggerTweenArrayOptions[]} props.options 애니메이션 및 스크롤트리거 옵션
  * @see https://stackblitz.com/edit/stackblitz-starters-u6rgzq?file=README.md gsap + ScrollTrigger + Next.js Starter Templates
@@ -90,25 +93,26 @@ export function useGsapRegister<ContainerElement extends HTMLElement>({
  * }
  * ```
  */
-export default function useScrollAnimation<ContainerElement extends HTMLElement>({
-  container,
+export default function useScrollAnimation({
+  refs,
   isTimeline = false,
   options,
 }: {
-  container: ContainerElement | null;
+  refs: Array<HTMLElement | null>;
   isTimeline?: boolean;
   options: ScrollTriggerTweenArrayOptions[];
 }) {
-  // GSAP initiate register
+  const container = useAtomValue(scrollContainer);
   useGsapRegister({ container });
+
   /**
    * 애니메이션 옵션별 gsap tween 설정 실행
    * @param {ScrollTriggerTweenArrayOptions} option 애니메이션 옵션
    */
   const gsapTween = useCallback(
     (option: ScrollTriggerTweenArrayOptions) => {
-      if (!(typeof option.target === "string" || option.target instanceof Element)) {
-        console.error("스크롤 인터랙션 초기화 오류 :: target 없음", option);
+      if (option.target === null) {
+        // console.error("스크롤 인터랙션 초기화 오류 :: target 없음", option);
         return;
       }
 
@@ -116,7 +120,7 @@ export default function useScrollAnimation<ContainerElement extends HTMLElement>
       const libObject = isTimeline ? gsap.timeline() : gsap;
 
       // 옵션 추출
-      console.log("스크롤 인터랙션 초기화", option);
+      // console.log("스크롤 인터랙션 초기화", option);
       const { target, direction, animation } = option;
 
       // 진행방향에 따른 tween 애니메이션 적용
@@ -129,7 +133,8 @@ export default function useScrollAnimation<ContainerElement extends HTMLElement>
             immediateRender: false, // 애니메이션 초기화 이슈 해결을 위한 옵션
           },
         );
-      } else if (direction === "from") {
+      }
+      if (direction === "from") {
         libObject.from(
           target,
           // from tween
@@ -138,7 +143,8 @@ export default function useScrollAnimation<ContainerElement extends HTMLElement>
             immediateRender: false, // 애니메이션 초기화 이슈 해결을 위한 옵션
           },
         );
-      } else if (direction === "fromTo") {
+      }
+      if (direction === "fromTo") {
         if (!animation[1]) {
           console.error("스크롤 인터랙션 초기화 오류 :: fromTo 애니메이션 없음", animation);
           return;
@@ -166,16 +172,15 @@ export default function useScrollAnimation<ContainerElement extends HTMLElement>
       return;
     }
 
-    console.log(`[useScrollAnimation :: useGSAP] options`, ...options);
+    // console.log(`[useScrollAnimation :: useGSAP] options`, ...options);
 
-    const validTargetOptions = options.filter(
-      ({ target }) => typeof target === "string" || target instanceof Element,
-    );
-    if (validTargetOptions.length === 0) {
-      console.error("스크롤 인터랙션 초기화 오류 :: target이 유효하지 않음");
+    const validElements = refs.filter(ref => ref !== null);
+
+    if (validElements.length === 0) {
+      // console.error("스크롤 인터랙션 초기화 오류 :: element 유효하지 않음", refs);
       return;
     }
     // tween 배열에 대한 애니메이션 설정 적용
     options.forEach(gsapTween);
-  }, [...options.map(({ target }) => target)]);
+  }, [...refs]);
 }
