@@ -20,7 +20,7 @@ npm i
 npm run dev
 ```
 
-- <http://localhost/>으로 접속
+- <http://localhost:3000/>으로 접속
 
 ---
 
