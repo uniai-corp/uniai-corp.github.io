@@ -1,5 +1,4 @@
 import { getImageProps } from "next/image";
-import Link from "next/link";
 
 export default function PageHeaderLogo() {
   const common = { alt: "UNiAI" };
@@ -33,7 +32,7 @@ export default function PageHeaderLogo() {
 
   return (
     <h1 className="page-header-logo">
-      <Link href="/">
+      <a href="/">
         <figure>
           <picture>
             <source media="(min-width: 1280px)" srcSet={desktop} />
@@ -42,7 +41,7 @@ export default function PageHeaderLogo() {
             <img {...rest} alt="UNiAI" style={{ width: "100%", height: "auto" }} />
           </picture>
         </figure>
-      </Link>
+      </a>
     </h1>
   );
 }

@@ -31,8 +31,6 @@ type SolutionProductSummaryDataType = {
   classifyKey: string;
   category: string;
   name: string;
-  width: number;
-  height: number;
 };
 
 type SolutionProductFeatureDataType = {
@@ -40,4 +38,11 @@ type SolutionProductFeatureDataType = {
   category: string;
   title: string;
   features: string[];
+};
+type SolutionProductFeaturePropsType = SolutionProductFeatureDataType & {
+  itemIndex: number;
+};
+
+type SolutionProductFeatureDetailsPropsType = SolutionProductFeaturePropsType & {
+  trigger: HTMLDivElement | null;
 };

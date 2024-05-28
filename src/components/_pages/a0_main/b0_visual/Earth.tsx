@@ -2,7 +2,7 @@ import { getImageProps } from "next/image";
 
 import SectionObjectImage from "@/components/section/ObjectImage";
 
-export default function PageMainVisualEarth() {
+export default function PageMainVisualEarth({ trigger }: { trigger: HTMLElement | null }) {
   const common = { alt: "global" };
 
   const {
@@ -43,6 +43,7 @@ export default function PageMainVisualEarth() {
 
   return (
     <SectionObjectImage
+      trigger={trigger}
       scrollAnimationOptions={[
         {
           optionKey: "main/visual/earth",

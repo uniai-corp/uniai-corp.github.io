@@ -1,7 +1,7 @@
 import PageSectionContainer from "@/components/section/Container";
-import PageSectionHeader from "@/components/section/Header";
 import PageSectionWrapper from "@/components/section/Wrapper";
 import PageSolutionSystemItem from "./Item";
+import PageSolutionSystemHeader from "./Header";
 
 export default function PageSolutionSystem() {
   const system: SolutionSystemDataType[] = [
@@ -61,13 +61,10 @@ export default function PageSolutionSystem() {
       },
     },
   ];
+
   return (
     <PageSectionContainer className="page-solution-system">
-      <PageSectionHeader className="page-solution-system-header">
-        <h2>
-          가금류 <strong>스마트 축사 통합 관제</strong> 시스템
-        </h2>
-      </PageSectionHeader>
+      <PageSolutionSystemHeader />
       <div className="page-solution-system-container">
         <PageSectionWrapper>
           {system.map((d, i) => (
