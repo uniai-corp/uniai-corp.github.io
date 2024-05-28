@@ -1,0 +1,57 @@
+"use client";
+
+import { useRef } from "react";
+
+import useScrollAnimation from "@/hooks/useScrollAnimation";
+
+export default function PageAboutCEOName() {
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const executivesRef = useRef<HTMLSpanElement | null>(null);
+  const nameRef = useRef<HTMLElement | null>(null);
+
+  useScrollAnimation({
+    refs: [titleRef.current, executivesRef.current, nameRef.current],
+    options: [
+      {
+        optionKey: "about/ceo/name/executive",
+        target: executivesRef.current,
+        animation: [
+          {
+            duration: 0.8,
+            autoAlpha: 1,
+            translateX: 0,
+            scrollTrigger: {
+              trigger: titleRef.current,
+              start: "top 80%",
+              end: "top 80%",
+            },
+          },
+        ],
+      },
+      {
+        optionKey: "about/ceo/name/name",
+        target: nameRef.current,
+        animation: [
+          {
+            duration: 0.8,
+            autoAlpha: 1,
+            translateX: 0,
+            delay: 0.24,
+            scrollTrigger: {
+              trigger: titleRef.current,
+              start: "top 80%",
+              end: "top 80%",
+            },
+          },
+        ],
+      },
+    ],
+  });
+
+  return (
+    <h3 className="page-about-ceo-name" ref={titleRef}>
+      <span ref={executivesRef}>대표이사</span>
+      <strong ref={nameRef}>백승환</strong>
+    </h3>
+  );
+}

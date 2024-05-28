@@ -30,27 +30,27 @@ export default function PageAboutVisual() {
       {
         optionKey: "about/visual/title",
         target: titleRef.current,
-        animation: [{ duration: 1, autoAlpha: 1, translateY: 0 }],
+        animation: [{ duration: 0.8, autoAlpha: 1, translateY: 0 }],
       },
       {
         optionKey: "about/visual/description",
         target: descriptionRef.current,
-        animation: [{ duration: 0.8, autoAlpha: 1, translateY: 0, delay: 0.64 }],
+        animation: [{ duration: 1, autoAlpha: 1, translateY: 0, delay: 0.32 }],
       },
       {
         optionKey: "about/visual/ci/plus",
         target: ciPlusRef.current,
-        animation: [{ duration: 1.2, autoAlpha: 1, delay: 1 }],
+        animation: [{ duration: 2, autoAlpha: 1, delay: 0.56 }],
       },
       {
         optionKey: "about/visual/ci/left",
         target: ciLeftRef.current,
-        animation: [{ duration: 0.8, translateX: 0, autoAlpha: 1, delay: 1.4 }],
+        animation: [{ duration: 1.2, translateX: 0, autoAlpha: 1, delay: 0.72 }],
       },
       {
         optionKey: "about/visual/ci/right",
         target: ciRightRef.current,
-        animation: [{ duration: 0.8, translateX: 0, autoAlpha: 1, delay: 1.4 }],
+        animation: [{ duration: 1.2, translateX: 0, autoAlpha: 1, delay: 0.72 }],
       },
     ],
   });

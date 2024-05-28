@@ -114,14 +114,20 @@
   }
 }
 .page-about-ceo-title {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   figure {
     margin: 0 auto 20px;
+    opacity: 0;
   }
   strong {
+    display: block;
     font-size: 26px;
     font-weight: 600;
     line-height: 31px;
+    opacity: 0;
+    transform: translateY(-50%);
   }
   @media only screen and (min-width: 1280px) {
     strong {
@@ -135,13 +141,19 @@
   text-align: center;
   font-size: 30px;
   line-height: 35px;
+  display: flex;
+  align-items: baseline;
   span {
     margin-right: 10px;
     color: var(--yellow);
     font-weight: 600;
+    opacity: 0;
+    transform: translateX(-25%);
   }
   strong {
     font-weight: 700;
+    opacity: 0;
+    transform: translateX(-25%);
   }
   @media only screen and (min-width: 768px) {
     margin-bottom: 48px;
@@ -174,31 +186,61 @@
 }
 
 .page-about-ceo-details {
+  --about-ceo-detail-title-margin: 16px;
+  --about-ceo-detail-title-font-size: 20px;
+  --about-ceo-detail-title-line-height: 23px;
+  --about-ceo-detail-list-margin: 10px;
+  --about-ceo-detail-list-padding: 20px;
+  --about-ceo-detail-list-item-font-size: 18px;
+  --about-ceo-detail-list-item-line-height: 21px;
+  @media only screen and (min-width: 768px) {
+    --about-ceo-detail-title-font-size: 24px;
+    --about-ceo-detail-title-line-height: 28px;
+    --about-ceo-detail-list-margin: 20px;
+    --about-ceo-detail-list-padding: 30px;
+    --about-ceo-detail-list-item-font-size: 22px;
+    --about-ceo-detail-list-item-line-height: 26px;
+  }
+
   .page-about-ceo-detail-item {
     width: 100%;
     margin-bottom: 24px;
+    position: relative;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  h4 {
-    margin-bottom: 16px;
-    font-size: 20px;
+  .list-border {
+    display: block;
+    width: 1px;
+    position: absolute;
+    top: var(--about-ceo-detail-title-line-height) + var(--about-ceo-detail-title-margin);
+    left: var(--about-ceo-detail-list-margin);
+    background: #b7b7b7;
+    height: 0;
+    opacity: 0;
+  }
+  .page-about-ceo-detail-item-title {
+    margin-bottom: var(--about-ceo-detail-title-margin);
+    font-size: var(--about-ceo-detail-title-font-size);
     color: #6a6c6b;
-    line-height: 23px;
+    line-height: var(--about-ceo-detail-title-line-height);
+    opacity: 0;
   }
-  ul {
-    width: calc(100% - 10px);
-    margin-left: 10px;
-    padding-left: 20px;
-    border-left: 1px solid #b7b7b7;
+  .page-about-ceo-detail-list {
+    width: calc(100% - var(--about-ceo-detail-list-margin));
+    margin-left: var(--about-ceo-detail-list-margin);
+    padding-left: var(--about-ceo-detail-list-padding);
+    position: relative;
   }
-  li {
+  .page-about-ceo-detail-list-item {
     margin-bottom: 12px;
-    font-size: 18px;
+    font-size: var(--about-ceo-detail-list-item-font-size);
     color: #333;
-    line-height: 21px;
+    line-height: var(--about-ceo-detail-list-item-line-height);
     font-weight: 500;
+    opacity: 0;
+    transform: translateX(-30px);
     strong {
       margin-right: 4px;
       font-weight: 600;
@@ -208,21 +250,6 @@
     }
     &:last-child {
       margin-bottom: 0;
-    }
-  }
-  @media only screen and (min-width: 768px) {
-    h4 {
-      font-size: 24px;
-      line-height: 28px;
-    }
-    ul {
-      width: calc(100% - 20px);
-      margin-left: 20px;
-      padding-left: 30px;
-    }
-    li {
-      font-size: 22px;
-      line-height: 26px;
     }
   }
   @media only screen and (min-width: 1280px) {
@@ -262,45 +289,51 @@
 .page-about-vision-title {
   margin-bottom: 30px;
   text-align: center;
-  h3 {
+  .page-about-vision-title-upper {
     margin-bottom: 36px;
     font-size: 24px;
     line-height: 28px;
     font-weight: 700;
+    opacity: 0;
+    transform: translateY(10px);
   }
-  p {
+  .page-about-vision-title-lower {
     font-size: 20px;
     line-height: 23px;
     font-weight: 500;
-    &:after {
-      content: "";
-      display: block;
-      width: 15px;
-      height: 15px;
-      margin: 18px auto 0;
-      border-radius: 50%;
-      background: var(--yellow);
-    }
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  .page-about-vision-title-dot {
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 18px auto 0;
+    border-radius: 50%;
+    background: var(--yellow);
+    opacity: 0;
+    transform: scale(0.7);
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
   @media only screen and (min-width: 768px) {
-    h3 {
+    .page-about-vision-title-upper {
       font-size: 40px;
       line-height: 47px;
       .mobile-br {
         display: none;
       }
     }
-    p {
+    .page-about-vision-title-lower {
       font-size: 24px;
       line-height: 28px;
-      &:after {
-        margin-top: 18px;
-      }
+    }
+    .page-about-vision-title-dot {
+      margin-top: 18px;
     }
   }
   @media only screen and (min-width: 1280px) {
     margin-bottom: 80px;
-    h3 {
+    .page-about-vision-title-upper {
       margin-bottom: 42px;
       font-size: 54px;
       line-height: 64px;
@@ -318,36 +351,39 @@
   align-items: flex-start;
   flex-wrap: wrap;
   text-align: center;
-  li {
+  .page-about-vision-list-item {
     width: 50%;
     padding: 0 15px;
     margin-bottom: 30px;
-    figure {
-      margin: 0 auto 20px;
-    }
-    h4 {
-      width: 100%;
-      font-size: 18px;
-      line-height: 21px;
-      font-weight: 700;
-    }
+  }
+  figure {
+    margin: 0 auto 20px;
+    opacity: 0;
+  }
+  h4 {
+    width: 100%;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(50%);
   }
   @media only screen and (min-width: 768px) {
     padding: 80px 0;
-    li {
+    .page-about-vision-list-item {
       width: 33.3333%;
       padding: 0 30px;
       margin-bottom: 60px;
-      h4 {
-        font-size: 28px;
-        line-height: 33px;
-      }
+    }
+    h4 {
+      font-size: 28px;
+      line-height: 33px;
     }
   }
   @media only screen and (min-width: 1280px) {
     padding: 60px 0;
     background: none;
-    li {
+    .page-about-vision-list-item {
       width: 16.6667%;
       padding: 0 35px;
       margin-bottom: 0;

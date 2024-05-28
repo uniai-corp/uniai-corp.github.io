@@ -1,10 +1,16 @@
 :root {
   --page-wrapper-padding: 30px;
+  --section-header-deco-width: 7px;
+  --section-header-deco-height: 30px;
   @media only screen and (min-width: 768px) {
     --page-wrapper-padding: 50px;
+    --section-header-deco-width: 10px;
+    --section-header-deco-height: 40px;
   }
   @media only screen and (min-width: 1280px) {
     --page-wrapper-padding: 30px;
+    --section-header-deco-width: 14px;
+    --section-header-deco-height: 58px;
   }
 }
 
@@ -71,31 +77,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  &:before {
-    display: block;
-    width: 7px;
-    height: 30px;
+  .deco {
+    display: none;
+    width: var(--section-header-deco-width);
+    height: var(--section-header-deco-height);
     margin-bottom: 20px;
-    transform: skewX(-30deg);
-    background: var(--yellow);
+    justify-content: center;
+    .deco-bar {
+      display: block;
+      width: var(--section-header-deco-width);
+      height: var(--section-header-deco-height);
+      background: var(--yellow);
+      font-size: 0;
+      opacity: 0;
+    }
   }
   &[title-deco="true"] {
-    &:before {
-      content: "";
-    }
-  }
-  @media only screen and (min-width: 768px) {
-    &:before {
-      width: 10px;
-      height: 40px;
-      transform: skewX(-30deg);
-    }
-  }
-  @media only screen and (min-width: 1280px) {
-    &:before {
-      width: 14px;
-      height: 58px;
-      transform: skewX(-30deg);
+    .deco {
+      display: flex;
     }
   }
 }
@@ -104,6 +103,9 @@
   line-height: 43px;
   font-weight: 700;
   text-transform: uppercase;
+  opacity: 0;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+
   @media only screen and (min-width: 768px) {
     font-size: 60px;
     line-height: 71px;
@@ -118,6 +120,8 @@
   line-height: 19px;
   font-weight: 400;
   text-align: center;
+  opacity: 0;
+  transform: translateY(-100%);
   @media only screen and (min-width: 768px) {
     font-size: 20px;
     line-height: 24px;

@@ -3,6 +3,7 @@ import PageSectionHeader from "@/components/section/Header";
 import PageSectionHeaderTitleContainer from "@/components/section/Title";
 import PageSectionWrapper from "@/components/section/Wrapper";
 import PageAboutVisionItem from "./Item";
+import PageAboutVisionContentsTitle from "./ContentsTitle";
 
 export default function PageAboutVision() {
   const vision: VisionListDataType[] = [
@@ -25,20 +26,14 @@ export default function PageAboutVision() {
   return (
     <PageSectionContainer className="page-about-section page-about-vision">
       <PageSectionHeader className="page-about-vision-header">
-        <PageSectionHeaderTitleContainer title="vision" deco={true} />
+        <PageSectionHeaderTitleContainer category="about/vision" title="vision" deco={true} />
       </PageSectionHeader>
-      <div className="page-about-vision-title">
-        <h3>
-          필요한 데이터로 이 세상에 <br className="mobile-br" />단 하나뿐인 <br />
-          인공지능 혁신을 만듭니다.
-        </h3>
-        <p>유니아이의 시작</p>
-      </div>
+      <PageAboutVisionContentsTitle />
       <div className="page-about-vision-container">
         <PageSectionWrapper>
           <ul className="page-about-vision-list">
-            {vision.map(d => (
-              <PageAboutVisionItem key={d.key} category={d.category} name={d.name} />
+            {vision.map((d, i) => (
+              <PageAboutVisionItem key={d.key} category={d.category} name={d.name} index={i} />
             ))}
           </ul>
         </PageSectionWrapper>
