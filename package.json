@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "share": "next dev --hostname 192.168.219.44",
+    "share": "next dev --hostname 192.168.219.41",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

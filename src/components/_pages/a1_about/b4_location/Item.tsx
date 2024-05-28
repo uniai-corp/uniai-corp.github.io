@@ -1,3 +1,5 @@
+import PageAboutLocationInfo from "./Address";
+
 export default function PageAboutLocationItem({
   title,
   address,
@@ -10,10 +12,7 @@ export default function PageAboutLocationItem({
   return (
     <div className="page-about-location-item">
       <header className="page-about-location-item-header">
-        <dl>
-          <dt>{title}</dt>
-          <dd>{address}</dd>
-        </dl>
+        <PageAboutLocationInfo title={title} address={address} />
       </header>
       <div className="page-about-location-item-contents">
         <iframe

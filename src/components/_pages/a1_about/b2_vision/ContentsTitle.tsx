@@ -42,11 +42,15 @@ export default function PageAboutVisionContentsTitle() {
         target: dotRef.current,
         animation: [
           {
-            duration: 0.4,
+            duration: 0.8,
             autoAlpha: 1,
             scale: 1,
-            delay: 1,
-            scrollTrigger: { trigger: titleRef.current, start: "top 70%", end: "top 70%" },
+            delay: 0.8,
+            scrollTrigger: {
+              trigger: titleRef.current,
+              start: "top 70%",
+              end: "top 70%",
+            },
           },
         ],
       },

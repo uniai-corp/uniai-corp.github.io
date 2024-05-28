@@ -1,13 +1,15 @@
 import { getImageProps } from "next/image";
 
+import { SolutionSystemItemPropsType } from "@/types/data.import";
+
 export default function PageSolutionSystemItemImage({
   index,
-  title,
   sizes,
+  alt,
 }: {
   index: number;
 } & SolutionSystemItemPropsType) {
-  const common = { alt: title };
+  const common = { alt };
 
   const {
     props: { srcSet: desktopLarge },
@@ -53,7 +55,7 @@ export default function PageSolutionSystemItemImage({
         <source media="(min-width: 1280px)" srcSet={desktopMedium} />
         <source media="(min-width: 768px)" srcSet={tablet} />
         <source srcSet={mobile} />
-        <img {...rest} alt={title} style={{ width: "100%", height: "auto" }} />
+        <img {...rest} alt={alt} style={{ width: "100%", height: "auto" }} />
       </picture>
     </figure>
   );

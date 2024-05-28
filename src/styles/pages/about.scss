@@ -312,8 +312,8 @@
     border-radius: 50%;
     background: var(--yellow);
     opacity: 0;
-    transform: scale(0.7);
-    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    transform: scale(0.4);
+    transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
   }
   @media only screen and (min-width: 768px) {
     .page-about-vision-title-upper {
@@ -416,11 +416,13 @@
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  h4 {
+  .page-about-partners-category-name {
     margin-right: 10px;
     font-size: 20px;
     line-height: 23px;
     white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-25%);
   }
   @media only screen and (min-width: 1280px) {
     width: 185px;
@@ -433,21 +435,34 @@
     width: 23px;
     height: 23px;
     border-radius: 23px;
-    background: var(--yellow);
     opacity: 0.5;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .circle-object {
+      width: 23px;
+      height: 23px;
+      border-radius: 23px;
+      background: var(--yellow);
+      transform: scale(0.4);
+      opacity: 0;
+      transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+    }
   }
   .chain-line {
     width: 9px;
     height: 9px;
     border-radius: 9px;
     background: var(--yellow);
+    opacity: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     .line {
-      width: 71px;
+      width: 0;
+      transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
       height: 1px;
       background: var(--yellow);
       position: absolute;
@@ -468,6 +483,15 @@
       }
     }
   }
+  @media only screen and (min-width: 1280px) {
+    .chain-line {
+      .line {
+        &:after {
+          transform: translate(-50%, calc(-50% + 0.5px));
+        }
+      }
+    }
+  }
 }
 .page-about-partners-category-list {
   display: flex;
@@ -475,12 +499,106 @@
   flex-wrap: wrap;
   width: calc(100% + 20px);
   margin: 0 -10px;
-  li {
+  .page-about-partners-category-list-item {
     margin: 0 10px 20px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition-timing-function: cubic-bezier(0.85, 0, 0.15, 1);
   }
   @media only screen and (min-width: 1280px) {
     width: auto;
     margin: 0;
     flex: 1;
   }
+}
+
+.page-about-location {
+  background: white;
+  padding-bottom: 60px;
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 80px;
+  }
+  @media only screen and (min-width: 1280px) {
+    padding: 100px 0;
+  }
+}
+.page-about-location-header {
+  padding-bottom: 30px;
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 50px;
+  }
+  @media only screen and (min-width: 1280px) {
+    padding-bottom: 80px;
+  }
+}
+.page-about-location-item {
+  margin-bottom: 30px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 50px;
+  }
+  @media only screen and (min-width: 1280px) {
+    margin-bottom: 80px;
+  }
+}
+.page-about-location-item-header {
+  margin-bottom: 20px;
+  dt,
+  dd {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 400;
+  }
+  dt {
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 30px;
+    dl {
+      display: flex;
+      align-items: flex-start;
+    }
+    dt,
+    dd {
+      font-size: 24px;
+      line-height: 28px;
+    }
+    dt {
+      margin: 0 20px 0 0;
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    dt,
+    dd {
+      font-size: 30px;
+      line-height: 35px;
+    }
+    dt {
+      margin-right: 30px;
+    }
+  }
+}
+
+.page-about-location-item-contents {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #c2c2c2;
+  @media only screen and (min-width: 768px) {
+    height: 400px;
+  }
+  @media only screen and (min-width: 1280px) {
+    height: 600px;
+  }
+}
+
+.page-about-location-info-title {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.page-about-location-info-address {
+  opacity: 0;
+  transform: translateX(-30px);
 }

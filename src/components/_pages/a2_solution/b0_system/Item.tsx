@@ -1,18 +1,21 @@
 "use client";
 
-import { useRef } from "react";
+import { ReactNode, useRef } from "react";
 
 import PageSolutionSystemItemImage from "./ItemImage";
 
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import { SolutionSystemItemPropsType } from "@/types/data.import";
 
 export default function PageSolutionSystemItem({
   index,
   title,
   desc,
   sizes,
+  alt,
 }: {
   index: number;
+  title: string | ReactNode;
 } & SolutionSystemItemPropsType) {
   const itemRef = useRef<HTMLDivElement | null>(null);
   const NumberingRef = useRef<HTMLElement | null>(null);
@@ -113,7 +116,7 @@ export default function PageSolutionSystemItem({
         </p>
       </div>
       <div className="page-solution-system-img-container" ref={imgRef}>
-        <PageSolutionSystemItemImage {...{ index, title, desc, sizes }} />
+        <PageSolutionSystemItemImage {...{ index, desc, sizes, alt }} />
       </div>
     </div>
   );

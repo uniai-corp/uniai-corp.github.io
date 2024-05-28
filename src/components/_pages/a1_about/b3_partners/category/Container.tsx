@@ -1,5 +1,5 @@
 import PageSectionWrapper from "@/components/section/Wrapper";
-import PageAboutPartnersCategoryList from "./CategoryList";
+import PageAboutPartnersCategoryList from "./List";
 
 export default function PageAboutPartnersCategoryContainer() {
   const partners: PartnersCollection = {
