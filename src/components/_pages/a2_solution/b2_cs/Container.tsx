@@ -7,7 +7,7 @@ export default function PageSolutionCustomerSupport() {
   return (
     <PageSectionContainer>
       <PageSectionHeader>
-        <PageSectionHeaderTitleContainer title="고객지원" />
+        <PageSectionHeaderTitleContainer category="cs" title="고객지원" />
       </PageSectionHeader>
       <PageSectionWrapper>고객지원 양식</PageSectionWrapper>
     </PageSectionContainer>

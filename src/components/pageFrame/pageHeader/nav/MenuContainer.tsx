@@ -1,12 +1,13 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback } from "react";
-import { useAtom } from "jotai";
+import { useAtomValue } from "jotai";
 
 import PageHeaderNavItem from "./MenuItem";
+
+import useClientRouteChange from "@/hooks/useClientRouteChange";
 
 import { isNavOpenState } from "@/jotai/nav";
 
@@ -14,25 +15,16 @@ import sitemap from "@/data/sitemap";
 
 export default function PageHeaderNavMenuContainer() {
   const pathName = usePathname();
-  const router = useRouter();
+  const isNavOpen = useAtomValue(isNavOpenState);
 
-  const [isNavOpen, setNavOpen] = useAtom(isNavOpenState);
-
-  const onClickNavButton = useCallback(
-    (href: string) => {
-      if (pathName === href || href === "") return;
-      setNavOpen(false);
-      router.push(href);
-    },
-    [pathName, router, setNavOpen],
-  );
+  useClientRouteChange();
 
   return (
     <div className={`page-nav-menu-container ${isNavOpen ? "active" : ""}`}>
       <ul>
         {sitemap.map(d => (
           <li key={d.key} className={pathName === d.href ? "selected" : ""}>
-            <PageHeaderNavItem clickEvent={() => onClickNavButton(d.href)}>
+            <PageHeaderNavItem href={d.href}>
               <span>{d.name}</span>
             </PageHeaderNavItem>
           </li>

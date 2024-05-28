@@ -1,12 +1,13 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useAtomValue } from "jotai";
 
 import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect";
-import { useAtomValue } from "jotai";
+
 import { scrollContainer } from "@/jotai/scroll";
 
 /**
@@ -57,13 +58,9 @@ export function useGsapRegister<ContainerElement extends HTMLElement>({
  *  const sectionRef = useRef<HTMLElement | null>(null);
  *  const titleRef = useRef<HTMLHeading | null>(null);
  *
- *  useEffect(() => {
- *    container.current = containerEl;
- *  }, [containerEl]);
- *
  *  // Hook 사용
  *  useScrollAnimation({
- *    container,
+ *    refs:[sectionRef.current, titleRef.current],
  *    options: [
  *      // fromTo option
  *      {
@@ -102,6 +99,8 @@ export default function useScrollAnimation({
   isTimeline?: boolean;
   options: ScrollTriggerTweenArrayOptions[];
 }) {
+  const dependencyRefs = useMemo(() => [...refs], [refs]);
+
   const container = useAtomValue(scrollContainer);
   useGsapRegister({ container });
 
@@ -167,6 +166,8 @@ export default function useScrollAnimation({
   return useGSAP(() => {
     if (typeof window === "undefined") return;
 
+    // console.log(`[useScrollAnimation :: useGSAP] register :: refs`, refs);
+
     if (options.length === 0) {
       console.error("스크롤 인터랙션 초기화 오류 :: options 없음");
       return;
@@ -180,7 +181,13 @@ export default function useScrollAnimation({
       // console.error("스크롤 인터랙션 초기화 오류 :: element 유효하지 않음", refs);
       return;
     }
+
+    // console.log(`[useScrollAnimation :: useGSAP] validElements`, validElements);
+
     // tween 배열에 대한 애니메이션 설정 적용
     options.forEach(gsapTween);
-  }, [...refs]);
+
+    ScrollTrigger.clearScrollMemory();
+    ScrollTrigger.refresh();
+  }, dependencyRefs);
 }

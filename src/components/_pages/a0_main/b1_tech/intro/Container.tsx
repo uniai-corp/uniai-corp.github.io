@@ -17,7 +17,7 @@ export default function PageMainTechIntroContainer() {
   const phraseLowerRef = useRef<HTMLParagraphElement | null>(null);
 
   useScrollAnimation({
-    refs: [sectionRef.current, titleRef.current],
+    refs: [sectionRef.current, titleRef.current, phraseUpperRef.current, phraseLowerRef.current],
     options: [
       {
         optionKey: "main/tech/intro/title",

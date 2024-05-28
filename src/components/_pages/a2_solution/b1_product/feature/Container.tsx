@@ -1,6 +1,7 @@
-import Image from "next/image";
+import PageSolutionProductFeatureHeader from "./Header";
+import PageSolutionProductFeatureListItem from "./Item";
 
-export default function PageSolutionProductFeature() {
+export default function PageSolutionProductFeatureContainer() {
   const feature: SolutionProductFeatureDataType[] = [
     {
       classifyKey: "solution/product/feature/feeding",
@@ -58,40 +59,15 @@ export default function PageSolutionProductFeature() {
       ],
     },
   ];
+
   return (
     <div className="page-solution-product-feature-container">
-      <header className="page-solution-product-feature-header">
-        <h3>개별상품</h3>
-      </header>
+      <PageSolutionProductFeatureHeader />
       <ul className="page-solution-product-feature-list">
-        {feature.map(d => (
-          <li key={d.classifyKey}>
-            <FeatureItem {...d} />
-          </li>
+        {feature.map((d, itemIndex) => (
+          <PageSolutionProductFeatureListItem key={d.classifyKey} {...d} itemIndex={itemIndex} />
         ))}
       </ul>
-    </div>
-  );
-}
-
-function FeatureItem({ classifyKey, category, title, features }: SolutionProductFeatureDataType) {
-  return (
-    <div className="page-solution-product-feature-item">
-      <figure>
-        <Image
-          src={`/img/solution/product/feature/${category}.png`}
-          alt={title}
-          width={100}
-          height={100}
-        />
-        <figcaption>{title}</figcaption>
-      </figure>
-      <dl className="page-solution-product-feature-details">
-        <dt>주요기능</dt>
-        {features.map((desc, i) => (
-          <dd key={`${classifyKey}/${i}`}>{desc}</dd>
-        ))}
-      </dl>
     </div>
   );
 }

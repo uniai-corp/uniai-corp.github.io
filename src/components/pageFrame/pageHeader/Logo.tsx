@@ -1,7 +1,18 @@
+"use client";
+
 import { getImageProps } from "next/image";
-import Link from "next/link";
+import { useMemo } from "react";
+import { useAtomValue } from "jotai";
+
+import { responsiveDeviceState } from "@/jotai/deviceViewport";
 
 export default function PageHeaderLogo() {
+  const { viewport } = useAtomValue(responsiveDeviceState);
+  const style = useMemo(
+    () => (viewport === "desktop" ? { width: "100%", height: "auto" } : {}),
+    [viewport],
+  );
+
   const common = { alt: "UNiAI" };
 
   const {
@@ -33,16 +44,16 @@ export default function PageHeaderLogo() {
 
   return (
     <h1 className="page-header-logo">
-      <Link href="/">
+      <a href="/">
         <figure>
           <picture>
             <source media="(min-width: 1280px)" srcSet={desktop} />
             <source media="(min-width: 768px)" srcSet={tablet} />
             <source srcSet={mobile} />
-            <img {...rest} alt="UNiAI" style={{ width: "100%", height: "auto" }} />
+            <img {...rest} alt="UNiAI" style={style} />
           </picture>
         </figure>
-      </Link>
+      </a>
     </h1>
   );
 }

@@ -22,12 +22,17 @@
       font-size: 32px;
       line-height: 38px;
       font-weight: 700;
+      opacity: 0;
+      transform: translateY(100%);
+      transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     }
     p {
       margin-bottom: 20px;
       font-size: 14px;
       line-height: 16px;
       font-weight: 600;
+      opacity: 0;
+      transform: translateY(-100%);
     }
     .ci-origin {
       display: flex;
@@ -37,10 +42,19 @@
       line-height: 60px;
       strong {
         font-weight: 700;
+        opacity: 0;
+        transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
       }
       span {
         font-weight: 300;
         margin: 0 20px;
+        opacity: 0;
+      }
+      .left {
+        transform: translateX(25%);
+      }
+      .right {
+        transform: translateX(-25%);
       }
     }
     @media only screen and (min-width: 768px) {
@@ -100,14 +114,20 @@
   }
 }
 .page-about-ceo-title {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   figure {
     margin: 0 auto 20px;
+    opacity: 0;
   }
   strong {
+    display: block;
     font-size: 26px;
     font-weight: 600;
     line-height: 31px;
+    opacity: 0;
+    transform: translateY(-50%);
   }
   @media only screen and (min-width: 1280px) {
     strong {
@@ -121,13 +141,19 @@
   text-align: center;
   font-size: 30px;
   line-height: 35px;
+  display: flex;
+  align-items: baseline;
   span {
     margin-right: 10px;
     color: var(--yellow);
     font-weight: 600;
+    opacity: 0;
+    transform: translateX(-25%);
   }
   strong {
     font-weight: 700;
+    opacity: 0;
+    transform: translateX(-25%);
   }
   @media only screen and (min-width: 768px) {
     margin-bottom: 48px;
@@ -160,31 +186,61 @@
 }
 
 .page-about-ceo-details {
+  --about-ceo-detail-title-margin: 16px;
+  --about-ceo-detail-title-font-size: 20px;
+  --about-ceo-detail-title-line-height: 23px;
+  --about-ceo-detail-list-margin: 10px;
+  --about-ceo-detail-list-padding: 20px;
+  --about-ceo-detail-list-item-font-size: 18px;
+  --about-ceo-detail-list-item-line-height: 21px;
+  @media only screen and (min-width: 768px) {
+    --about-ceo-detail-title-font-size: 24px;
+    --about-ceo-detail-title-line-height: 28px;
+    --about-ceo-detail-list-margin: 20px;
+    --about-ceo-detail-list-padding: 30px;
+    --about-ceo-detail-list-item-font-size: 22px;
+    --about-ceo-detail-list-item-line-height: 26px;
+  }
+
   .page-about-ceo-detail-item {
     width: 100%;
     margin-bottom: 24px;
+    position: relative;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  h4 {
-    margin-bottom: 16px;
-    font-size: 20px;
+  .list-border {
+    display: block;
+    width: 1px;
+    position: absolute;
+    top: var(--about-ceo-detail-title-line-height) + var(--about-ceo-detail-title-margin);
+    left: var(--about-ceo-detail-list-margin);
+    background: #b7b7b7;
+    height: 0;
+    opacity: 0;
+  }
+  .page-about-ceo-detail-item-title {
+    margin-bottom: var(--about-ceo-detail-title-margin);
+    font-size: var(--about-ceo-detail-title-font-size);
     color: #6a6c6b;
-    line-height: 23px;
+    line-height: var(--about-ceo-detail-title-line-height);
+    opacity: 0;
   }
-  ul {
-    width: calc(100% - 10px);
-    margin-left: 10px;
-    padding-left: 20px;
-    border-left: 1px solid #b7b7b7;
+  .page-about-ceo-detail-list {
+    width: calc(100% - var(--about-ceo-detail-list-margin));
+    margin-left: var(--about-ceo-detail-list-margin);
+    padding-left: var(--about-ceo-detail-list-padding);
+    position: relative;
   }
-  li {
+  .page-about-ceo-detail-list-item {
     margin-bottom: 12px;
-    font-size: 18px;
+    font-size: var(--about-ceo-detail-list-item-font-size);
     color: #333;
-    line-height: 21px;
+    line-height: var(--about-ceo-detail-list-item-line-height);
     font-weight: 500;
+    opacity: 0;
+    transform: translateX(-30px);
     strong {
       margin-right: 4px;
       font-weight: 600;
@@ -194,21 +250,6 @@
     }
     &:last-child {
       margin-bottom: 0;
-    }
-  }
-  @media only screen and (min-width: 768px) {
-    h4 {
-      font-size: 24px;
-      line-height: 28px;
-    }
-    ul {
-      width: calc(100% - 20px);
-      margin-left: 20px;
-      padding-left: 30px;
-    }
-    li {
-      font-size: 22px;
-      line-height: 26px;
     }
   }
   @media only screen and (min-width: 1280px) {
@@ -248,45 +289,51 @@
 .page-about-vision-title {
   margin-bottom: 30px;
   text-align: center;
-  h3 {
+  .page-about-vision-title-upper {
     margin-bottom: 36px;
     font-size: 24px;
     line-height: 28px;
     font-weight: 700;
+    opacity: 0;
+    transform: translateY(10px);
   }
-  p {
+  .page-about-vision-title-lower {
     font-size: 20px;
     line-height: 23px;
     font-weight: 500;
-    &:after {
-      content: "";
-      display: block;
-      width: 15px;
-      height: 15px;
-      margin: 18px auto 0;
-      border-radius: 50%;
-      background: var(--yellow);
-    }
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  .page-about-vision-title-dot {
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 18px auto 0;
+    border-radius: 50%;
+    background: var(--yellow);
+    opacity: 0;
+    transform: scale(0.4);
+    transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
   }
   @media only screen and (min-width: 768px) {
-    h3 {
+    .page-about-vision-title-upper {
       font-size: 40px;
       line-height: 47px;
       .mobile-br {
         display: none;
       }
     }
-    p {
+    .page-about-vision-title-lower {
       font-size: 24px;
       line-height: 28px;
-      &:after {
-        margin-top: 18px;
-      }
+    }
+    .page-about-vision-title-dot {
+      margin-top: 18px;
     }
   }
   @media only screen and (min-width: 1280px) {
     margin-bottom: 80px;
-    h3 {
+    .page-about-vision-title-upper {
       margin-bottom: 42px;
       font-size: 54px;
       line-height: 64px;
@@ -304,36 +351,39 @@
   align-items: flex-start;
   flex-wrap: wrap;
   text-align: center;
-  li {
+  .page-about-vision-list-item {
     width: 50%;
     padding: 0 15px;
     margin-bottom: 30px;
-    figure {
-      margin: 0 auto 20px;
-    }
-    h4 {
-      width: 100%;
-      font-size: 18px;
-      line-height: 21px;
-      font-weight: 700;
-    }
+  }
+  figure {
+    margin: 0 auto 20px;
+    opacity: 0;
+  }
+  h4 {
+    width: 100%;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(50%);
   }
   @media only screen and (min-width: 768px) {
     padding: 80px 0;
-    li {
+    .page-about-vision-list-item {
       width: 33.3333%;
       padding: 0 30px;
       margin-bottom: 60px;
-      h4 {
-        font-size: 28px;
-        line-height: 33px;
-      }
+    }
+    h4 {
+      font-size: 28px;
+      line-height: 33px;
     }
   }
   @media only screen and (min-width: 1280px) {
     padding: 60px 0;
     background: none;
-    li {
+    .page-about-vision-list-item {
       width: 16.6667%;
       padding: 0 35px;
       margin-bottom: 0;
@@ -366,11 +416,13 @@
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  h4 {
+  .page-about-partners-category-name {
     margin-right: 10px;
     font-size: 20px;
     line-height: 23px;
     white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-25%);
   }
   @media only screen and (min-width: 1280px) {
     width: 185px;
@@ -383,21 +435,34 @@
     width: 23px;
     height: 23px;
     border-radius: 23px;
-    background: var(--yellow);
     opacity: 0.5;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .circle-object {
+      width: 23px;
+      height: 23px;
+      border-radius: 23px;
+      background: var(--yellow);
+      transform: scale(0.4);
+      opacity: 0;
+      transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+    }
   }
   .chain-line {
     width: 9px;
     height: 9px;
     border-radius: 9px;
     background: var(--yellow);
+    opacity: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     .line {
-      width: 71px;
+      width: 0;
+      transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
       height: 1px;
       background: var(--yellow);
       position: absolute;
@@ -418,6 +483,15 @@
       }
     }
   }
+  @media only screen and (min-width: 1280px) {
+    .chain-line {
+      .line {
+        &:after {
+          transform: translate(-50%, calc(-50% + 0.5px));
+        }
+      }
+    }
+  }
 }
 .page-about-partners-category-list {
   display: flex;
@@ -425,12 +499,106 @@
   flex-wrap: wrap;
   width: calc(100% + 20px);
   margin: 0 -10px;
-  li {
+  .page-about-partners-category-list-item {
     margin: 0 10px 20px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition-timing-function: cubic-bezier(0.85, 0, 0.15, 1);
   }
   @media only screen and (min-width: 1280px) {
     width: auto;
     margin: 0;
     flex: 1;
   }
+}
+
+.page-about-location {
+  background: white;
+  padding-bottom: 60px;
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 80px;
+  }
+  @media only screen and (min-width: 1280px) {
+    padding: 100px 0;
+  }
+}
+.page-about-location-header {
+  padding-bottom: 30px;
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 50px;
+  }
+  @media only screen and (min-width: 1280px) {
+    padding-bottom: 80px;
+  }
+}
+.page-about-location-item {
+  margin-bottom: 30px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 50px;
+  }
+  @media only screen and (min-width: 1280px) {
+    margin-bottom: 80px;
+  }
+}
+.page-about-location-item-header {
+  margin-bottom: 20px;
+  dt,
+  dd {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 400;
+  }
+  dt {
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 30px;
+    dl {
+      display: flex;
+      align-items: flex-start;
+    }
+    dt,
+    dd {
+      font-size: 24px;
+      line-height: 28px;
+    }
+    dt {
+      margin: 0 20px 0 0;
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    dt,
+    dd {
+      font-size: 30px;
+      line-height: 35px;
+    }
+    dt {
+      margin-right: 30px;
+    }
+  }
+}
+
+.page-about-location-item-contents {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #c2c2c2;
+  @media only screen and (min-width: 768px) {
+    height: 400px;
+  }
+  @media only screen and (min-width: 1280px) {
+    height: 600px;
+  }
+}
+
+.page-about-location-info-title {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.page-about-location-info-address {
+  opacity: 0;
+  transform: translateX(-30px);
 }

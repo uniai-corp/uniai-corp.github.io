@@ -1,4 +1,4 @@
-# UNIAI 홈페이지
+# UNiAI 홈페이지
 
 ---
 
@@ -20,7 +20,7 @@ npm i
 npm run dev
 ```
 
-- <http://localhost/>으로 접속
+- <http://localhost:3000/>으로 접속
 
 ---
 
@@ -46,12 +46,12 @@ npm run dev
 
 - pretendard 폰트 패키지 적용
 - SASS (모든 CSS 문법은 SASS로 함)
-- TailwindCSS (프로토타이핑 단계에서 사용)
+- TailwindCSS (reset.css만 적용)
 
 #### 인터렉션
 
-- gsap
-- swiper.js
+- gsap (ScrollTrigger 플러그인)
+- simplebar, simplebar-react (커스텀 스크롤바)
 
 #### 패키지 관리
 
@@ -59,7 +59,7 @@ npm run dev
 
 #### 컨벤션
 
-- ESLint (문법 체크) - v9 버전업 예정, eslint.config.js 작성 필요
+- ESLint (문법 체크)
 - Prettier (코드 스타일)
 
 ---

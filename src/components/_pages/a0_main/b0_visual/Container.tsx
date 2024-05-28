@@ -16,28 +16,18 @@ export default function PageMainVisualContainer() {
   const phraseRef = useRef<HTMLHeadingElement | null>(null);
 
   useScrollAnimation({
-    refs: [sectionRef.current, sloganUpperRef.current],
+    refs: [sectionRef.current, sloganUpperRef.current, sloganLowerRef.current, phraseRef.current],
     options: [
       {
         optionKey: "main/visual/slogan/upper",
         target: sloganUpperRef.current,
         animation: [{ duration: 0.8, autoAlpha: 1, translateY: 0 }],
       },
-    ],
-  });
-  useScrollAnimation({
-    refs: [sectionRef.current, sloganLowerRef.current],
-    options: [
       {
         optionKey: "main/visual/slogan/lower",
         target: sloganLowerRef.current,
         animation: [{ duration: 0.8, autoAlpha: 1, translateY: 0, delay: 0.24 }],
       },
-    ],
-  });
-  useScrollAnimation({
-    refs: [sectionRef.current, phraseRef.current],
-    options: [
       {
         optionKey: "main/visual/phrase",
         target: phraseRef.current,
@@ -49,7 +39,7 @@ export default function PageMainVisualContainer() {
   return (
     <PageSectionContainer className="page-main-visual" ref={sectionRef}>
       <PageMainVisualBackground />
-      <PageMainVisualEarth />
+      <PageMainVisualEarth trigger={sectionRef.current} />
       <div className="cover">
         <PageSectionWrapper>
           <h2>

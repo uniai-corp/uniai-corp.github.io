@@ -2,14 +2,14 @@ import { ReactNode } from "react";
 
 export default function PageHeaderNavItem({
   children,
-  clickEvent,
+  href,
 }: {
   children: ReactNode;
-  clickEvent: () => void;
+  href: string;
 }) {
   return (
-    <button className="nav-button" type="button" onClick={clickEvent}>
+    <a className="nav-button" href={href}>
       {children}
-    </button>
+    </a>
   );
 }

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "share": "next dev --hostname 192.168.219.41",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -11,22 +12,21 @@
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "gsap": "^3.12.5",
-    "jotai": "^2.8.1",
+    "jotai": "^2.8.2",
     "next": "^14.2.3",
     "pretendard": "^1.3.9",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "simplebar": "^6.2.6",
     "simplebar-core": "^1.2.5",
-    "simplebar-react": "^3.2.5",
-    "swiper": "^11.1.3"
+    "simplebar-react": "^3.2.5"
   },
   "devDependencies": {
     "@types/node": "20.12.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.10.0",
-    "@typescript-eslint/parser": "^7.10.0",
+    "@typescript-eslint/eslint-plugin": "^7.11.0",
+    "@typescript-eslint/parser": "^7.11.0",
     "autoprefixer": "10.4.19",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.3",

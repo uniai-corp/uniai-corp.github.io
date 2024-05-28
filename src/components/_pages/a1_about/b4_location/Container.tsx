@@ -8,7 +8,7 @@ export default function PageAboutLocation() {
   return (
     <PageSectionContainer className="page-about-section page-about-location">
       <PageSectionHeader className="page-about-location-header">
-        <PageSectionHeaderTitleContainer title="location" deco={true} />
+        <PageSectionHeaderTitleContainer category="about/location" title="location" deco={true} />
       </PageSectionHeader>
       <div className="page-about-location-container">
         <PageSectionWrapper>
