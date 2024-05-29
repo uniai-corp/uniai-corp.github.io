@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 
 export const site = {
-  domain: "http://localhost:3000/", // "https://www.uniai.co.kr/",
-  domainAlt: "http://localhost:3000/", // "https://www.uniai.co.kr/",
+  domain: "https://uniai-corp.github.io/", // "https://www.uniai.co.kr/",
+  domainAlt: "https://uniai-corp.github.io/", // "https://www.uniai.co.kr/",
   desc: "인공지능 기술로 빅데이터 가치를 실현합니다.",
   title: "UNiAI :: 유니아이",
 };
