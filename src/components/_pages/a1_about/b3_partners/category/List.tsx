@@ -66,7 +66,7 @@ export default function PageAboutPartnersCategoryList({
           {
             duration: 0.48,
             autoAlpha: 1,
-            delay: 0.56,
+            delay: 0.4,
             scrollTrigger: {
               trigger: itemRef.current,
               start: "top 75%",
@@ -80,10 +80,10 @@ export default function PageAboutPartnersCategoryList({
         target: smallCircleRef.current?.querySelector(".line") || null,
         animation: [
           {
-            duration: 0.64,
+            duration: 0.56,
             autoAlpha: 1,
             width: 71,
-            delay: 0.64,
+            delay: 0.48,
             scrollTrigger: {
               trigger: itemRef.current,
               start: "top 75%",
@@ -99,10 +99,10 @@ export default function PageAboutPartnersCategoryList({
             target,
             animation: [
               {
-                duration: 1.2,
+                duration: 0.8,
                 autoAlpha: 1,
                 translateX: 0,
-                delay: 1 + i * 0.16,
+                delay: 0.8 + i * 0.24,
                 scrollTrigger: {
                   trigger: itemRef.current,
                   start: "top 75%",
