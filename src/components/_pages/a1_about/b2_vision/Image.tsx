@@ -1,5 +1,5 @@
 import { getImageProps } from "next/image";
-import { ForwardedRef, forwardRef } from "react";
+import { forwardRef } from "react";
 
 const PageAboutVisionImage = forwardRef(
   (
@@ -10,7 +10,7 @@ const PageAboutVisionImage = forwardRef(
       category: string;
       name: string;
     },
-    ref: ForwardedRef<HTMLElement>,
+    ref: React.ForwardedRef<HTMLElement>,
   ) => {
     const common = { alt: name };
 

@@ -1,7 +1,8 @@
 "use client";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
 import { useRef } from "react";
+
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 export default function PageAboutVisionContentsTitle() {
   const titleRef = useRef<HTMLDivElement | null>(null);
