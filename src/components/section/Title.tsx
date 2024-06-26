@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { useRef } from "react";
 
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 
@@ -12,10 +12,10 @@ export default function PageSectionHeaderTitleContainer({
   children,
 }: {
   category: string;
-  title: string | ReactNode;
-  subtitle?: string | ReactNode;
+  title: string | React.ReactNode;
+  subtitle?: string | React.ReactNode;
   deco?: boolean;
-  children?: ReactNode;
+  children?: React.ReactNode;
 }) {
   const titleContainerRef = useRef<HTMLDivElement | null>(null);
 
