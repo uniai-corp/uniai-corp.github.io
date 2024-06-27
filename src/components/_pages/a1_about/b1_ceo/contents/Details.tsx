@@ -1,5 +1,4 @@
 import PageAboutCEODetailItem from "./DetailItem";
-import { CEODataType } from "@/types/data.import";
 
 export default function PageAboutCEODetails() {
   const ceo: CEODataType = {

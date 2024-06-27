@@ -2,7 +2,6 @@ import PageSectionContainer from "@/components/section/Container";
 import PageSectionWrapper from "@/components/section/Wrapper";
 import PageSolutionSystemItem from "./Item";
 import PageSolutionSystemHeader from "./Header";
-import { SolutionSystemDataType } from "@/types/data.import";
 
 export default function PageSolutionSystem() {
   const system: SolutionSystemDataType[] = [

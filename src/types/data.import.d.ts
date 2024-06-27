@@ -1,9 +1,7 @@
-import { ReactNode } from "react";
-
 type CEODetailDataType = {
   classifyKey: string;
   title: string;
-  list: (string | ReactNode)[];
+  list: (string | React.ReactNode)[];
 };
 type CEODataType = {
   [category: string]: CEODetailDataType;
@@ -21,5 +19,5 @@ type SolutionSystemItemPropsType = {
 };
 type SolutionSystemDataType = {
   key: string;
-  title: string | ReactNode;
+  title: string | React.ReactNode;
 } & SolutionSystemItemPropsType;

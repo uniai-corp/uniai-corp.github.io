@@ -1,11 +1,9 @@
-import { ReactNode } from "react";
-
 export default function SectionBackgroundImage({
   className,
   children,
 }: {
   className?: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }) {
   return <figure className={`bg ${className ? className : ""}`}>{children}</figure>;
 }

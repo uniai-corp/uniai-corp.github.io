@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ForwardedRef, forwardRef } from "react";
+import { forwardRef } from "react";
 
 const PageSolutionProductSummaryItemImage = forwardRef(
   (
@@ -10,7 +10,7 @@ const PageSolutionProductSummaryItemImage = forwardRef(
       category: string;
       name: string;
     },
-    ref: ForwardedRef<HTMLElement | null>,
+    ref: React.ForwardedRef<HTMLElement | null>,
   ) => {
     return (
       <figure ref={ref}>

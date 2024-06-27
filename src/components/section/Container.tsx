@@ -1,4 +1,4 @@
-import { ForwardedRef, ReactNode, forwardRef } from "react";
+import { forwardRef } from "react";
 
 const PageSectionContainer = forwardRef(
   (
@@ -7,9 +7,9 @@ const PageSectionContainer = forwardRef(
       children,
     }: {
       className?: string;
-      children: ReactNode;
+      children: React.ReactNode;
     },
-    ref: ForwardedRef<HTMLElement>,
+    ref: React.ForwardedRef<HTMLElement>,
   ) => {
     return (
       <section className={`page-section-container ${className ? className : ""}`} ref={ref}>

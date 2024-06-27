@@ -1,7 +1,7 @@
 import { getImageProps } from "next/image";
-import { ForwardedRef, forwardRef } from "react";
+import { forwardRef } from "react";
 
-const PageAboutCEOHeaderLogo = forwardRef((props, ref: ForwardedRef<HTMLElement | null>) => {
+const PageAboutCEOHeaderLogo = forwardRef((props, ref: React.ForwardedRef<HTMLElement | null>) => {
   const commonLogo = { alt: "유니아이" };
 
   const {

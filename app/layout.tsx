@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 // SEO를 위한 메타데이터
 export { nextjs_metadata as metadata, nextjs_viewport as viewport } from "@/data/metadata";
 
@@ -15,7 +13,7 @@ import ViewportDeviceChecker from "@/components/roots/ViewportDeviceChecker";
 import PageContainer from "@/components/pageFrame/PageContainer";
 import PageScrollContainer from "@/components/pageFrame/PageScrollContainer";
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" viewport-device="desktop" is-apple="false">
       <body>
