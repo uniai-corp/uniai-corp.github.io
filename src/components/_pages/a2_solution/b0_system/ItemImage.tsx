@@ -1,7 +1,5 @@
 import { getImageProps } from "next/image";
 
-import { SolutionSystemItemPropsType } from "@/types/data.import";
-
 export default function PageSolutionSystemItemImage({
   index,
   sizes,
