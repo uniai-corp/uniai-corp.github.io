@@ -1,10 +1,8 @@
-import { ReactNode } from "react";
-
 export default function PageHeaderNavItem({
   children,
   href,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
   href: string;
 }) {
   return (

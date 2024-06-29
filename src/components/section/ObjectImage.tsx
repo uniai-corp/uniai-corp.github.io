@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { useRef } from "react";
 
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 
@@ -12,7 +12,7 @@ export default function SectionObjectImage({
   scrollAnimationOptions,
 }: {
   className?: string;
-  children: ReactNode;
+  children: React.ReactNode;
   isTimeline?: boolean;
   trigger: HTMLElement | null;
   scrollAnimationOptions?: ScrollTriggerTweenArrayOptions[];

@@ -1,4 +1,4 @@
-import { RefObject, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useDebounce from "./useDebounce";
 
 export default function useResizeObserver<T extends HTMLElement>({
@@ -6,7 +6,7 @@ export default function useResizeObserver<T extends HTMLElement>({
   delay,
   notDebounce,
 }: {
-  ref?: RefObject<T>;
+  ref?: React.RefObject<T>;
   delay?: number;
   notDebounce?: boolean;
 }) {

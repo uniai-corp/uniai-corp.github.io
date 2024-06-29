@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useAtom } from "jotai";
 import SimpleBarCore from "simplebar-core";
 import SimpleBar from "simplebar-react";
@@ -12,7 +12,7 @@ import useDebounce from "@/hooks/useDebounce";
 
 import { scrollContainer } from "@/jotai/scroll";
 
-export default function PageScrollContainer({ children }: { children: ReactNode }) {
+export default function PageScrollContainer({ children }: { children: React.ReactNode }) {
   const containerRef = useRef<SimpleBarCore | null>(null);
   const [container, setContainer] = useAtom(scrollContainer);
 

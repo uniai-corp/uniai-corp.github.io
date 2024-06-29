@@ -1,7 +1,7 @@
 import { getImageProps } from "next/image";
-import { ForwardedRef, forwardRef } from "react";
+import { forwardRef } from "react";
 
-const PageMainFarmaidLogo = forwardRef((props, ref: ForwardedRef<HTMLElement>) => {
+const PageMainFarmaidLogo = forwardRef((props, ref: React.ForwardedRef<HTMLElement>) => {
   const common = { alt: "팜에이드" };
 
   const {

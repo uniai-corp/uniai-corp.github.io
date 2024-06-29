@@ -1,8 +1,10 @@
 "use client";
 
+import { useRef } from "react";
+
 import PageSectionHeader from "@/components/section/Header";
 import PageAboutCEOHeaderLogo from "./Logo";
-import { useRef } from "react";
+
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 export default function PageAboutCEOHeader() {

@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 
-import { CEODetailDataType } from "@/types/data.import";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 export default function PageAboutCEODetailItem({ classifyKey, title, list }: CEODetailDataType) {
