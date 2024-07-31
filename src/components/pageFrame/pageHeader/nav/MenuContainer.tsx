@@ -39,7 +39,7 @@ export default function PageHeaderNavMenuContainer() {
             <figure>
               <Image
                 src="/img/common/icon_link_external.svg"
-                alt="팜에이드 서비스 문의로 이동"
+                alt="치킨몽거 서비스 문의로 이동"
                 width={20}
                 height={20}
               />

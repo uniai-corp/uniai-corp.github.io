@@ -33,7 +33,7 @@ export default function PageSolutionSystem() {
       key: "solution/system/03",
       title: "질병관리",
       alt: "질병관리",
-      desc: "AI의 건강 이상감지 지역수의사, 병성감정기관과 연계하여 건강검진과 진단 서비스로 까다로운 질병관리를 팜에이드가 대신 해드립니다.",
+      desc: "AI의 건강 이상감지 지역수의사, 병성감정기관과 연계하여 건강검진과 진단 서비스로 까다로운 질병관리를 치킨몽거가 대신 해드립니다.",
       sizes: {
         desktop_large: [810, 500],
         desktop_medium: [1180, 500],

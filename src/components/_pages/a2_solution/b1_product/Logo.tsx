@@ -1,7 +1,7 @@
 import { getImageProps } from "next/image";
 
 export default function PageSolutionProductLogo() {
-  const common = { alt: "팜에이드" };
+  const common = { alt: "치킨몽거" };
 
   const {
     props: { srcSet: desktop },
@@ -26,7 +26,7 @@ export default function PageSolutionProductLogo() {
       <picture>
         <source media="(min-width: 768px)" srcSet={desktop} />
         <source srcSet={mobile} />
-        <img {...rest} alt="팜에이드" style={{ width: "100%", height: "auto" }} />
+        <img {...rest} alt="치킨몽거" style={{ width: "100%", height: "auto" }} />
       </picture>
     </figure>
   );

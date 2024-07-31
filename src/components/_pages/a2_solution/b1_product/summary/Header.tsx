@@ -80,7 +80,7 @@ export default function PageSolutionProductSummaryHeader() {
         <span className="service-feature-item"> + 체중관리</span>
         <span className="service-feature-item"> + 통합제어</span> <br />
         <span className="all-services">
-          <i>팜에이드의 모든 서비스</i>를
+          <i>치킨몽거의 모든 서비스</i>를
         </span>
       </p>
       <p>
