@@ -1,8 +1,8 @@
 import { getImageProps } from "next/image";
 import { forwardRef } from "react";
 
-const PageMainFarmaidLogo = forwardRef((props, ref: React.ForwardedRef<HTMLElement>) => {
-  const common = { alt: "팜에이드" };
+const PageMainChickenMongerLogo = forwardRef((props, ref: React.ForwardedRef<HTMLElement>) => {
+  const common = { alt: "ChickenMonger" };
 
   const {
     props: { srcSet: desktop },
@@ -10,7 +10,7 @@ const PageMainFarmaidLogo = forwardRef((props, ref: React.ForwardedRef<HTMLEleme
     ...common,
     width: 542,
     height: 69,
-    src: "/img/main/farmaid/logo_desktop.png",
+    src: "/img/main/chicken_monger/logo_desktop.png",
   });
 
   const {
@@ -19,7 +19,7 @@ const PageMainFarmaidLogo = forwardRef((props, ref: React.ForwardedRef<HTMLEleme
     ...common,
     width: 460,
     height: 59,
-    src: "/img/main/farmaid/logo_tablet.png",
+    src: "/img/main/chicken_monger/logo_tablet.png",
   });
 
   const {
@@ -28,7 +28,7 @@ const PageMainFarmaidLogo = forwardRef((props, ref: React.ForwardedRef<HTMLEleme
     ...common,
     width: 300,
     height: 39,
-    src: "/img/main/farmaid/logo_mobile.png",
+    src: "/img/main/chicken_monger/logo_mobile.png",
   });
 
   return (
@@ -37,9 +37,9 @@ const PageMainFarmaidLogo = forwardRef((props, ref: React.ForwardedRef<HTMLEleme
         <source media="(min-width: 1280px)" srcSet={desktop} />
         <source media="(min-width: 768px)" srcSet={tablet} />
         <source srcSet={mobile} />
-        <img {...rest} alt="팜에이드" style={{ width: "100%", height: "auto" }} />
+        <img {...rest} alt="치킨몽거" style={{ width: "100%", height: "auto" }} />
       </picture>
     </figure>
   );
 });
-export default PageMainFarmaidLogo;
+export default PageMainChickenMongerLogo;

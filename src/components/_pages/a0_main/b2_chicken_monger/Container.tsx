@@ -1,14 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { useRef } from "react";
 
 import PageSectionContainer from "@/components/section/Container";
 import PageSectionWrapper from "@/components/section/Wrapper";
-import PageMainFarmaidLogo from "./Logo";
+import PageMainChickenMongerLogo from "./Logo";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
-import Link from "next/link";
 
-export default function PageMainFarmaid() {
+export default function PageMainChickenMonger() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const descriptionRef = useRef<HTMLParagraphElement | null>(null);
   const logoRef = useRef<HTMLElement | null>(null);
@@ -27,7 +27,7 @@ export default function PageMainFarmaid() {
       ...(descriptionRef.current === null
         ? []
         : Array.from(descriptionRef.current.children).map((target, i) => ({
-            optionKey: `main/farmaid/desc/0`,
+            optionKey: `main/chicken_monger/desc/0`,
             target,
             animation: [
               {
@@ -44,7 +44,7 @@ export default function PageMainFarmaid() {
             ],
           }))),
       {
-        optionKey: `main/farmaid/logo`,
+        optionKey: `main/chicken_monger/logo`,
         target: logoRef.current,
         animation: [
           {
@@ -60,7 +60,7 @@ export default function PageMainFarmaid() {
         ],
       },
       {
-        optionKey: `main/farmaid/name`,
+        optionKey: `main/chicken_monger/name`,
         target: nameRef.current,
         animation: [
           {
@@ -77,7 +77,7 @@ export default function PageMainFarmaid() {
         ],
       },
       {
-        optionKey: `main/farmaid/link`,
+        optionKey: `main/chicken_monger/link`,
         target: btnRef.current,
         animation: [
           {
@@ -96,19 +96,21 @@ export default function PageMainFarmaid() {
   });
 
   return (
-    <PageSectionContainer className="page-main-farmaid" ref={sectionRef}>
-      <PageSectionWrapper className="page-main-farmaid-wrapper">
-        <p className="page-main-farmaid-description" ref={descriptionRef}>
-          <span className="page-main-farmaid-desc-span">
-            팜에이드는 실시간 모니터링, 농장제어, 사양관리와
+    <PageSectionContainer className="page-main-chicken-monger" ref={sectionRef}>
+      <PageSectionWrapper className="page-main-chicken-monger-wrapper">
+        <p className="page-main-chicken-monger-description" ref={descriptionRef}>
+          <span className="page-main-chicken-monger-desc-span">
+            치킨몽거는 실시간 모니터링, 농장제어, 사양관리와
           </span>
-          <span className="page-main-farmaid-desc-span">더불어 유니아이의 인공지능 기술로</span>
-          <span className="page-main-farmaid-desc-span">
+          <span className="page-main-chicken-monger-desc-span">
+            더불어 유니아이의 인공지능 기술로
+          </span>
+          <span className="page-main-chicken-monger-desc-span">
             체중예측, 질병예측까지 가능한 축산 농가 종합 솔루션입니다.
           </span>
         </p>
-        <PageMainFarmaidLogo ref={logoRef} />
-        <h2 ref={nameRef}>팜에이드 플랫폼</h2>
+        <PageMainChickenMongerLogo ref={logoRef} />
+        <h2 ref={nameRef}>치킨몽거 플랫폼</h2>
         <div className="link-container" ref={btnRef}>
           <Link className="radius-button link-button" href="https://farmaid.kr/" target="_blank">
             <span>바로가기</span>

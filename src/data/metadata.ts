@@ -30,6 +30,8 @@ export const nextjs_metadata: Metadata = {
     "유니아이",
     "팜에이드",
     "farmaid",
+    "치킨몽거",
+    "chicken monger",
     "uniai",
   ],
   formatDetection: {
