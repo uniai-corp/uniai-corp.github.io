@@ -27,6 +27,8 @@ type SolutionProductFeatureDataType = {
 };
 type SolutionProductFeaturePropsType = SolutionProductFeatureDataType & {
   itemIndex: number;
+  isDetail: boolean;
+  itemLength: number;
 };
 
 type SolutionProductFeatureDetailsPropsType = SolutionProductFeaturePropsType & {

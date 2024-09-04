@@ -8,8 +8,8 @@ const PageMainChickenMongerLogo = forwardRef((props, ref: React.ForwardedRef<HTM
     props: { srcSet: desktop },
   } = getImageProps({
     ...common,
-    width: 542,
-    height: 69,
+    width: 654,
+    height: 80,
     src: "/img/main/chicken_monger/logo_desktop.png",
   });
 
@@ -17,8 +17,8 @@ const PageMainChickenMongerLogo = forwardRef((props, ref: React.ForwardedRef<HTM
     props: { srcSet: tablet },
   } = getImageProps({
     ...common,
-    width: 460,
-    height: 59,
+    width: 490,
+    height: 60,
     src: "/img/main/chicken_monger/logo_tablet.png",
   });
 
@@ -26,8 +26,8 @@ const PageMainChickenMongerLogo = forwardRef((props, ref: React.ForwardedRef<HTM
     props: { srcSet: mobile, ...rest },
   } = getImageProps({
     ...common,
-    width: 300,
-    height: 39,
+    width: 262,
+    height: 32,
     src: "/img/main/chicken_monger/logo_mobile.png",
   });
 
