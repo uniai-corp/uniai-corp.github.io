@@ -52,14 +52,16 @@ export default function PageSolutionProductFeatureListItem(props: SolutionProduc
   });
 
   return (
-    <li>
+    <li item-length={props.itemLength}>
       <div className="page-solution-product-feature-item" ref={itemRef}>
         <PageSolutionProductFeatureItemImage
           category={props.category}
           title={props.title}
           ref={imgRef}
         />
-        <PageSolutionProductFeatureDetails {...props} trigger={itemRef.current} />
+        {props.isDetail && (
+          <PageSolutionProductFeatureDetails {...props} trigger={itemRef.current} />
+        )}
       </div>
     </li>
   );

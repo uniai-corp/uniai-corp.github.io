@@ -23,7 +23,7 @@ export default function PageFooterLower() {
         <dl className="address-info-item">
           <dt>본사</dt>
           <dd>
-            <address>(34112) 대전광역시 유성구 대덕대로 593 대덕테크비즈센터 803-1호</address>
+            <address>(34134) 대전광역시 유성구 대학로 99 대전 팁스타운 405호</address>
           </dd>
         </dl>
         <dl className="address-info-item">

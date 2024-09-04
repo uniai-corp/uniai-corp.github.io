@@ -14,8 +14,8 @@ export default function PageAboutLocation() {
         <PageSectionWrapper>
           <PageAboutLocationItem
             title="본사"
-            address="대전광역시 유성구 대덕대로 593 대덕테크비즈센터 803-1호"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3211.9529352311324!2d127.37527777647422!3d36.386133372368114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35654a2144a75e57%3A0x1a0a9b318349102f!2z64yA7KCE6rSR7Jet7IucIOycoOyEseq1rCDrjIDrjZXrjIDroZwgNTkz!5e0!3m2!1sko!2skr!4v1715843170828!5m2!1sko!2skr"
+            address="대전광역시 유성구 대학로 99 대전 팁스타운 405호"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2412.3589472457707!2d127.34511410786531!3d36.36304636647881!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35654b6f24eafc15%3A0xec1d8def175451f3!2z64yA7KCEIO2MgeyKpO2DgOyatA!5e0!3m2!1sko!2skr!4v1725413377528!5m2!1sko!2skr"
           />
           <PageAboutLocationItem
             title="성남지사"
