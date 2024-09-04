@@ -12,11 +12,10 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "testing-library", "@tanstack/query"],
+  "plugins": ["@typescript-eslint", "testing-library"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@tanstack/eslint-plugin-query/recommended",
     "plugin:prettier/recommended",
     "next/core-web-vitals"
   ],
