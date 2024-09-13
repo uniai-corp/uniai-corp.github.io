@@ -5,7 +5,7 @@ import path from "path";
 const root = path.dirname(new URL(import.meta.url).pathname);
 
 const nextConfig = {
-  output: "export",
+  // output: "export",
   reactStrictMode: true,
   optimizeFonts: false,
   sassOptions: {
