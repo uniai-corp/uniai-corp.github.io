@@ -7,8 +7,7 @@
     "share": "next dev -p 3333 --hostname 172.17.0.82 --experimental-https",
     "build": "next build",
     "start": "next start -p 3333",
-    "lint": "next lint --no-cache",
-    "export": "next build && next export"
+    "lint": "next lint --no-cache"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
