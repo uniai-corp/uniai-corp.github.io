@@ -27,7 +27,7 @@ npm run dev
 ## 2. 프로젝트 환경 구성
 
 - Node.js v20.17.0
-- Next.js v14.2.8 - App Router
+- Next.js v14.2.13 - App Router
 - create-next-app([참조](https://nextjs.org/docs/getting-started/installation))으로 시작
 - 기타 버전 관리는 [package.json](https://github.com/uniai-corp/homepage/blob/front_dev/package.json) 참조
 
