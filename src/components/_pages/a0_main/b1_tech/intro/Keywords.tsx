@@ -1,27 +1,27 @@
-import { getImageProps } from "next/image";
+// import { getImageProps } from "next/image";
 
 import SectionObjectImage from "@/components/section/ObjectImage";
 
 export default function PageTechIntroKeywords({ trigger }: { trigger: HTMLElement | null }) {
-  const common = { alt: "AI 키워드" };
+  // const common = { alt: "AI 키워드" };
 
-  const {
-    props: { srcSet: desktopLarge },
-  } = getImageProps({
-    ...common,
-    width: 1247,
-    height: 434,
-    src: "/img/main/tech/intro/text_desktop_large.png",
-  });
+  // const {
+  //   props: { srcSet: desktopLarge },
+  // } = getImageProps({
+  //   ...common,
+  //   width: 1247,
+  //   height: 434,
+  //   src: "/img/main/tech/intro/text_desktop_large.png",
+  // });
 
-  const {
-    props: { srcSet: desktopMedium, ...rest },
-  } = getImageProps({
-    ...common,
-    width: 1111,
-    height: 434,
-    src: "/img/main/tech/intro/text_desktop_medium.png",
-  });
+  // const {
+  //   props: { srcSet: desktopMedium, ...rest },
+  // } = getImageProps({
+  //   ...common,
+  //   width: 1111,
+  //   height: 434,
+  //   src: "/img/main/tech/intro/text_desktop_medium.png",
+  // });
 
   return (
     <SectionObjectImage
@@ -47,9 +47,13 @@ export default function PageTechIntroKeywords({ trigger }: { trigger: HTMLElemen
       ]}
     >
       <picture>
-        <source media="(min-width: 1340px)" srcSet={desktopLarge} />
-        <source media="(min-width: 1280px)" srcSet={desktopMedium} />
-        <img {...rest} alt="AI" style={{ width: "100%", height: "auto" }} />
+        <source media="(min-width: 1340px)" srcSet="/img/main/tech/intro/text_desktop_large.png" />
+        <source media="(min-width: 1280px)" srcSet="/img/main/tech/intro/text_desktop_medium.png" />
+        <img
+          src="/img/main/tech/intro/text_desktop_medium.png"
+          alt="AI 키워드"
+          style={{ width: "100%", height: "auto" }}
+        />
       </picture>
     </SectionObjectImage>
   );

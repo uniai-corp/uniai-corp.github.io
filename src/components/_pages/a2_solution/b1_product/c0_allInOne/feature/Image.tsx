@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { forwardRef } from "react";
 
 const PageSolutionProductFeatureItemImage = forwardRef(
@@ -8,12 +8,14 @@ const PageSolutionProductFeatureItemImage = forwardRef(
   ) => {
     return (
       <figure ref={ref}>
-        <Image
-          src={`/img/solution/product/feature/${category}.png`}
-          alt={title}
-          width={100}
-          height={101}
-        />
+        <picture>
+          <img
+            src={`/img/solution/product/feature/${category}.png`}
+            alt={title}
+            // width={100}
+            // height={101}
+          />
+        </picture>
         <figcaption>{title}</figcaption>
       </figure>
     );

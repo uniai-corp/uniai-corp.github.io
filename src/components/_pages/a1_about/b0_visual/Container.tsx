@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import { useRef } from "react";
 
 import PageSectionContainer from "@/components/section/Container";
@@ -58,7 +58,13 @@ export default function PageAboutVisual() {
   return (
     <PageSectionContainer className="page-about-visual" ref={sectionRef}>
       <figure className="bg">
-        <Image src="/img/about/visual.png" alt="회사소개 비주얼" fill={true} priority={true} />
+        <picture>
+          <img
+            src="/img/about/visual.png"
+            alt="회사소개 비주얼"
+            style={{ width: "100%", height: "100%" }}
+          />
+        </picture>
       </figure>
       <div className="cover">
         <PageSectionWrapper>

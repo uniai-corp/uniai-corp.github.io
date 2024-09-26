@@ -56,7 +56,7 @@ export default function PageScrollContainer({ children }: { children: React.Reac
   }, [onRefreshScrollTrigger]);
 
   return (
-    <SimpleBar forceVisible="y" ref={updateContainerRef}>
+    <SimpleBar className="page-scroll-container" forceVisible="y" ref={updateContainerRef}>
       {children}
     </SimpleBar>
   );
