@@ -3,7 +3,13 @@
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import { useRef } from "react";
 
-export default function PageAboutLocation({ title, address }: { title: string; address: string }) {
+export default function PageAboutLocationAddress({
+  title,
+  address,
+}: {
+  title: string;
+  address: string;
+}) {
   const dlRef = useRef<HTMLDListElement | null>(null);
   const dtRef = useRef<HTMLElement | null>(null);
   const ddRef = useRef<HTMLElement | null>(null);

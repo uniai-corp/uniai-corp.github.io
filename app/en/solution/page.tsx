@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import PageSolutionContainer from "@/components/_pages/a2_solution/Container";
 
 export const metadata: Metadata = {
-  title: "솔루션",
+  title: "Solutions",
 };
 
-export default function PageSolutionKo() {
-  return <PageSolutionContainer locale="ko" />;
+export default function PageSolutionEng() {
+  return <PageSolutionContainer locale="en" />;
 }
