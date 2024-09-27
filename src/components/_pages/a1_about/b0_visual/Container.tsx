@@ -7,8 +7,11 @@ import PageSectionContainer from "@/components/section/Container";
 import PageSectionWrapper from "@/components/section/Wrapper";
 
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useLocale from "@/hooks/useLocale";
 
 export default function PageAboutVisual() {
+  const { t } = useLocale();
+
   const sectionRef = useRef<HTMLElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const descriptionRef = useRef<HTMLParagraphElement | null>(null);
@@ -68,13 +71,12 @@ export default function PageAboutVisual() {
       </figure>
       <div className="cover">
         <PageSectionWrapper>
-          <h2 ref={titleRef}>
-            데이터로 만드는 <br />
-            인공지능 혁신
-          </h2>
+          <h2 ref={titleRef}>{t("about/visual/title", "데이터로 만드는 <br />인공지능 혁신")}</h2>
           <p ref={descriptionRef}>
-            UNIAI.는 데이터와 인공 지능(AI) 기술력을 통하여 생산자와 소비자 모두에게 필요한 데이터로
-            이 세상에 단 하나뿐인 인공지능 혁신을 만듭니다.
+            {t(
+              "about/visual/desc",
+              "유니아이만의 AI 기술력을 통해 생산자와 소비자 모두에게 필요한 데이터를 제공하여, 세상에 단 하나뿐인 인공지능 혁신을 만들어갑니다.",
+            )}
           </p>
           <div className="ci-origin">
             <strong className="left" ref={ciLeftRef}>

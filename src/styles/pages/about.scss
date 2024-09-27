@@ -319,7 +319,7 @@
     .page-about-vision-title-upper {
       font-size: 40px;
       line-height: 47px;
-      .mobile-br {
+      br:first-of-type {
         display: none;
       }
     }

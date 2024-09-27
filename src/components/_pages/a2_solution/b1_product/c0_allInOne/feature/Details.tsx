@@ -1,6 +1,9 @@
+"use client";
+
 import { useRef } from "react";
 
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useLocale from "@/hooks/useLocale";
 
 export default function PageSolutionProductFeatureDetails({
   classifyKey,
@@ -8,6 +11,8 @@ export default function PageSolutionProductFeatureDetails({
   itemIndex,
   trigger,
 }: SolutionProductFeatureDetailsPropsType) {
+  const { t } = useLocale();
+
   const dlRef = useRef<HTMLDListElement | null>(null);
 
   useScrollAnimation({
@@ -36,7 +41,7 @@ export default function PageSolutionProductFeatureDetails({
 
   return (
     <dl className="page-solution-product-feature-details" ref={dlRef}>
-      <dt>주요기능</dt>
+      <dt>{t("solution/product/allInOne/feature/title", "주요기능")}</dt>
       {features.map((desc, i) => (
         <dd key={`${classifyKey}/${itemIndex}/details/${i}`}>{desc}</dd>
       ))}

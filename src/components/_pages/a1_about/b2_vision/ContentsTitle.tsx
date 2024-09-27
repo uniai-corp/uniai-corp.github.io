@@ -3,8 +3,11 @@
 import { useRef } from "react";
 
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useLocale from "@/hooks/useLocale";
 
 export default function PageAboutVisionContentsTitle() {
+  const { t } = useLocale();
+
   const titleRef = useRef<HTMLDivElement | null>(null);
   const upperRef = useRef<HTMLHeadingElement | null>(null);
   const lowerRef = useRef<HTMLParagraphElement | null>(null);
@@ -61,11 +64,13 @@ export default function PageAboutVisionContentsTitle() {
   return (
     <div className="page-about-vision-title" ref={titleRef}>
       <h3 className="page-about-vision-title-upper" ref={upperRef}>
-        필요한 데이터로 이 세상에 <br className="mobile-br" />단 하나뿐인 <br />
-        인공지능 혁신을 만듭니다.
+        {t(
+          "about/vision/desc/upper",
+          "필요한 데이터로 이 세상에 <br />단 하나뿐인 <br />인공지능 혁신을 만듭니다.",
+        )}
       </h3>
       <p className="page-about-vision-title-lower" ref={lowerRef}>
-        유니아이의 시작
+        {t("about/vision/desc/lower", "유니아이의 시작")}
         <span className="page-about-vision-title-dot" ref={dotRef}></span>
       </p>
     </div>

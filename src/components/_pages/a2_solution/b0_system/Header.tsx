@@ -5,8 +5,11 @@ import { useRef } from "react";
 import PageSectionHeader from "@/components/section/Header";
 
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useLocale from "@/hooks/useLocale";
 
 export default function PageSolutionSystemHeader() {
+  const { t } = useLocale();
+
   const titleRef = useRef<HTMLHeadingElement | null>(null);
 
   useScrollAnimation({
@@ -23,7 +26,9 @@ export default function PageSolutionSystemHeader() {
   return (
     <PageSectionHeader className="page-solution-system-header">
       <h2 className="page-solution-system-title" ref={titleRef}>
-        가금류 <strong>스마트 축사 통합 관제</strong> 시스템
+        {t("solution/system/title/0", "가금류")}{" "}
+        <strong>{t("solution/system/title/1", "스마트 축사 통합 관제")}</strong>{" "}
+        {t("solution/system/title/2", "시스템")}
       </h2>
     </PageSectionHeader>
   );

@@ -1,11 +1,12 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 import PageAboutContainer from "@/components/_pages/a1_about/Container";
+import localeData from "@/data/locale";
 
 export const metadata: Metadata = {
-  title: "회사소개",
+  title: localeData["page/about"].ko,
 };
 
-export default function PageAboutKo() {
-  return <PageAboutContainer locale="ko" />;
+export default function PageAbout() {
+  return <PageAboutContainer />;
 }

@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from "next";
+import localeData from "./locale";
 
-export const site = {
-  domain: "https://uniai-corp.github.io/", // "https://www.uniai.co.kr/",
-  domainAlt: "https://uniai-corp.github.io/", // "https://www.uniai.co.kr/",
-  desc: "인공지능 기술로 빅데이터 가치를 실현합니다.",
-  title: "UNiAI :: 유니아이",
+export const site: MetaSiteDataType = {
+  domain: localeData["site/domain"],
+  domainAlt: localeData["site/domain"].ko,
+  title: localeData["site/title"],
+  desc: localeData["site/desc"],
 };
 
 export const nextjs_viewport: Viewport = {
@@ -13,20 +14,28 @@ export const nextjs_viewport: Viewport = {
   minimumScale: 1,
 };
 
-export const nextjs_metadata: Metadata = {
+export const nextjs_metadata = (locale: LocaleType = "ko"): Metadata => ({
   title: {
-    default: site.title,
-    template: `%s | ${site.title}`,
+    default: site.title[locale],
+    template: `%s | ${site.title[locale]}`,
   },
-  description: site.desc,
+  description: site.desc[locale],
   keywords: [
     "인공지능",
+    "AI",
+    "Artificial intelligence",
     "가금류",
+    "chicken",
+    "poultry",
     "양계",
     "양계장",
+    "poultry farming",
+    "chicken raising",
+    "livestock",
     "축사",
     "스마트",
     "스마트팜",
+    "smart farm",
     "유니아이",
     "팜에이드",
     "farmaid",
@@ -39,25 +48,26 @@ export const nextjs_metadata: Metadata = {
     telephone: false,
   },
   // SEO
-  metadataBase: new URL(site.domain), // 도메인 주소
+  metadataBase: new URL(site.domain[locale]), // 도메인 주소
   // 대체 접속 경로
   alternates: {
-    canonical: site.domain,
+    canonical: site.domain[locale],
     languages: {
-      "en-US": site.domain,
+      "ko-KR": site.domain.ko,
+      "en-US": site.domain.en,
     },
   },
   // 오픈그래프
   openGraph: {
     type: "website",
-    locale: "ko-KR",
-    url: site.domain,
-    title: site.title,
-    description: site.desc,
+    locale: locale === "en" ? "en-US" : "ko-KR",
+    url: site.domain[locale],
+    title: site.title[locale],
+    description: site.desc[locale],
     images: [
       {
         url: "/img/seo/thumbnail.jpg",
-        alt: site.title,
+        alt: site.title[locale],
       },
     ],
   },
@@ -138,4 +148,4 @@ export const nextjs_metadata: Metadata = {
   //     follow: false,
   //   },
   // },
-};
+});

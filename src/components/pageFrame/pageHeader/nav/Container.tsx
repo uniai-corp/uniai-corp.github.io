@@ -1,4 +1,4 @@
-import PageHeaderNavMenuContainer from "./MenuContainer";
+import PageHeaderNavMenuContainer from "./Menu";
 import PageHeaderNavOpenButton from "./OpenButton";
 
 export default function PageHeaderNavContainer() {

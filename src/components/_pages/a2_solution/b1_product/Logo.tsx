@@ -37,7 +37,7 @@ export default function PageSolutionProductLogo() {
         <source media="(min-width: 768px)" srcSet="/img/solution/product/logo_tablet.png" />
         <img
           src="/img/solution/product/logo_mobile.png"
-          alt="치킨몽거"
+          alt="ChickenMonger"
           style={{ width: "100%", height: "auto" }}
         />
       </picture>

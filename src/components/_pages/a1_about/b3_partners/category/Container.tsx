@@ -1,7 +1,12 @@
+"use client";
+
 import PageSectionWrapper from "@/components/section/Wrapper";
 import PageAboutPartnersCategoryList from "./List";
+import useLocale from "@/hooks/useLocale";
 
 export default function PageAboutPartnersCategoryContainer() {
+  const { t } = useLocale();
+
   const partners: PartnersCollection = {
     association: [
       { key: "partners/association/kpsha", name: "한국육용종계부화협회" },
@@ -50,15 +55,42 @@ export default function PageAboutPartnersCategoryContainer() {
   return (
     <div className="page-about-partners-container">
       <PageSectionWrapper>
-        <PageAboutPartnersCategoryList title="가금협회" list={partners.association} />
-        <PageAboutPartnersCategoryList title="제품개발" list={partners.rnd} />
-        <PageAboutPartnersCategoryList title="질병연구" list={partners.disease} />
-        <PageAboutPartnersCategoryList title="가금계열사" list={partners.distribution} />
-        <PageAboutPartnersCategoryList title="마케팅" list={partners.marketing} />
-        <PageAboutPartnersCategoryList title="사료유통" list={partners.feeds} />
-        <PageAboutPartnersCategoryList title="정부기관" list={partners.govern} />
-        <PageAboutPartnersCategoryList title="산학협력" list={partners.academic} />
-        <PageAboutPartnersCategoryList title="법률자문" list={partners.law} />
+        <PageAboutPartnersCategoryList
+          title={t("about/partner/association", "가금협회")}
+          list={partners.association}
+        />
+        <PageAboutPartnersCategoryList
+          title={t("about/partner/rnd", "제품개발")}
+          list={partners.rnd}
+        />
+        <PageAboutPartnersCategoryList
+          title={t("about/partner/disease", "질병연구")}
+          list={partners.disease}
+        />
+        <PageAboutPartnersCategoryList
+          title={t("about/partner/distribution", "가금계열사")}
+          list={partners.distribution}
+        />
+        <PageAboutPartnersCategoryList
+          title={t("about/partner/marketing", "마케팅")}
+          list={partners.marketing}
+        />
+        <PageAboutPartnersCategoryList
+          title={t("about/partner/feeds", "사료유통")}
+          list={partners.feeds}
+        />
+        <PageAboutPartnersCategoryList
+          title={t("about/partner/govern", "정부기관")}
+          list={partners.govern}
+        />
+        <PageAboutPartnersCategoryList
+          title={t("about/partner/academic", "산학협력")}
+          list={partners.academic}
+        />
+        <PageAboutPartnersCategoryList
+          title={t("about/partner/law", "법률자문")}
+          list={partners.law}
+        />
       </PageSectionWrapper>
     </div>
   );
