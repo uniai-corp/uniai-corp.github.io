@@ -27,7 +27,12 @@ export default function PageHeaderNavMenuContainer() {
       {/* {process.env.NODE_ENV === "development" && <PageHeaderNavLanguage />} */}
       <ul>
         {sitemap.map(d => (
-          <li key={d.key} className={pathName.endsWith(d.href) ? "selected" : ""}>
+          <li
+            key={d.key}
+            className={
+              pathName.endsWith(d.href) || pathName.endsWith(`${d.href}/`) ? "selected" : ""
+            }
+          >
             <Link className="nav-button" href={`${locale === "en" ? "/en" : ""}${d.href}`}>
               <span>{d.name[locale]}</span>
             </Link>
