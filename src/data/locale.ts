@@ -6,8 +6,8 @@ export const localeSegment: LocalePropsType[] = [
 const localeData: LocaleDataCollectionType = {
   // ------------------ 메타데이터
   "site/domain": {
-    ko: "https://www.uniai.co.kr/",
-    en: "https://www.uniai.co.kr/en",
+    ko: "https://uniai-corp.github.io/", // "https://www.uniai.co.kr/",
+    en: "https://uniai-corp.github.io/en", // "https://www.uniai.co.kr/en"
   },
   "site/title": { ko: "UNiAI :: 유니아이", en: "UNiAI" },
   "site/desc": {
