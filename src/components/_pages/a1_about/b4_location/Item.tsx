@@ -5,8 +5,8 @@ export default function PageAboutLocationItem({
   address,
   src,
 }: {
-  title: string;
-  address: string;
+  title: React.ReactNode;
+  address: React.ReactNode;
   src: string;
 }) {
   return (

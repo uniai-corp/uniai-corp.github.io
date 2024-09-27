@@ -7,8 +7,8 @@ export default function PageAboutLocationAddress({
   title,
   address,
 }: {
-  title: string;
-  address: string;
+  title: React.ReactNode;
+  address: React.ReactNode;
 }) {
   const dlRef = useRef<HTMLDListElement | null>(null);
   const dtRef = useRef<HTMLElement | null>(null);

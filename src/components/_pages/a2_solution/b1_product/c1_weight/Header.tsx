@@ -6,8 +6,11 @@ import useScrollAnimation from "@/hooks/useScrollAnimation";
 import PageSolutionProductCategoryHeader from "../assets/CategoryHeader";
 import PageSolutionProductCategoryTitle from "../assets/CategoryTitle";
 import PageSolutionProductCategoryDescription from "../assets/CategoryDescription";
+import useLocale from "@/hooks/useLocale";
 
 export default function PageSolutionProductWeightHeader() {
+  const { t } = useLocale();
+
   const headerRef = useRef<HTMLElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const descUpperRef = useRef<HTMLParagraphElement | null>(null);
@@ -72,15 +75,18 @@ export default function PageSolutionProductWeightHeader() {
   return (
     <PageSolutionProductCategoryHeader ref={headerRef}>
       <PageSolutionProductCategoryTitle
-        title="개별상품"
+        title={t("solution/product/weightPackage/title", "개별상품")}
         className="product-weight-title"
         ref={titleRef}
       />
       <PageSolutionProductCategoryDescription className="fade-text" ref={descUpperRef}>
-        체중에 초점을 맞춘 “체중특화” 상품으로
+        {t("solution/product/weightPackage/desc/upper", "체중에 초점을 맞춘 “체중특화” 상품으로")}
       </PageSolutionProductCategoryDescription>
       <PageSolutionProductCategoryDescription className="fade-text" ref={descLowerRef}>
-        사양관리 + 체중관리 + 통합제어를 이용하실 수 있습니다.
+        {t(
+          "solution/product/weightPackage/desc/lower",
+          "사양관리 + 체중관리 + 통합제어를 이용하실 수 있습니다.",
+        )}
       </PageSolutionProductCategoryDescription>
     </PageSolutionProductCategoryHeader>
   );

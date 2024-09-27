@@ -51,7 +51,7 @@ export default function PageTechIntroKeywords({ trigger }: { trigger: HTMLElemen
         <source media="(min-width: 1280px)" srcSet="/img/main/tech/intro/text_desktop_medium.png" />
         <img
           src="/img/main/tech/intro/text_desktop_medium.png"
-          alt="AI 키워드"
+          alt="AI Keywords"
           style={{ width: "100%", height: "auto" }}
         />
       </picture>

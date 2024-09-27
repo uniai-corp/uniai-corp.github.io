@@ -41,7 +41,7 @@ export default function PageMainVisualBackground() {
         <source media="(min-width: 768px)" srcSet="/img/main/visual/bg_tablet.png" />
         <img
           src="/img/main/visual/bg_mobile.png"
-          alt="유니아이 홈페이지"
+          alt="UNiAI"
           style={{ width: "100%", height: "100%" }}
         />
       </picture>

@@ -8,7 +8,7 @@ export default function PageAboutPartnersCategoryList({
   title,
   list,
 }: {
-  title: string;
+  title: React.ReactNode;
   list: PartnerListDataType[];
 }) {
   const itemRef = useRef<HTMLDivElement | null>(null);

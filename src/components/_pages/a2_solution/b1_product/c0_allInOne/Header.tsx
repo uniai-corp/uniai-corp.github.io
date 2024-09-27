@@ -6,8 +6,11 @@ import PageSolutionProductCategoryTitle from "../assets/CategoryTitle";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import PageSolutionProductCategoryDescription from "../assets/CategoryDescription";
 import PageSolutionProductSummaryList from "./summary/List";
+import useLocale from "@/hooks/useLocale";
 
 export default function PageSolutionProductAllInOneHeader() {
+  const { t } = useLocale();
+
   const headerRef = useRef<HTMLElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const descUpperRef = useRef<HTMLParagraphElement | null>(null);
@@ -75,16 +78,32 @@ export default function PageSolutionProductAllInOneHeader() {
 
   return (
     <PageSolutionProductCategoryHeader ref={headerRef}>
-      <PageSolutionProductCategoryTitle title="통합상품" ref={titleRef} />
+      <PageSolutionProductCategoryTitle
+        className="page-solution-product-title"
+        title={t("solution/product/allInOne/title", "통합상품")}
+        ref={titleRef}
+      />
       <PageSolutionProductSummaryList />
       <PageSolutionProductCategoryDescription ref={descUpperRef}>
-        <span className="fade-text">사양관리</span>
-        <span className="fade-text"> + 질병관리</span>
-        <span className="fade-text"> + 체중관리</span>
-        <span className="fade-text"> + 통합제어</span> <br />
+        <span className="fade-text">{t("solution/product/feature/feeding/title", "사양관리")}</span>
+        <span className="fade-text">
+          {" "}
+          + {t("solution/product/feature/disease/title", "질병관리")}
+        </span>
+        <span className="fade-text">
+          {" "}
+          + {t("solution/product/feature/weight/title", "체중관리")}
+        </span>
+        <span className="fade-text">
+          {" "}
+          + {t("solution/product/feature/control/title", "통합제어")}
+        </span>{" "}
+        <br />
       </PageSolutionProductCategoryDescription>
       <PageSolutionProductCategoryDescription className="fade-text" ref={descLowerRef}>
-        <strong>ChickenMonger의 모든 서비스를 한번에!</strong>
+        <strong>
+          {t("solution/product/allInOne/category/desc", "ChickenMonger의 모든 서비스를 한번에!")}
+        </strong>
       </PageSolutionProductCategoryDescription>
     </PageSolutionProductCategoryHeader>
   );

@@ -1,5 +1,11 @@
 // SEO를 위한 메타데이터
-export { nextjs_metadata as metadata, nextjs_viewport as viewport } from "@/data/metadata";
+export {
+  // nextjs_metadata as metadata,
+  nextjs_viewport as viewport,
+} from "@/data/metadata";
+
+import { nextjs_metadata } from "@/data/metadata";
+export const generateMetadata = () => nextjs_metadata("ko");
 
 // styles
 import "pretendard/dist/web/static/pretendard.css";
@@ -7,11 +13,7 @@ import "@/styles/style.scss";
 
 // components
 import JotaiProvider from "@/components/roots/JotaiProvider";
-import PageHeader from "@/components/pageFrame/pageHeader/Container";
-import PageFooter from "@/components/pageFrame/pageFooter/Container";
 import ViewportDeviceChecker from "@/components/roots/ViewportDeviceChecker";
-import PageContainer from "@/components/pageFrame/PageContainer";
-import PageScrollContainer from "@/components/pageFrame/PageScrollContainer";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -19,13 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <JotaiProvider>
           <ViewportDeviceChecker />
-          <PageContainer>
-            <PageScrollContainer>
-              <PageHeader />
-              {children}
-              <PageFooter />
-            </PageScrollContainer>
-          </PageContainer>
+          {children}
         </JotaiProvider>
       </body>
     </html>

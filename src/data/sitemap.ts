@@ -1,12 +1,14 @@
-const sitemap = [
+import localeData from "./locale";
+
+const sitemap: SitemapDataType[] = [
   {
     key: `uniai/about`,
-    name: "회사소개",
+    name: localeData["page/about"],
     href: "/about",
   },
   {
     key: `uniai/solution`,
-    name: "솔루션",
+    name: localeData["page/solution"],
     href: "/solution",
   },
 ];

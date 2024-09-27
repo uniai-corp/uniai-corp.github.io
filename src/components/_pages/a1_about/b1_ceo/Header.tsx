@@ -6,8 +6,11 @@ import PageSectionHeader from "@/components/section/Header";
 import PageAboutCEOHeaderLogo from "./Logo";
 
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useLocale from "@/hooks/useLocale";
 
 export default function PageAboutCEOHeader() {
+  const { t } = useLocale();
+
   const headerRef = useRef<HTMLElement | null>(null);
   const logoRef = useRef<HTMLElement | null>(null);
   const textRef = useRef<HTMLElement | null>(null);
@@ -54,7 +57,7 @@ export default function PageAboutCEOHeader() {
     <PageSectionHeader className="page-about-ceo-header" ref={headerRef}>
       <h2 className="page-about-ceo-title">
         <PageAboutCEOHeaderLogo ref={logoRef} />
-        <strong ref={textRef}>유니아이 대표이사 소개</strong>
+        <strong ref={textRef}>{t("about/ceo/title", "유니아이 대표이사 소개")}</strong>
       </h2>
     </PageSectionHeader>
   );

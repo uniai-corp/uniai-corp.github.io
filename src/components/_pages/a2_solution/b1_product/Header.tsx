@@ -5,8 +5,11 @@ import { useRef } from "react";
 import PageSolutionProductLogo from "./Logo";
 
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useLocale from "@/hooks/useLocale";
 
 export default function PageSolutionProductHeader() {
+  const { t } = useLocale();
+
   const headerRef = useRef<HTMLElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const logoRef = useRef<HTMLDivElement | null>(null);
@@ -52,7 +55,7 @@ export default function PageSolutionProductHeader() {
   return (
     <header className="page-solution-product-header" ref={headerRef}>
       <h2 className="page-solution-product-title" ref={titleRef}>
-        스마트 축사 통합 관제 시스템
+        {t("solution/product/title", "스마트 축사 통합 관제 시스템")}
       </h2>
       <div className="page-solution-product-logo" ref={logoRef}>
         <PageSolutionProductLogo />

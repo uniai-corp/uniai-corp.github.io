@@ -1,6 +1,6 @@
 type CEODetailDataType = {
   classifyKey: string;
-  title: string;
+  title: React.ReactNode;
   list: (string | React.ReactNode)[];
 };
 type CEODataType = {

@@ -7,9 +7,11 @@ import PageSectionWrapper from "@/components/section/Wrapper";
 import PageMainVisualBackground from "./Background";
 import PageMainVisualEarth from "./Earth";
 
+import useLocale from "@/hooks/useLocale";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 export default function PageMainVisualContainer() {
+  const { t } = useLocale();
   const sectionRef = useRef<HTMLElement | null>(null);
   const sloganUpperRef = useRef<HTMLSpanElement | null>(null);
   const sloganLowerRef = useRef<HTMLSpanElement | null>(null);
@@ -44,10 +46,10 @@ export default function PageMainVisualContainer() {
         <PageSectionWrapper>
           <h2>
             <span className="upper" ref={sloganUpperRef}>
-              유니아이만의 인공지능 기술로{" "}
+              {`${t("main/visual/upper", "유니아이만의 인공지능 기술로")} `}
             </span>
             <span className="lower" ref={sloganLowerRef}>
-              빅데이터 가치를 실현하다.
+              {`${t("main/visual/lower", "유니아이만의 인공지능 기술로")} `}
             </span>
           </h2>
           <p ref={phraseRef}>

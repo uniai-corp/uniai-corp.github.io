@@ -3,8 +3,11 @@
 import { useRef } from "react";
 
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useLocale from "@/hooks/useLocale";
 
 export default function PageAboutCEOName() {
+  const { t } = useLocale();
+
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const executivesRef = useRef<HTMLSpanElement | null>(null);
   const nameRef = useRef<HTMLElement | null>(null);
@@ -50,8 +53,8 @@ export default function PageAboutCEOName() {
 
   return (
     <h3 className="page-about-ceo-name" ref={titleRef}>
-      <span ref={executivesRef}>대표이사</span>
-      <strong ref={nameRef}>백승환</strong>
+      <span ref={executivesRef}>{t("common/company/ceo/title", "대표이사")}</span>
+      <strong ref={nameRef}>{t("common/company/ceo/name", "백승환")}</strong>
     </h3>
   );
 }

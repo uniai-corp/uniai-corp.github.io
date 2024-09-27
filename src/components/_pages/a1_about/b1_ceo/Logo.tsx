@@ -28,7 +28,7 @@ const PageAboutCEOHeaderLogo = forwardRef((props, ref: React.ForwardedRef<HTMLEl
         <source media="(min-width: 1280px)" srcSet="/img/about/ceo/logo_desktop.png" />
         <img
           src="/img/about/ceo/logo_mobile.png"
-          alt="유니아이"
+          alt="UNiAI"
           style={{ width: "100%", height: "auto" }}
         />
       </picture>
