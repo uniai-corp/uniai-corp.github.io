@@ -27,12 +27,12 @@ const localeData: LocaleDataCollectionType = {
   "common/company/register/title": { ko: "사업자등록번호", en: "Business Number" },
   "common/company/hq": { ko: "본사", en: "HQ" },
   "common/company/hq/address": {
-    ko: "대전광역시 유성구 대학로 99 대전 팁스타운 405호",
+    ko: "대전광역시 유성구 대학로 99 대전 팁스타운",
     en: "",
   },
-  "common/company/research": { ko: "기업부설연구소", en: "Affiliated" },
+  "common/company/research": { ko: "기업부설연구소", en: "Research center" },
   "common/company/research/address": {
-    ko: "경기 성남시 수정구 대왕판교로 815 기업지원허브 835호",
+    ko: "경기 성남시 수정구 대왕판교로 815 기업지원허브",
     en: "",
   },
 

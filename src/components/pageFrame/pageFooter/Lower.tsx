@@ -20,7 +20,7 @@ export default function PageFooterLower() {
         <dl className="company-info-item">
           <dt>E-mail</dt>
           <dd>
-            <Link href="mailto:uniai@uniai.co.kr">uniai@uniai.co.kr</Link>
+            <Link href="mailto:uniai@uniai.co.kr">support@uniai.co.kr</Link>
           </dd>
         </dl>
       </div>
@@ -29,8 +29,7 @@ export default function PageFooterLower() {
           <dt>{t("common/company/hq", "본사")}</dt>
           <dd>
             <address>
-              (34134){" "}
-              {t("common/company/hq/address", "대전광역시 유성구 대학로 99 대전 팁스타운 405호")}
+              (34134) {t("common/company/hq/address", "대전광역시 유성구 대학로 99 대전 팁스타운")}
             </address>
           </dd>
         </dl>
@@ -41,7 +40,7 @@ export default function PageFooterLower() {
               (13449){" "}
               {t(
                 "common/company/research/address",
-                "경기 성남시 수정구 대왕판교로 815 기업지원허브 835호",
+                "경기 성남시 수정구 대왕판교로 815 기업지원허브",
               )}
             </address>
           </dd>
