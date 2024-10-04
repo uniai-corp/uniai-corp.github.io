@@ -6,7 +6,7 @@ import svgrConfigNextjs from "./config/svgr/config.nextjs.mjs";
 const root = path.dirname(new URL(import.meta.url).pathname);
 
 const nextConfig = {
-  output: "export",
+  // output: "export",
   trailingSlash: true,
   reactStrictMode: true,
   optimizeFonts: false,
