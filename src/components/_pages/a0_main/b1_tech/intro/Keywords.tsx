@@ -1,8 +1,12 @@
+"use client";
+
 // import { getImageProps } from "next/image";
 
 import SectionObjectImage from "@/components/section/ObjectImage";
+import useLocale from "@/hooks/useLocale";
 
 export default function PageTechIntroKeywords({ trigger }: { trigger: HTMLElement | null }) {
+  const { locale } = useLocale();
   // const common = { alt: "AI 키워드" };
 
   // const {
@@ -47,10 +51,16 @@ export default function PageTechIntroKeywords({ trigger }: { trigger: HTMLElemen
       ]}
     >
       <picture>
-        <source media="(min-width: 1340px)" srcSet="/img/main/tech/intro/text_desktop_large.png" />
-        <source media="(min-width: 1280px)" srcSet="/img/main/tech/intro/text_desktop_medium.png" />
+        <source
+          media="(min-width: 1340px)"
+          srcSet={`/img/main/tech/intro/text_desktop_large${locale === "en" ? "_en" : ""}.png`}
+        />
+        <source
+          media="(min-width: 1280px)"
+          srcSet={`/img/main/tech/intro/text_desktop_medium${locale === "en" ? "_en" : ""}.png`}
+        />
         <img
-          src="/img/main/tech/intro/text_desktop_medium.png"
+          src={`/img/main/tech/intro/text_desktop_medium${locale === "en" ? "_en" : ""}.png`}
           alt="AI Keywords"
           style={{ width: "100%", height: "auto" }}
         />
