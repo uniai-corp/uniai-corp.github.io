@@ -87,7 +87,7 @@
       font-weight: 700;
     }
   }
-  h3 {
+  .page-solution-system-info-title-text {
     flex: 1;
     font-size: 34px;
     font-weight: 700;
@@ -107,12 +107,14 @@
         font-size: 36px;
       }
     }
-    h3 {
+    .page-solution-system-info-title-text {
       font-size: 46px;
       white-space: nowrap;
-      br {
-        display: none;
-      }
+      line-height: 1em;
+      // word-break: keep-all;
+      // br {
+      //   display: none;
+      // }
     }
   }
   @media only screen and (min-width: 1340px) {
@@ -123,7 +125,7 @@
         font-size: 50px;
       }
     }
-    h3 {
+    .page-solution-system-info-title-text {
       font-size: 60px;
     }
   }
