@@ -41,7 +41,7 @@ export default function PageHeaderNavMenuContainer() {
         <li className="inquiry-button-item">
           <Link
             className="radius-button inquiry-button"
-            href="https://farmaid.kr/inquiry"
+            href="https://chickenmonger.com/inquiry"
             target="_blank"
           >
             <span>{t("page/inquiry", "서비스 문의")}</span>
