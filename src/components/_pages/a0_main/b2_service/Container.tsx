@@ -114,7 +114,7 @@ export default function PageMainChickenMonger() {
         <PageMainChickenMongerLogo ref={logoRef} />
         <h2 ref={nameRef}>{t("main/service/name", "치킨몽거 플랫폼")}</h2>
         {/* <div className="link-container" ref={btnRef}>
-          <Link className="radius-button link-button" href="https://farmaid.kr/" target="_blank">
+          <Link className="radius-button link-button" href="https://chickenmonger.com/" target="_blank">
             <span>바로가기</span>
           </Link>
         </div> */}
