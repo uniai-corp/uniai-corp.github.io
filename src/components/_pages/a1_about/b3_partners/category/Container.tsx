@@ -34,7 +34,7 @@ export default function PageAboutPartnersCategoryContainer() {
       { key: "partners/marketing/mbc", name: "대전MBC" },
       { key: "partners/marketing/millban", name: "밀반 코리아" },
     ],
-    feeds: [{ key: "partners/feeds/farmsco", name: "팜스코" }],
+    // feeds: [{ key: "partners/feeds/farmsco", name: "팜스코" }],
     govern: [
       { key: "partners/govern/qia", name: "농림축산검역본부" },
       { key: "partners/govern/cnvri", name: "충청남도 동물위생시험소" },
