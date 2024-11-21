@@ -75,10 +75,10 @@ export default function PageAboutPartnersCategoryContainer() {
           title={t("about/partner/marketing", "마케팅")}
           list={partners.marketing}
         />
-        <PageAboutPartnersCategoryList
+        {/* <PageAboutPartnersCategoryList
           title={t("about/partner/feeds", "사료유통")}
           list={partners.feeds}
-        />
+        /> */}
         <PageAboutPartnersCategoryList
           title={t("about/partner/govern", "정부기관")}
           list={partners.govern}
