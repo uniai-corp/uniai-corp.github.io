@@ -27,6 +27,12 @@
     }
   },
   "files": ["node_modules/gsap/types/index.d.ts"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "jest.setup.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "./config/svgr/svgr.d.ts"
+  ],
   "exclude": ["node_modules"]
 }

@@ -8,18 +8,12 @@
     },
     "ecmaVersion": "latest"
   },
-  "plugins": ["testing-library", "prettier"],
+  "plugins": ["prettier"],
   "extends": [
     "eslint:recommended",
     "next/core-web-vitals",
     "next/typescript",
     "plugin:prettier/recommended"
-  ],
-  "overrides": [
-    {
-      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
-      "extends": ["plugin:testing-library/react"]
-    }
   ],
   "rules": {
     "import/prefer-default-export": "off",

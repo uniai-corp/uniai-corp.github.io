@@ -7,6 +7,4 @@ export const metadata: Metadata = {
   title: localeData["page/about"].ko,
 };
 
-export default function PageAbout() {
-  return <PageAboutContainer />;
-}
+export default PageAboutContainer;

@@ -2,6 +2,9 @@ import { MetadataRoute } from "next";
 import { site } from "@/data/metadata";
 import routeData from "@/data/sitemap";
 
+export const dynamic = "force-static";
+export const revalidate = 60;
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const domain = site.domain.ko;
   const locales: LocaleType[] = ["ko", "en"];
