@@ -1,7 +1,4 @@
-export const localeSegment: LocalePropsType[] = [
-  // { locale: "ko" },
-  { locale: "en" },
-];
+export const localeSegment: LocalePropsType[] = [{ locale: "en" }, { locale: "ko" }];
 
 const localeData: LocaleDataCollectionType = {
   // ------------------ 메타데이터

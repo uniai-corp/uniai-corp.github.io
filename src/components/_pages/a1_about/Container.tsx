@@ -1,3 +1,5 @@
+"use client";
+
 import PageContainer from "@/components/pageFrame/PageContainer";
 import PageAboutVisual from "./b0_visual/Container";
 import PageAboutCeo from "./b1_ceo/Container";
