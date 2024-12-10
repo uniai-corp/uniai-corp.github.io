@@ -21,9 +21,6 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Add CNAME file
-        run: echo 'uniai.co.kr' > ./out/CNAME
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
