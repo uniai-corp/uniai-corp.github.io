@@ -1,24 +1,25 @@
-// SEO를 위한 메타데이터
-export async function generateStaticParams() {
-  return localeSegment;
-}
-
 import { nextjs_metadata } from "@/data/metadata";
-export const generateMetadata = async ({ params }: { params: Promise<LocalePropsType> }) => {
-  const locale = (await params).locale || "en";
-  return nextjs_metadata(locale);
-};
 
 // components
 import LocaleProvider from "@/components/roots/LocaleProvider";
 import { localeSegment } from "@/data/locale";
 
-export default function RootLayout({
+// SEO를 위한 메타데이터
+export function generateStaticParams() {
+  return localeSegment.length ? localeSegment : [{ locale: "en" }];
+}
+export async function generateMetadata({ params }: { params: Promise<LocalePropsType> }) {
+  const locale = (await params).locale || "en";
+  return nextjs_metadata(locale);
+}
+
+export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: LocalePropsType;
+  params: Promise<LocalePropsType>;
 }) {
+  const locale = (await params).locale || "en";
   return <LocaleProvider locale={locale}>{children}</LocaleProvider>;
 }

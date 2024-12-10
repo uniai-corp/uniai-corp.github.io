@@ -46,8 +46,10 @@
     justify-content: center;
   }
 
-  text-align: left;
-  word-break: keep-all;
+  & {
+    text-align: left;
+    word-break: keep-all;
+  }
 
   h2 {
     width: 100%;
@@ -355,9 +357,11 @@
     --page-main-chicken-monger-logo-margin: 60px;
   }
 
-  padding: var(--page-main-chicken-monger-padding) 0;
-  text-align: center;
-  background: white;
+  & {
+    padding: var(--page-main-chicken-monger-padding) 0;
+    text-align: center;
+    background: white;
+  }
 
   p {
     font-size: 20px;

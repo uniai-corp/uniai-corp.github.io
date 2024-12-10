@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 /**
  * 반응형 웹 breakpoint 감지
  */
-const checkResponsiveDevice = (userAgent: string): BreakPointType => {
+export const checkResponsiveDevice = (userAgent: string): BreakPointType => {
   const { mobile, tablet } = devicePatterns;
   const isTablet = tablet.some(agent => userAgent.includes(agent));
   const isMobile = mobile.some(agent => userAgent.includes(agent));
@@ -18,7 +18,7 @@ const checkResponsiveDevice = (userAgent: string): BreakPointType => {
 /**
  * 애플 디바이스 감지
  */
-const checkAppleDevice = (userAgent: string): "true" | "false" => {
+export const checkAppleDevice = (userAgent: string): "true" | "false" => {
   const { apple } = devicePatterns;
   const isApple = apple.some(agent => userAgent.includes(agent));
   return isApple ? "true" : "false";

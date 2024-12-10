@@ -34,3 +34,11 @@ type SolutionProductFeaturePropsType = SolutionProductFeatureDataType & {
 type SolutionProductFeatureDetailsPropsType = SolutionProductFeaturePropsType & {
   trigger: HTMLDivElement | null;
 };
+
+type SolutionProductFeatureDetailItemPropsType = {
+  classifyKey: string;
+  itemIndex: number;
+  trigger: HTMLDivElement | null;
+  index: number;
+  children: React.ReactNode;
+};

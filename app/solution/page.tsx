@@ -7,6 +7,4 @@ export const metadata: Metadata = {
   title: localeData["page/solution"].ko,
 };
 
-export default function PageSolution() {
-  return <PageSolutionContainer />;
-}
+export default PageSolutionContainer;
