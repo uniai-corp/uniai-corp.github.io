@@ -28,7 +28,7 @@ export default function PageAboutPartnersCategoryContainer() {
       { key: "partners/distribution/haemil", name: "해밀" },
       { key: "partners/distribution/cherrybro", name: "체리부로" },
       { key: "partners/distribution/maniker", name: "마니커" },
-      { key: "partners/distribution/harim", name: "하림" },
+      // { key: "partners/distribution/harim", name: "하림" },
     ],
     marketing: [
       { key: "partners/marketing/mbc", name: "대전MBC" },
