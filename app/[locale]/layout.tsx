@@ -4,8 +4,10 @@ export async function generateStaticParams() {
 }
 
 import { nextjs_metadata } from "@/data/metadata";
-export const generateMetadata = ({ params: { locale } }: { params: LocalePropsType }) =>
-  nextjs_metadata(locale);
+export const generateMetadata = async ({ params }: { params: Promise<LocalePropsType> }) => {
+  const locale = (await params).locale || "en";
+  return nextjs_metadata(locale);
+};
 
 // components
 import LocaleProvider from "@/components/roots/LocaleProvider";

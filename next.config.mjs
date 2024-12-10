@@ -9,7 +9,7 @@ const nextConfig = {
   output: "export",
   trailingSlash: true,
   reactStrictMode: true,
-  optimizeFonts: false,
+  // optimizeFonts: false,
   sassOptions: {
     includesPaths: [path.join(root, "styles")],
   },

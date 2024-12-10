@@ -5,7 +5,8 @@ export async function generateStaticParams() {
   return localeSegment;
 }
 
-export async function generateMetadata({ params: { locale } }: { params: LocalePropsType }) {
+export async function generateMetadata({ params }: { params: Promise<LocalePropsType> }) {
+  const locale = (await params).locale || "en";
   return {
     title: localeData["page/solution"][locale] || localeData["page/solution"].en,
   };
