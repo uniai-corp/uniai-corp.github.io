@@ -16,6 +16,8 @@ const localeData: LocaleDataCollectionType = {
   "page/about": { ko: "회사소개", en: "About" },
   "page/solution": { ko: "솔루션", en: "Solutions" },
   "page/inquiry": { ko: "서비스문의", en: "Contact Us" },
+  "page/privacy": { ko: "개인정보 처리방침", en: "Policy of Privacy" },
+  "page/terms": { ko: "이용약관", en: "Terms and Conditions of Use" },
 
   // ------------------ 공통정보
   "common/company/name": { ko: "주식회사 유니아이", en: "UNIAI. Co., Ltd." },
