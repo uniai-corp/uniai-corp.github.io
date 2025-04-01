@@ -8,8 +8,8 @@ const localeData: LocaleDataCollectionType = {
   },
   "site/title": { ko: "UNiAI :: 유니아이", en: "UNiAI" },
   "site/desc": {
-    ko: "인공지능 기술로 빅데이터 가치를 실현합니다.",
-    en: "Realizing the value of big data with AI technology.",
+    ko: "인공지능과 사람이 만들어나가는 자연스러운 사회",
+    en: "A harmonious society co-created by humans and AI, grounded in nature",
   },
 
   // ------------------ 페이지 메뉴
@@ -38,10 +38,10 @@ const localeData: LocaleDataCollectionType = {
   // ------------------ 메인페이지
   // 메인페이지; 비주얼
   "main/visual/upper": {
-    ko: "유니아이만의 인공지능 기술로",
-    en: "Realizing the value of big data",
+    ko: "인공지능과 사람이 만들어나가는",
+    en: "A harmonious society co-created",
   },
-  "main/visual/lower": { ko: "빅데이터 가치를 실현하다.", en: "with UNiAI's unique AI technology" },
+  "main/visual/lower": { ko: "자연스러운 사회", en: "by humans and AI, grounded in nature" },
   // 메인페이지; 기술
   "main/tech/title": {
     ko: "유니아이의 AI 기술을 소개합니다",
