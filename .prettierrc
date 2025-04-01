@@ -7,6 +7,12 @@
   "printWidth": 100,
   "overrides": [
     {
+      "files": "**/*.yml",
+      "options": {
+        "singleQuote": true
+      }
+    },
+    {
       "files": "**/*.{ts,tsx,js,jsx,mjs}",
       "options": {
         "singleAttributePerLine": false,
