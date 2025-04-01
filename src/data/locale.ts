@@ -9,7 +9,7 @@ const localeData: LocaleDataCollectionType = {
   "site/title": { ko: "UNiAI :: 유니아이", en: "UNiAI" },
   "site/desc": {
     ko: "인공지능과 사람이 만들어나가는 자연스러운 사회",
-    en: "A harmonious society co-created by humans and AI, in nature",
+    en: "Humans and AI, crafting in harmony with nature",
   },
 
   // ------------------ 페이지 메뉴
@@ -39,9 +39,9 @@ const localeData: LocaleDataCollectionType = {
   // 메인페이지; 비주얼
   "main/visual/upper": {
     ko: "인공지능과 사람이 만들어나가는",
-    en: "A harmonious society co-created",
+    en: "Humans and AI, crafting",
   },
-  "main/visual/lower": { ko: "자연스러운 사회", en: "by humans and AI, in nature" },
+  "main/visual/lower": { ko: "자연스러운 사회", en: " in harmony with nature" },
   // 메인페이지; 기술
   "main/tech/title": {
     ko: "유니아이의 AI 기술을 소개합니다",
