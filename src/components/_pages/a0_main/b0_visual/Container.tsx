@@ -46,10 +46,10 @@ export default function PageMainVisualContainer() {
         <PageSectionWrapper>
           <h2>
             <span className="upper" ref={sloganUpperRef}>
-              {`${t("main/visual/upper", "유니아이만의 인공지능 기술로")} `}
+              {`${t("main/visual/upper", "인공지능과 사람이 만들어나가는")} `}
             </span>
             <span className="lower" ref={sloganLowerRef}>
-              {`${t("main/visual/lower", "유니아이만의 인공지능 기술로")} `}
+              {`${t("main/visual/lower", "자연스러운 사회")} `}
             </span>
           </h2>
           <p ref={phraseRef}>
