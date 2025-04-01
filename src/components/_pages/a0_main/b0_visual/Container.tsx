@@ -52,7 +52,11 @@ export default function PageMainVisualContainer() {
               {`${t("main/visual/lower", "자연스러운 사회")} `}
             </span>
           </h2>
-          <p ref={phraseRef}>Humans and AI, crafting in harmony with nature</p>
+          <p ref={phraseRef}>
+            Artificial Intelligence, Livestock IndustryBio, Smart Farm, Robotics SystemMedical,{" "}
+            <br />
+            Embedded System, Smart Inter-modal Transport
+          </p>
         </PageSectionWrapper>
       </div>
     </PageSectionContainer>
