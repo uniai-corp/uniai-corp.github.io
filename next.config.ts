@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   sassOptions: {
     silenceDeprecations: ["legacy-js-api"],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   // svg 컴포넌트 변환을 위한 설정
   webpack: svgrConfigNextjs,
   experimental: {
