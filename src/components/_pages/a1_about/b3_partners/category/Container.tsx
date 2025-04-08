@@ -25,13 +25,13 @@ export default function PageAboutPartnersCategoryContainer() {
       { key: "partners/disease/cmc", name: "서울성모병원" },
     ],
     distribution: [
-      { key: "partners/distribution/haemil", name: "해밀" },
+      // { key: "partners/distribution/haemil", name: "해밀" },
       { key: "partners/distribution/cherrybro", name: "체리부로" },
       { key: "partners/distribution/maniker", name: "마니커" },
       // { key: "partners/distribution/harim", name: "하림" },
     ],
     marketing: [
-      { key: "partners/marketing/mbc", name: "대전MBC" },
+      // { key: "partners/marketing/mbc", name: "대전MBC" },
       { key: "partners/marketing/millban", name: "밀반 코리아" },
     ],
     // feeds: [{ key: "partners/feeds/farmsco", name: "팜스코" }],
