@@ -55,3 +55,6 @@ next-env.d.ts
 
 reference
 certificates
+
+pnpm-lock.yaml
+package-lock.json

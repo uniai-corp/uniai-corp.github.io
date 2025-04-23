@@ -8,7 +8,7 @@
 
 0-1. Node.js 설치
 
-- 버전은 `v20.18.0`으로 설치해주세요.
+- 버전은 `v22.14.0`으로 설치해주세요.
 - 구글에서 `node.js 설치`만 검색해도 쉬운 설명 글이 많이 있습니다.
 
 ### 1-1. 패키지 설치
@@ -32,7 +32,7 @@ npm run dev
 - 와이파이 접속망을 통한 공유 주소는, 로컬서버 구동 시 서버 로그를 통해 URL이 제공됩니다.
 
 ```plaintext
-▲ Next.js 14.2.14
+▲ Next.js 15.3.1
   - Local:        https://localhost:3000
   - Network:      http://0.0.0.0:3000
 
@@ -46,8 +46,8 @@ npm run dev
 
 ## 2. 프로젝트 환경 구성
 
-- Node.js v20.18.0
-- Next.js v14.2.14 - App Router
+- Node.js v22.14.0
+- Next.js v15.3.1 - App Router
 - `create-next-app`([참조](https://nextjs.org/docs/getting-started/installation))으로 시작
 - 기타 버전 관리는 [package.json](https://github.com/uniai-corp/homepage/blob/front_dev/package.json) 참조
 
@@ -55,7 +55,7 @@ npm run dev
 
 #### 코어
 
-- `Next.js` v14 - App Router
+- `Next.js` v15 - App Router
 - `TypeScript`
 
 #### 상태관리
