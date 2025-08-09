@@ -9,9 +9,9 @@ import {
   isAppleDeviceState,
   responsiveDeviceState,
   viewportOrientationState,
-} from "@/jotai/deviceViewport";
+} from "@/jotai/device-viewport";
 
-import { checkAppleDevice, checkResponsiveDevice } from "@/util/checkDevice.util";
+import { checkAppleDevice, checkResponsiveDevice } from "@/util/check-device.";
 
 export default function ViewportDeviceChecker() {
   // 현재 해당하는 breakpoint 상태 업데이트
