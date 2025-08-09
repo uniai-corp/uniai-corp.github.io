@@ -1,0 +1,46 @@
+[
+  {
+    "key": "welfare/salary",
+    "code": "salary",
+    "name": "급여제도",
+    "items": ["상여금", "야근수당", "인센티브제", "4대 보험", "퇴직금", "휴일(특근)수당"]
+  },
+  {
+    "key": "welfare/culture",
+    "code": "culture",
+    "name": "조직 문화",
+    "items": ["님/닉네임 문화", "회식 강요 안함", "자유 복장"]
+  },
+  {
+    "key": "welfare/refresh",
+    "code": "refresh",
+    "name": "리프레시",
+    "items": ["시간제 연차", "포상휴가", "근로자의날 휴무", "반차/연차"]
+  },
+  {
+    "key": "welfare/work-environment",
+    "code": "work-environment",
+    "name": "근무 환경",
+    "items": [
+      "사내 정원",
+      "최고 성능 컴퓨터",
+      "휴게실",
+      "공기청정기",
+      "사무용품 지급",
+      "안마실/안마의자",
+      "회의실"
+    ]
+  },
+  {
+    "key": "welfare/education",
+    "code": "education",
+    "name": "교육/생활",
+    "items": ["음료 제공(차, 커피)"]
+  },
+  {
+    "key": "welfare/commuting",
+    "code": "commuting",
+    "name": "출퇴근",
+    "items": ["주 1회 재택근무", "탄력근무제", "주차비 지원/주차장 제공"]
+  }
+]

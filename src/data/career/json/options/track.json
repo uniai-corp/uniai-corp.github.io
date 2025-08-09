@@ -1,0 +1,42 @@
+{
+  "fe": {
+    "key": "track/fe",
+    "code": "fe",
+    "name": "프론트엔드"
+  },
+  "be": {
+    "key": "track/be",
+    "code": "be",
+    "name": "백엔드"
+  },
+  "infra": {
+    "key": "track/infra",
+    "code": "infra",
+    "name": "인프라"
+  },
+  "data": {
+    "key": "track/data",
+    "code": "data",
+    "name": "데이터"
+  },
+  "ai": {
+    "key": "track/ai",
+    "code": "ai",
+    "name": "AI"
+  },
+  "robot": {
+    "key": "track/robot",
+    "code": "robot",
+    "name": "로봇"
+  },
+  "pm": {
+    "key": "track/project-manager",
+    "code": "pm",
+    "name": "프로젝트 매니저"
+  },
+  "qa": {
+    "key": "track/quality-assurance",
+    "code": "qa",
+    "name": "QA"
+  }
+}
