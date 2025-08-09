@@ -5,9 +5,6 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   reactStrictMode: true,
-  sassOptions: {
-    silenceDeprecations: ["legacy-js-api"],
-  },
   // svg 컴포넌트 변환을 위한 설정
   webpack: svgrConfigNextjs,
   turbopack: {
