@@ -11,7 +11,7 @@ export default function PageCareerVisual() {
   const descriptionRef = useRef<HTMLParagraphElement>(null);
 
   return (
-    <PageSectionContainer className="page-career-visual" ref={sectionRef}>
+    <PageSectionContainer className="page-sub-visual page-career-visual" ref={sectionRef}>
       <figure className="bg">
         <picture>
           <img
