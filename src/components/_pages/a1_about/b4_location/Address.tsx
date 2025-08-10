@@ -1,7 +1,7 @@
 "use client";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
 import { useRef } from "react";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 
 export default function PageAboutLocationAddress({
   title,

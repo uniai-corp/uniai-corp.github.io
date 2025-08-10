@@ -8,7 +8,7 @@ import "simplebar-react/dist/simplebar.min.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-import useDebounce from "@/hooks/useDebounce";
+import useDebounce from "@/hooks/util/useDebounce";
 
 import { scrollContainer } from "@/jotai/scroll";
 

@@ -1,12 +1,14 @@
 "use client";
 
 import { useRef } from "react";
+
 import PageSolutionProductCategoryHeader from "../assets/CategoryHeader";
 import PageSolutionProductCategoryTitle from "../assets/CategoryTitle";
-import useScrollAnimation from "@/hooks/useScrollAnimation";
 import PageSolutionProductCategoryDescription from "../assets/CategoryDescription";
 import PageSolutionProductSummaryList from "./summary/List";
+
 import useLocale from "@/hooks/useLocale";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 
 export default function PageSolutionProductAllInOneHeader() {
   const { t } = useLocale();

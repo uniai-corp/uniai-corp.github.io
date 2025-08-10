@@ -4,8 +4,8 @@ import { useRef } from "react";
 
 import PageSolutionProductLogo from "./Logo";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
 import useLocale from "@/hooks/useLocale";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 
 export default function PageSolutionProductHeader() {
   const { t } = useLocale();

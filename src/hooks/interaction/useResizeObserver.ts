@@ -1,5 +1,7 @@
+"use client";
+
 import { useCallback, useEffect, useState } from "react";
-import useDebounce from "./useDebounce";
+import useDebounce from "../util/useDebounce";
 
 export default function useResizeObserver<T extends HTMLElement>({
   ref,

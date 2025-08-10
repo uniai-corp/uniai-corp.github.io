@@ -2,11 +2,12 @@
 
 import { useRef } from "react";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
 import PageSolutionProductCategoryHeader from "../assets/CategoryHeader";
 import PageSolutionProductCategoryTitle from "../assets/CategoryTitle";
 import PageSolutionProductCategoryDescription from "../assets/CategoryDescription";
+
 import useLocale from "@/hooks/useLocale";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 
 export default function PageSolutionProductWeightHeader() {
   const { t } = useLocale();

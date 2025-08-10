@@ -8,7 +8,7 @@ import { useAtomValue } from "jotai";
 import PageHeaderNavLanguage from "./Language";
 
 import useLocale from "@/hooks/useLocale";
-import useClientRouteChange from "@/hooks/useClientRouteChange";
+import useClientRouteChange from "@/hooks/util/useClientRouteChange";
 
 import { isNavOpenState } from "@/jotai/nav";
 

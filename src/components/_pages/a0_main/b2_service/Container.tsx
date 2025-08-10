@@ -5,7 +5,7 @@ import { useRef } from "react";
 import PageSectionContainer from "@/components/section/Container";
 import PageSectionWrapper from "@/components/section/Wrapper";
 import PageMainChickenMongerLogo from "./Logo";
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 import useLocale from "@/hooks/useLocale";
 
 export default function PageMainChickenMonger() {

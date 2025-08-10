@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 import PageSolutionProductSummaryItemImage from "./Image";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 
 export default function PageSolutionProductSummaryItem({
   category,

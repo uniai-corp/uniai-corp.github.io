@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 import PageSolutionSystemItemImage from "./ItemImage";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 
 export default function PageSolutionSystemItem({
   index,

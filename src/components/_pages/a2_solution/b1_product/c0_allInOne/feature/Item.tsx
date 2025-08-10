@@ -5,7 +5,7 @@ import { useRef } from "react";
 import PageSolutionProductFeatureItemImage from "./Image";
 import PageSolutionProductFeatureDetails from "./Details";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 
 export default function PageSolutionProductFeatureListItem(props: SolutionProductFeaturePropsType) {
   const itemRef = useRef<HTMLDivElement | null>(null);

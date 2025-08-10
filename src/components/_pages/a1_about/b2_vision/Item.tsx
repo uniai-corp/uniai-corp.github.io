@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 import PageAboutVisionImage from "./Image";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 
 export default function PageAboutVisionItem({
   category,

@@ -4,8 +4,8 @@ import { useRef } from "react";
 
 import PageSectionHeader from "@/components/section/Header";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
 import useLocale from "@/hooks/useLocale";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 
 export default function PageSolutionSystemHeader() {
   const { t } = useLocale();

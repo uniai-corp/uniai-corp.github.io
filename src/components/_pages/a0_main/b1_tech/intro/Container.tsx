@@ -8,7 +8,7 @@ import PageTechIntroAI from "./AI";
 import PageSectionWrapper from "@/components/section/Wrapper";
 import PageTechIntroKeywords from "./Keywords";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 import useLocale from "@/hooks/useLocale";
 
 export default function PageMainTechIntroContainer() {

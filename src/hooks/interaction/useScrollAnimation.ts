@@ -6,7 +6,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useAtomValue } from "jotai";
 
-import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect";
+import useIsomorphicLayoutEffect from "../util/useIsomorphicLayoutEffect";
 
 import { scrollContainer } from "@/jotai/scroll";
 

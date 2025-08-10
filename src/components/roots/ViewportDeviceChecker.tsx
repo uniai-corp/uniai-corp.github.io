@@ -3,7 +3,7 @@
 import { useCallback, useEffect } from "react";
 import { useAtom, useSetAtom } from "jotai";
 
-import useResizeObserver from "@/hooks/useResizeObserver";
+import useResizeObserver from "@/hooks/interaction/useResizeObserver";
 
 import {
   isAppleDeviceState,
