@@ -1,6 +1,0 @@
-[
-  { "key": "employment-type/full-time", "code": "full-time", "name": "정규직" },
-  { "key": "employment-type/part-time", "code": "part-time", "name": "파트타임" },
-  { "key": "employment-type/contract", "code": "contract", "name": "계약직" },
-  { "key": "employment-type/internship", "code": "internship", "name": "인턴" }
-]

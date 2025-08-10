@@ -1,27 +1,26 @@
-import trackData from "../json/options/track.json";
-import roleData from "../json/options/role.json";
-import officeData from "../json/options/office.json";
+import trackData from "../json/track.json";
+import roleData from "../json/role.json";
+import officeData from "../json/office.json";
+import employmentType from "../json/employment_type.json";
+import workEnv from "../json/work_env.json";
+import welfare from "../json/welfare.json";
+import applyProcess from "../json/apply_process.json";
+import precaution from "../json/pre_caution.json";
 
 export const recruit_fe_engineer = {
   key: "career/recruit-post/fe/engineer",
-  title: "[2025 유니아이] 프론트엔드 엔지니어 채용",
+  title: `[2025 유니아이] ${trackData.fe.name} ${roleData.engineer.name} 채용`,
   period: ["2025-08-01T09:00:00", "2025-09-30T23:59:59"],
   position: {
+    name: `${trackData.fe.name} ${roleData.engineer.name}`,
     track: trackData.fe,
     role: roleData.engineer,
   },
   openings: 1,
   years: [3, 5],
   education: "학력무관",
-  employment_type: {
-    value: "정규직",
-    probation: 3,
-  },
-  working_schedule: {
-    days: "주 5일(월 ~ 금)",
-    hours: "09:00 ~ 18:00",
-    benefits: "재택근무 가능, 탄력근무제",
-  },
+  employment_type: employmentType.full_time,
+  working_schedule: workEnv.full_time,
   office: officeData.daejeon,
   // 주요업무
   tasks: [
@@ -80,14 +79,16 @@ export const recruit_fe_engineer = {
     },
     welfare: {
       title: "복지 및 혜택",
-      items: [
-        "급여 제도: 상여금, 야근수당, 인센티브제, 4대 보험, 퇴직금, 휴일(특근)수당",
-        "조직 문화: 님/닉네임 문화, 회식 강요 안함, 자유복장",
-        "리프레시: 시간제 연차, 포상휴가, 근로자의날 휴무, 반차/연차",
-        "근무 환경: 사내 정원, 최고 성능 컴퓨터, 휴게실, 공기청정기, 사무용품 지급, 안마실/안마의자, 회의실",
-        "교육/생활: 음료 제공(차, 커피)",
-        "출퇴근: 주 1회 재택근무, 탄력근무제, 주차비 지원/주차장 제공",
-      ],
+      items: welfare.map(({ name, items }) => `${name}: ${items.join(", ")}`),
     },
   },
+  process: {
+    title: null,
+    items: [
+      `접수 방법: ${applyProcess.apply.document.pdf_email},`,
+      `모집 기간: ${applyProcess.apply.period.fit}`,
+    ],
+    steps: applyProcess.steps.engineer,
+  },
+  pre_caution: precaution.daejeon,
 };
