@@ -20,7 +20,7 @@
       }
     },
     {
-      "files": "**/*.{scss,css}",
+      "files": ["**/*.{scss,css}"],
       "options": {
         "singleAttributePerLine": false,
         "proseWrap": "preserve",

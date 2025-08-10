@@ -1,10 +1,14 @@
 import type { NextConfig } from "next";
+import path from "node:path";
 import { openBrowser, svgrConfigNextjs } from "./config";
 
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   reactStrictMode: true,
+  sassOptions: {
+    loadPaths: [path.join(process.cwd(), "src/styles")],
+  },
   // svg 컴포넌트 변환을 위한 설정
   webpack: svgrConfigNextjs,
   turbopack: {
@@ -22,7 +26,7 @@ const nextConfig: NextConfig = {
   // },
   async redirects() {
     // 로컬 서버 구동 시, 브라우저 창 열기
-    openBrowser({ https: true });
+    openBrowser();
     return [];
   },
 };
