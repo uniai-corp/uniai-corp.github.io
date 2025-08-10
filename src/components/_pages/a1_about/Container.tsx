@@ -7,6 +7,8 @@ import PageAboutVision from "./b2_vision/Container";
 import PageAboutPartners from "./b3_partners/Container";
 import PageAboutLocation from "./b4_location/Container";
 
+import "@/styles/pages/about.scss";
+
 export default function PageAboutContainer() {
   return (
     <PageContainer>

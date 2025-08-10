@@ -1,7 +1,4 @@
-@use "../components/section";
-
 .page-about-visual {
-  @include section.common-layout();
   height: 300px;
   @media only screen and (min-width: 768px) {
     height: 360px;
@@ -10,13 +7,6 @@
     height: 600px;
   }
   .cover {
-    color: white;
-    text-align: center;
-    word-break: keep-all;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     h2 {
       margin-bottom: 20px;
       font-size: 32px;
