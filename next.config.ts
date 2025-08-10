@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import svgrConfigNextjs from "./config/svgr/config.nextjs";
+import { openBrowser, svgrConfigNextjs } from "./config";
 
 const nextConfig: NextConfig = {
   output: "export",
@@ -20,6 +20,11 @@ const nextConfig: NextConfig = {
   //   locales: ["ko", "en"],
   //   defaultLocale: "ko",
   // },
+  async redirects() {
+    // 로컬 서버 구동 시, 브라우저 창 열기
+    openBrowser({ https: true });
+    return [];
+  },
 };
 
 export default nextConfig;
