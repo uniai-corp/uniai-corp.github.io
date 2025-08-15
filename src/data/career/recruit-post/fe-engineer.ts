@@ -7,8 +7,9 @@ import welfare from "../json/welfare.json";
 import applyProcess from "../json/apply_process.json";
 import precaution from "../json/pre_caution.json";
 
-export const recruit_fe_engineer = {
+export const recruit_fe_engineer: RecruitPost = {
   key: "career/recruit-post/fe/engineer",
+  code: "fe_engineer",
   title: `[2025 유니아이] ${trackData.fe.name} ${roleData.engineer.name} 채용`,
   period: ["2025-08-01T09:00:00", "2025-09-30T23:59:59"],
   position: {

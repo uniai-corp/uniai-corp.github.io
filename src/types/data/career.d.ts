@@ -3,7 +3,7 @@
  * @property {string | null} title 섹션 제목(없을 수 있음)
  * @property {string[]} items 항목 내용(개행식)
  */
-export type JDSection = {
+type JDSection = {
   /** 섹션 제목(없을 수 있음) */
   title: string | null;
   /** 항목 내용(개행식) */
@@ -15,7 +15,7 @@ export type JDSection = {
  * @property {string} code 직무 코드(슬러그)
  * @property {string} name 직무 명칭(표시명)
  */
-export type Track = {
+type Track = {
   /** 직무 코드(슬러그) */
   code: string;
   /** 직무 명칭(표시명) */
@@ -26,7 +26,7 @@ export type Track = {
  * 채용 직무 정보 컬렉션: code → Track
  * @property {Track} key 직무 코드별 Track 객체
  */
-export type TrackCollection = Record<string, Track>;
+type TrackCollection = Record<string, Track>;
 
 // --------------------------------------
 // role.json
@@ -38,7 +38,7 @@ export type TrackCollection = Record<string, Track>;
  * @property {string} code 직위 코드(e.g. "engineer")
  * @property {string} name 직위 명칭(e.g. "엔지니어")
  */
-export type Role = {
+type Role = {
   /** 내부 고정 키 */
   key: string;
   /** 직위 코드 */
@@ -51,7 +51,7 @@ export type Role = {
  * 직위 컬렉션: code → Role
  * @property {Role} key 직위 코드별 Role 객체
  */
-export type RoleMap = Record<string, Role>;
+type RoleMap = Record<string, Role>;
 
 // --------------------------------------
 // office.json
@@ -61,7 +61,7 @@ export type RoleMap = Record<string, Role>;
  * 지도/내비 등 외부 맵 서비스 URL 모음
  * @property {string | null} [platform] 플랫폼 키(google/naver 등)에 대한 URL 또는 null
  */
-export type OfficeMapUrls = Record<string, string | null>;
+type OfficeMapUrls = Record<string, string | null>;
 
 /**
  * 근무지(오피스) 메타
@@ -71,7 +71,7 @@ export type OfficeMapUrls = Record<string, string | null>;
  * @property {[string, string]} address 주소: [도로명, 상세]
  * @property {OfficeMapUrls} map 맵 서비스 링크 모음
  */
-export type Office = {
+type Office = {
   /** 내부 고정 키 */
   key: string;
   /** 오피스 코드 */
@@ -79,7 +79,7 @@ export type Office = {
   /** 오피스 명칭 */
   name: string;
   /** 주소: [도로명, 상세] */
-  address: [string, string];
+  address: string[];
   /** 맵 서비스 링크 모음 */
   map: OfficeMapUrls;
 };
@@ -88,7 +88,7 @@ export type Office = {
  * 오피스 컬렉션: code → Office
  * @property {Office} key 오피스 코드별 Office 객체
  */
-export type OfficeMap = Record<string, Office>;
+type OfficeMap = Record<string, Office>;
 
 // --------------------------------------
 // employment_type.json
@@ -99,7 +99,7 @@ export type OfficeMap = Record<string, Office>;
  * @property {string} name 고용형태 명칭(표시용)
  * @property {number | null} probation 수습 개월 수(null이면 미적용)
  */
-export type EmploymentTypeEntry = {
+type EmploymentTypeEntry = {
   /** 고용형태 명칭(표시용) */
   name: string;
   /** 수습 개월 수(null이면 미적용) */
@@ -110,7 +110,7 @@ export type EmploymentTypeEntry = {
  * 고용 형태 컬렉션: key → Entry (e.g. full_time/contract)
  * @property {EmploymentTypeEntry} key 고용 형태별 엔트리
  */
-export type EmploymentTypeMap = Record<string, EmploymentTypeEntry>;
+type EmploymentTypeMap = Record<string, EmploymentTypeEntry>;
 
 // --------------------------------------
 // work_env.json (근무 스케줄/형태)
@@ -122,7 +122,7 @@ export type EmploymentTypeMap = Record<string, EmploymentTypeEntry>;
  * @property {string} hours 근무 시간 설명(예: 09:00~18:00)
  * @property {string | null} benefits 스케줄 관련 부가 혜택(없을 수 있음)
  */
-export type WorkEnvEntry = {
+type WorkEnvEntry = {
   /** 근무 요일 설명 */
   days: string;
   /** 근무 시간 설명 */
@@ -135,7 +135,7 @@ export type WorkEnvEntry = {
  * 근무 스케줄 컬렉션: key → Entry (e.g. full_time/part_time)
  * @property {WorkEnvEntry} key 근무 스케줄별 엔트리
  */
-export type WorkEnvMap = Record<string, WorkEnvEntry>;
+type WorkEnvMap = Record<string, WorkEnvEntry>;
 
 // --------------------------------------
 // welfare.json (복지 카테고리)
@@ -148,7 +148,7 @@ export type WorkEnvMap = Record<string, WorkEnvEntry>;
  * @property {string} name 카테고리 명칭(e.g. "급여 제도")
  * @property {string[]} items 항목 리스트
  */
-export type WelfareCategory = {
+type WelfareCategory = {
   /** 카테고리 고정 키 */
   key: string;
   /** 카테고리 코드 */
@@ -163,7 +163,7 @@ export type WelfareCategory = {
  * 복지 카탈로그(배열)
  * @property {WelfareCategory[]} 0..n 카테고리 리스트
  */
-export type WelfareCatalog = WelfareCategory[];
+type WelfareCatalog = WelfareCategory[];
 
 // --------------------------------------
 // apply_process.json
@@ -174,21 +174,21 @@ export type WelfareCatalog = WelfareCategory[];
  * @property {string} code 제출 방식 코드 키(예: "pdf_email")
  * @property {string} value 제출 방식 설명/주소/링크 등
  */
-export type ApplyDocumentMap = Record<string, string>;
+type ApplyDocumentMap = Record<string, string>;
 
 /**
  * 모집 기간 정보 맵 (확장용 코드 → 설명)
  * @property {string} code 기간 코드 키(예: "fit", "open_ended" 등)
  * @property {string} value 기간 설명 텍스트
  */
-export type ApplyPeriodMap = Record<string, string>;
+type ApplyPeriodMap = Record<string, string>;
 
 /**
  * 지원 방법(서류/기간 등)
  * @property {ApplyDocumentMap} document 서류 제출 방식 맵(예: { pdf_email: "..." })
  * @property {ApplyPeriodMap} period 모집 기간 맵(예: { fit: "채용 시 마감" })
  */
-export type ApplyProcessApply = {
+type ApplyProcessApply = {
   /** 서류 제출 방식 맵 */
   document: ApplyDocumentMap;
   /** 모집 기간 맵 */
@@ -199,14 +199,14 @@ export type ApplyProcessApply = {
  * 직군별 전형 단계 맵: roleCode → steps[]
  * @property {string[]} roleCode 직군 코드별 단계 리스트(서류→면접 등)
  */
-export type ApplyProcessSteps = Record<string, string[]>;
+type ApplyProcessSteps = Record<string, string[]>;
 
 /**
  * 전형/지원 안내(간결형; JSON 1:1)
  * @property {ApplyProcessApply} apply 지원 방법
  * @property {ApplyProcessSteps} steps 직군 코드별 전형 단계 맵
  */
-export type ApplyProcess = {
+type ApplyProcess = {
   /** 지원 방법 */
   apply: ApplyProcessApply;
   /** 직군 코드별 전형 단계 맵 */
@@ -218,7 +218,7 @@ export type ApplyProcess = {
  * @property {ApplyProcessApply} apply 지원 방법
  * @property {ApplyProcessSteps} steps 직군 코드별 전형 단계 맵
  */
-export type ApplyProcessStrict = {
+type ApplyProcessStrict = {
   /** 지원 방법 */
   apply: ApplyProcessApply;
   /** 직군 코드별 전형 단계 맵 */
@@ -233,7 +233,7 @@ export type ApplyProcessStrict = {
  * 오피스별 사전 유의사항: code → strings
  * @property {string[]} code 오피스 코드별 유의사항 리스트
  */
-export type PreCautionMap = Record<string, string[]>;
+type PreCautionMap = Record<string, string[]>;
 
 // --------------------------------------
 // recruit-post/* (fe-engineer.ts 등 최종 공고 오브젝트)
@@ -245,7 +245,7 @@ export type PreCautionMap = Record<string, string[]>;
  * @property {Track} track 직무 참조
  * @property {Role} role 직위 참조
  */
-export type PositionLite = {
+type PositionLite = {
   /** 조합 표기명 */
   name: string;
   /** 직무 참조 */
@@ -257,22 +257,17 @@ export type PositionLite = {
 /**
  * 고용 형태 키(확장 가능)
  */
-export type EmploymentTypeKey =
-  | "full_time"
-  | "part_time"
-  | "contract"
-  | "internship"
-  | (string & {});
+type EmploymentTypeKey = "full_time" | "part_time" | "contract" | "internship" | (string & {});
 
 /**
  * 근무 스케줄 키(확장 가능)
  */
-export type WorkEnvKey = "full_time" | "part_time" | "contract" | "internship" | (string & {});
+type WorkEnvKey = "full_time" | "part_time" | "contract" | "internship" | (string & {});
 
 /**
  * 오피스 코드 슬러그
  */
-export type OfficeKey = string;
+type OfficeKey = string;
 
 /**
  * 최종 채용 공고(fe-engineer.ts 등)
@@ -297,9 +292,11 @@ export type OfficeKey = string;
  * @property {{title: string | null, items: string[], steps: string[]}} process 전형 절차
  * @property {string[]} pre_caution 오피스별 유의사항(사전 고지)
  */
-export type RecruitPost = {
+type RecruitPost = {
   /** 고유 키 */
   key: string;
+  /** 공고 직무 분류코드 */
+  code: string;
   /** 공고 제목 */
   title: string;
   /** 모집 기간 [start, end] ISO8601 */
@@ -366,7 +363,7 @@ export type RecruitPost = {
  * @property {ApplyProcess} applyProcess 전형/지원 안내(또는 ApplyProcessStrict)
  * @property {PreCautionMap} preCaution 오피스별 사전 유의사항
  */
-export type CareerCatalog = {
+type CareerCatalog = {
   /** 직무 컬렉션 */
   track: TrackCollection;
   /** 직위 컬렉션 */
