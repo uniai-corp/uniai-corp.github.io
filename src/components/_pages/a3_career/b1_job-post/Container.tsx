@@ -1,13 +1,17 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 
 import PageCareerTabMenu from "./TabMenu";
+import PageCareerJobPostBody from "./Body";
 
 import recruit from "@/data/career/recruit-post";
+import PageTopButton from "@/components/page-frame/TopButton";
+import PageCareerJobPostHeader from "./Header";
 
 export default function PageCareerJobPostContainer() {
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const postKey = useMemo(() => searchParams.get("post_key") || "fe_engineer", [searchParams]);
 
@@ -17,18 +21,20 @@ export default function PageCareerJobPostContainer() {
         routeKey: d.key,
         name: d.position.name,
         code,
-        path: `/career?post_key=${code}`,
-        selected: d.key === postKey,
+        path: `${pathname}?post_key=${code}`,
+        selected: d.code === postKey,
       })),
-    [postKey],
+    [pathname, postKey],
   );
 
-  console.log("list", list);
-  // const contents = useMemo(() => ({}), []);
+  const post = useMemo((): RecruitPost => recruit[postKey], [postKey]);
 
   return (
-    <div>
+    <div className="page-career-job-post-container">
       <PageCareerTabMenu list={list} />
+      <PageCareerJobPostHeader title={post.title} period={post.period} />
+      <PageCareerJobPostBody post={post} />
+      <PageTopButton />
     </div>
   );
 }

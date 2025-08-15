@@ -4,7 +4,7 @@ import { openBrowser, svgrConfigNextjs } from "./config";
 
 const nextConfig: NextConfig = {
   output: "export",
-  trailingSlash: true,
+  trailingSlash: false,
   reactStrictMode: true,
   sassOptions: {
     loadPaths: [path.join(process.cwd(), "src/styles")],

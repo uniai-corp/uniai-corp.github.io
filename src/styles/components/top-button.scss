@@ -1,0 +1,33 @@
+.page-top-button {
+  --top-button-size: 48px;
+
+  width: var(--top-button-size);
+  height: var(--top-button-size);
+  border-radius: 24px;
+  background-color: #000;
+
+  position: sticky;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(
+    calc(var(--page-wrapper-width) / 2 - var(--page-wrapper-padding) - var(--top-button-size))
+  );
+  z-index: 5000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  figure {
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 4px;
+  }
+  span {
+    font-size: 12px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1em;
+  }
+}

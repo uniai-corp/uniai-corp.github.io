@@ -1,4 +1,5 @@
 :root {
+  --page-wrapper-width: 1400px;
   --page-wrapper-padding: 30px;
   --section-header-deco-width: 7px;
   --section-header-deco-height: 30px;
@@ -58,7 +59,7 @@
 
 .page-section-wrapper {
   width: 100%;
-  max-width: 1400px;
+  max-width: var(--page-wrapper-width);
   padding: 0 var(--page-wrapper-padding);
   margin: 0 auto;
 }
