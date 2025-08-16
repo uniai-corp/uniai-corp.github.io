@@ -58,10 +58,23 @@ type RoleMap = Record<string, Role>;
 // --------------------------------------
 
 /**
- * 지도/내비 등 외부 맵 서비스 URL 모음
- * @property {string | null} [platform] 플랫폼 키(google/naver 등)에 대한 URL 또는 null
+ * 지도 플랫폼 URL 정보
  */
-type OfficeMapUrls = Record<string, string | null>;
+type OfficeMapUrls = {
+  /**
+   * 구글 맵 임베드 URL
+   */
+  embed: string;
+  /**
+   * 구글 맵 링크 URL
+   */
+  link: string;
+};
+/**
+ * 지도/내비 등 외부 맵 서비스 URL 모음
+ * @property {string} [platform] 플랫폼 키(google/naver 등)에 대한 URL
+ */
+type OfficeMapPlatform = Record<string, OfficeMapUrls>;
 
 /**
  * 근무지(오피스) 메타
@@ -81,7 +94,7 @@ type Office = {
   /** 주소: [도로명, 상세] */
   address: string[];
   /** 맵 서비스 링크 모음 */
-  map: OfficeMapUrls;
+  map: OfficeMapPlatform;
 };
 
 /**

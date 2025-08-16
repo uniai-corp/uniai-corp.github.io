@@ -85,7 +85,7 @@ export const recruit_be_engineer: RecruitPost = {
   process: {
     title: null,
     items: [
-      `접수 방법: ${applyProcess.apply.document.pdf_email},`,
+      `접수 방법: ${applyProcess.apply.document.pdf_email}`,
       `모집 기간: ${applyProcess.apply.period.fit}`,
     ],
     steps: applyProcess.steps.engineer,
