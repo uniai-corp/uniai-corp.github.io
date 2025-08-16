@@ -2,10 +2,11 @@
 
 import { useCallback } from "react";
 import { useAtom } from "jotai";
+import clsx from "clsx";
 
 import { isNavOpenState } from "@/jotai/nav";
 
-export default function PageHeaderNavOpenButton() {
+export default function PageNavOpenButton() {
   const [isNavOpen, setNavOpen] = useAtom(isNavOpenState);
 
   const onOpen = useCallback(() => {
@@ -14,7 +15,7 @@ export default function PageHeaderNavOpenButton() {
 
   return (
     <button
-      className={`page-header-nav-open-button ${isNavOpen ? "active" : ""}`}
+      className={clsx("page-nav-open-button", { active: isNavOpen })}
       type="button"
       onClick={onOpen}
     >

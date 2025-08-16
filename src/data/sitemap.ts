@@ -11,6 +11,11 @@ const sitemap: SitemapDataType[] = [
     name: localeData["page/solution"],
     href: "/solution",
   },
+  {
+    key: `uniai/career`,
+    name: localeData["page/career"],
+    href: "/career",
+  },
 ];
 
 export default sitemap;

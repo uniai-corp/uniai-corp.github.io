@@ -1,44 +1,3 @@
-:root {
-  --page-header-height: 60px;
-  @media only screen and (min-width: 768px) {
-    --page-header-height: 80px;
-  }
-  @media only screen and (min-width: 1280px) {
-    --page-header-height: 100px;
-  }
-}
-
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-
-#pageContainer {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-#pageHeader {
-  width: 100%;
-  height: var(--page-header-height);
-  border-bottom: 1px solid #bbb;
-  background: #fff;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-.page-header-wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
-
 #pageFooter {
   width: 100%;
   padding: 40px 0;
@@ -114,15 +73,4 @@ body {
       justify-content: flex-end;
     }
   }
-}
-
-.page-body {
-  width: 100%;
-  position: relative;
-  z-index: 0;
-}
-
-.page-scroll-container {
-  width: 100%;
-  height: 100%;
 }

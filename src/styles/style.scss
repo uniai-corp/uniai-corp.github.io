@@ -1,13 +1,17 @@
 // 스타일 환경 설정
-@use "./common/fonts";
-@use "./common/colors";
-@use "./common/reset";
+@use "./common/fonts.scss";
+@use "./common/colors.scss";
+@use "./common/reset.scss";
 
 // 컴포넌트
-@use "./components/simplebar";
-@use "./components/section";
-@use "./components/buttons";
-@use "./components/page-frame";
-@use "./components/nav";
-@use "./components/sub-visual";
-@use "./components/top-button";
+@use "./components/simplebar.scss";
+@use "./components/section.scss";
+@use "./components/buttons.scss";
+
+@use "./components/page-frame/frame.scss";
+@use "./components/page-frame/header.scss";
+@use "./components/page-frame/nav.scss";
+@use "./components/page-frame/footer.scss";
+
+@use "./components/sub-visual.scss";
+@use "./components/top-button.scss";

@@ -1,12 +1,12 @@
 "use client";
 
-// import { getImageProps } from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
 import { useAtomValue } from "jotai";
 
-import { responsiveDeviceState } from "@/jotai/device-viewport";
 import useLocale from "@/hooks/useLocale";
+
+import { responsiveDeviceState } from "@/jotai/device-viewport";
 
 export default function PageHeaderLogo() {
   const { locale } = useLocale();
@@ -21,9 +21,8 @@ export default function PageHeaderLogo() {
       <Link href={`/${locale === "ko" ? "" : locale}`}>
         <figure>
           <picture>
-            <source media="(min-width: 1280px)" srcSet="/img/common/logo_header_desktop.png" />
-            <source media="(min-width: 768px)" srcSet="/img/common/logo_header_tablet.png" />
-            <img src="/img/common/logo_header_mobile.png" alt="UNiAI" style={style} />
+            <source media="(min-width: 768px)" srcSet="/img/logo/logo-header-desktop.png" />
+            <img src="/img/logo/logo-header-mobile.png" alt="UNiAI" style={style} />
           </picture>
         </figure>
       </Link>

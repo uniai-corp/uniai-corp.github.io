@@ -1,6 +1,6 @@
-import PageFooter from "../page-frame/page-footer/Container";
-import PageHeader from "../page-frame/page-header/Container";
 import PageScrollContainer from "../page-frame/PageScrollContainer";
+import PageHeader from "./page-header/Container";
+import PageFooter from "../page-frame/page-footer/Container";
 
 export default function PageContainer({ children }: { children: React.ReactNode }) {
   return (

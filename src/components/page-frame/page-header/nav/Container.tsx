@@ -1,11 +1,11 @@
-import PageHeaderNavMenuContainer from "./Menu";
-import PageHeaderNavOpenButton from "./OpenButton";
+import PageNavMenuContainer from "./menu/Container";
+import PageNavOpenButton from "./OpenButton";
 
-export default function PageHeaderNavContainer() {
+export default function PageNavContainer() {
   return (
-    <nav id="navContainer" className="page-nav-container">
-      <PageHeaderNavOpenButton />
-      <PageHeaderNavMenuContainer />
+    <nav className="page-nav-container" id="navContainer">
+      <PageNavOpenButton />
+      <PageNavMenuContainer />
     </nav>
   );
 }

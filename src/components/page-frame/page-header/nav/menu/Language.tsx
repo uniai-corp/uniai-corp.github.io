@@ -1,15 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import clsx from "clsx";
+
 import useLocale from "@/hooks/useLocale";
+
 import LanguageIcon from "@img/common/language_icon.svg";
 
-export default function PageHeaderNavLanguage() {
+export default function PageNavLanguage() {
   const { locale } = useLocale();
 
   return (
-    <dl className="page-header-nav-language-menu">
-      <dt className="page-header-nav-language-icon">
+    <dl className="page-nav-language-menu">
+      <dt className="page-nav-language-icon">
         <figure>
           <picture>
             <LanguageIcon />
@@ -19,10 +22,10 @@ export default function PageHeaderNavLanguage() {
       {(["ko", "en"] as LocaleType[]).map(lang => (
         <dd
           key={`page/header/nav/language/${lang}`}
-          className={`page-header-nav-language-item${locale === lang ? " selected" : ""}`}
+          className={clsx("page-nav-language-item", { selected: locale === lang })}
         >
-          <Link href={`/${lang === "ko" ? "" : lang}`}>
-            <span>{lang.toUpperCase()}</span>
+          <Link className="page-nav-language-button" href={`/${lang === "ko" ? "" : lang}`}>
+            {lang.toUpperCase()}
           </Link>
         </dd>
       ))}
