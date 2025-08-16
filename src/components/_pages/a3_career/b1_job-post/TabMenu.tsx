@@ -1,6 +1,7 @@
-import PageSectionWrapper from "@/components/section/Wrapper";
-import { clsx } from "clsx";
 import Link from "next/link";
+import { clsx } from "clsx";
+
+import PageSectionWrapper from "@/components/section/Wrapper";
 
 export default function PageCareerTabMenu({ list }: { list: CareerTabMenuList[] }) {
   return (
