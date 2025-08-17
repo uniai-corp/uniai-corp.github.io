@@ -1,6 +1,6 @@
 .page-top-button-wrapper {
   --top-button-size: 48px;
-  --top-buttom-margin: 100px;
+  --top-button-margin: 100px;
 
   height: 0;
 
@@ -13,11 +13,15 @@
   // );
   bottom: 0;
   right: 0;
-  transform: translate(0, calc(var(--top-button-size) * -1 - var(--top-buttom-margin)));
+  transform: translate(0, calc(var(--top-button-size) * -1 - var(--top-button-margin)));
   z-index: 5000;
 
   display: flex;
   justify-content: flex-end;
+
+  @media only screen and (max-width: 768px) {
+    --top-button-margin: var(--page-wrapper-padding);
+  }
 }
 
 .page-top-button {

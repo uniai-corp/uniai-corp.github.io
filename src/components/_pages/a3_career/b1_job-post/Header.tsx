@@ -53,7 +53,10 @@ export default function PageCareerJobPostHeader({
           <div className="d-day">
             <span>{dDayFormat(period[1])}</span>
           </div>
-          <h3>{title}</h3>
+          <h3>
+            <span className="title-text">[{period[1].split("-")[0]} 유니아이]</span>
+            <span className="title-text">{title}</span>
+          </h3>
         </div>
         <div className="period">
           <time>{dateFormat(period[0])}</time>

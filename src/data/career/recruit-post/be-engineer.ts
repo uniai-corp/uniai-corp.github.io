@@ -10,7 +10,7 @@ import precaution from "../json/pre_caution.json";
 export const recruit_be_engineer: RecruitPost = {
   key: "career/recruit-post/be/engineer",
   code: "be_engineer",
-  title: `[2025 유니아이] ${trackData.be.name} ${roleData.engineer.name} 채용`,
+  title: `${trackData.be.name} ${roleData.engineer.name} 채용`,
   period: ["2025-08-01T09:00:00", "2025-09-30T23:59:59"],
   position: {
     name: `${trackData.be.name} ${roleData.engineer.name}`,

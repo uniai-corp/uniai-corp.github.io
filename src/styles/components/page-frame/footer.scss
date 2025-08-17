@@ -41,11 +41,13 @@
     line-height: 1.5em;
     display: flex;
     dt {
-      margin-right: 4px;
+      // width: 100px;
+      margin-right: 8px;
       font-weight: 600;
       white-space: nowrap;
     }
     dd {
+      flex: 1;
       font-weight: 400;
     }
   }
