@@ -3,6 +3,13 @@
   padding: 40px 0;
   border-top: 1px solid #c2c2c2;
   background: #fff;
+
+  span,
+  p,
+  i {
+    letter-spacing: 0;
+  }
+
   .page-footer-section {
     width: 100%;
     margin-bottom: 40px;
@@ -10,11 +17,14 @@
   }
   .logo-box {
     font-size: 0;
+    figure {
+      width: 125px;
+    }
     figcaption {
-      margin-top: 15px;
-      font-size: 17px;
+      margin-top: 20px;
+      font-size: 16px;
       line-height: 1em;
-      font-weight: 600;
+      font-weight: 400;
       display: flex;
       align-items: center;
     }
@@ -28,7 +38,7 @@
   dl {
     margin-bottom: 6px;
     font-size: 14px;
-    line-height: 21px;
+    line-height: 1.5em;
     display: flex;
     dt {
       margin-right: 4px;
@@ -40,9 +50,9 @@
     }
   }
   .copyright {
-    font-size: 14px;
+    font-size: 12px;
     color: #666;
-    line-height: 21px;
+    line-height: 1.5em;
     font-weight: 400;
   }
 }
@@ -54,18 +64,23 @@
     }
     .logo-box {
       font-size: 0;
+      figure {
+        width: 153px;
+      }
       figcaption {
-        height: 37px;
-        font-size: 22px;
+        font-size: 16px;
       }
     }
     dl {
       font-size: 16px;
-      line-height: 24px;
-      display: flex;
       align-items: center;
       &:last-child {
         margin-bottom: 0;
+      }
+    }
+    .company-info-item {
+      dt {
+        width: 120px;
       }
     }
     .address-info-item {
