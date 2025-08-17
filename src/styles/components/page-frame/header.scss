@@ -1,10 +1,7 @@
 :root {
-  --page-header-height: 70px;
-  @media only screen and (min-width: 768px) {
-    --page-header-height: 80px;
-  }
-  @media only screen and (min-width: 1280px) {
-    --page-header-height: 100px;
+  --page-header-height: 100px;
+  @media only screen and (max-width: 768px) {
+    --page-header-height: 70px;
   }
 }
 
@@ -17,6 +14,17 @@
   top: 0;
   left: 0;
   z-index: 1000;
+}
+
+.page-header-logo {
+  figure {
+    width: 125px;
+  }
+  @media only screen and (max-width: 768px) {
+    figure {
+      width: 60px;
+    }
+  }
 }
 
 .page-header-wrapper {

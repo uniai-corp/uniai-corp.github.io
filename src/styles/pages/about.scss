@@ -110,6 +110,13 @@
   figure {
     margin: 0 auto 20px;
     opacity: 0;
+    height: 46px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
   strong {
     display: block;
@@ -120,6 +127,9 @@
     transform: translateY(-50%);
   }
   @media only screen and (min-width: 1280px) {
+    figure {
+      height: 70px;
+    }
     strong {
       font-size: 30px;
       line-height: 35px;
