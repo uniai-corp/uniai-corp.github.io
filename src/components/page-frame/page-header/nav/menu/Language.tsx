@@ -6,9 +6,15 @@ import clsx from "clsx";
 import useLocale from "@/hooks/useLocale";
 
 import LanguageIcon from "@img/common/language_icon.svg";
+import { useEffect } from "react";
 
 export default function PageNavLanguage() {
   const { locale } = useLocale();
+
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.documentElement.lang = locale;
+  }, [locale]);
 
   return (
     <dl className="page-nav-language-menu">
