@@ -90,4 +90,13 @@
       justify-content: flex-end;
     }
   }
+  &[lang="en"] {
+    #pageFooter {
+      .company-info-item {
+        dt {
+          width: auto;
+        }
+      }
+    }
+  }
 }
