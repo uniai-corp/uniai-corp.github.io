@@ -26,7 +26,8 @@ const nextConfig: NextConfig = {
   // },
   async redirects() {
     // 로컬 서버 구동 시, 브라우저 창 열기
-    openBrowser();
+    openBrowser({ port: 3100 });
+
     return [];
   },
 };

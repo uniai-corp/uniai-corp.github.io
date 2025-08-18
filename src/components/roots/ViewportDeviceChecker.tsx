@@ -12,6 +12,7 @@ import {
 } from "@/jotai/device-viewport";
 
 import { checkAppleDevice, checkResponsiveDevice } from "@/util/check-device.";
+import { isNavOpenState } from "@/jotai/nav";
 
 export default function ViewportDeviceChecker() {
   // 현재 해당하는 breakpoint 상태 업데이트
@@ -19,6 +20,8 @@ export default function ViewportDeviceChecker() {
 
   // 현재 화면 방향 상태 업데이트
   const [viewportOrientation, setViewportOrientation] = useAtom(viewportOrientationState);
+
+  const setNavOpen = useSetAtom(isNavOpenState);
 
   // 현재 접속 기기가 애플기기인지의 여부
   const [isAppleDevice, setIsAppleDevice] = useAtom(isAppleDeviceState);
@@ -89,11 +92,14 @@ export default function ViewportDeviceChecker() {
       document.documentElement.setAttribute("viewport-device", viewport);
     }
 
+    // 전환될 때 내비게이션 닫기
+    if (viewport === "desktop" && viewport !== viewportAttr) setNavOpen(false);
+
     setResponsiveDevice({
       hardware,
       viewport,
     });
-  }, [getViewport, setResponsiveDevice]);
+  }, [getViewport, setResponsiveDevice, setNavOpen]);
 
   return null;
 }
