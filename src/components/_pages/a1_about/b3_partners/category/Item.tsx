@@ -4,7 +4,7 @@
 import { useMemo } from "react";
 import { useAtomValue } from "jotai";
 
-import { responsiveDeviceState } from "@/jotai/deviceViewport";
+import { responsiveDeviceState } from "@/jotai/device-viewport";
 
 export default function PageAboutPartnersCategoryItem({
   classify,

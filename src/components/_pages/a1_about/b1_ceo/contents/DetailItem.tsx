@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 
 export default function PageAboutCEODetailItem({ classifyKey, title, list }: CEODetailDataType) {
   const itemRef = useRef<HTMLDivElement | null>(null);

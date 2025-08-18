@@ -1,0 +1,22 @@
+{
+  "lead": {
+    "key": "role/lead",
+    "code": "lead",
+    "name": "리드"
+  },
+  "engineer": {
+    "key": "role/engineer",
+    "code": "engineer",
+    "name": "엔지니어"
+  },
+  "manager": {
+    "key": "role/manager",
+    "code": "manager",
+    "name": "매니저"
+  },
+  "intern": {
+    "key": "role/intern",
+    "code": "intern",
+    "name": "인턴"
+  }
+}

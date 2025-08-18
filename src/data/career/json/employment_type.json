@@ -1,0 +1,18 @@
+{
+  "full_time": {
+    "name": "정규직",
+    "probation": 3
+  },
+  "part_time": {
+    "name": "파트타임",
+    "probation": null
+  },
+  "contract": {
+    "name": "계약직",
+    "probation": null
+  },
+  "internship": {
+    "name": "인턴쉽",
+    "probation": null
+  }
+}

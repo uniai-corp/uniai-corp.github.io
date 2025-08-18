@@ -1,7 +1,7 @@
-import { LocaleContext } from "@/components/roots/LocaleProvider";
-import localeData from "@/data/locale";
-import { convertTextToJsx } from "@/util/convertTextToJsx";
 import { useCallback, useContext } from "react";
+import { LocaleContext } from "@/components/roots/LocaleProvider";
+import { convertTextToJsx } from "@/util/convert";
+import localeData from "@/data/locale";
 
 /**
  * 언어도구 훅

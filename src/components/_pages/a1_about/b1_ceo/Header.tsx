@@ -5,7 +5,7 @@ import { useRef } from "react";
 import PageSectionHeader from "@/components/section/Header";
 import PageAboutCEOHeaderLogo from "./Logo";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 import useLocale from "@/hooks/useLocale";
 
 export default function PageAboutCEOHeader() {

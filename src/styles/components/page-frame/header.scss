@@ -1,0 +1,37 @@
+:root {
+  --page-header-height: 100px;
+  @media only screen and (max-width: 1280px) {
+    --page-header-height: 70px;
+  }
+}
+
+.page-header {
+  width: 100%;
+  height: var(--page-header-height);
+  border-bottom: 1px solid #bbb;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.page-header-logo {
+  figure {
+    width: 125px;
+  }
+  @media only screen and (max-width: 768px) {
+    figure {
+      width: 60px;
+    }
+  }
+}
+
+.page-header-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}

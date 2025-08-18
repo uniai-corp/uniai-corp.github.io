@@ -1,0 +1,34 @@
+{
+  "fe": {
+    "code": "fe",
+    "name": "프론트엔드"
+  },
+  "be": {
+    "code": "be",
+    "name": "백엔드"
+  },
+  "infra": {
+    "code": "infra",
+    "name": "인프라"
+  },
+  "data": {
+    "code": "data",
+    "name": "데이터"
+  },
+  "ai": {
+    "code": "ai",
+    "name": "AI"
+  },
+  "robot": {
+    "code": "robot",
+    "name": "로봇"
+  },
+  "pm": {
+    "code": "pm",
+    "name": "프로젝트 매니저"
+  },
+  "qa": {
+    "code": "qa",
+    "name": "QA"
+  }
+}

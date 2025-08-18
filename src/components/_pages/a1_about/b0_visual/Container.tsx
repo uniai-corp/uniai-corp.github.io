@@ -6,7 +6,7 @@ import { useRef } from "react";
 import PageSectionContainer from "@/components/section/Container";
 import PageSectionWrapper from "@/components/section/Wrapper";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 import useLocale from "@/hooks/useLocale";
 
 export default function PageAboutVisual() {
@@ -59,7 +59,7 @@ export default function PageAboutVisual() {
   });
 
   return (
-    <PageSectionContainer className="page-about-visual" ref={sectionRef}>
+    <PageSectionContainer className="page-sub-visual page-about-visual" ref={sectionRef}>
       <figure className="bg">
         <picture>
           <img

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import setViewportDeviceInfo from "@/util/checkDevice.util";
+import setViewportDeviceInfo from "@/util/check-device.";
 
 export default function middleware(req: NextRequest) {
   const userAgent = req.headers.get("user-agent") || "";

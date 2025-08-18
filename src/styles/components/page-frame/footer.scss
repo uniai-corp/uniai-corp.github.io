@@ -1,0 +1,93 @@
+#pageFooter {
+  width: 100%;
+  padding: 40px 0;
+  border-top: 1px solid #c2c2c2;
+  background: #fff;
+
+  span,
+  p,
+  i {
+    letter-spacing: 0;
+  }
+
+  .page-footer-section {
+    width: 100%;
+    margin-bottom: 40px;
+    justify-content: space-between;
+  }
+  .logo-box {
+    font-size: 0;
+    figure {
+      width: 125px;
+    }
+    figcaption {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 1em;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .inquiry-button {
+    padding: 0 36px;
+    span {
+      font-size: 26px;
+    }
+  }
+  dl {
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 1.5em;
+    display: flex;
+    dt {
+      // width: 100px;
+      margin-right: 8px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    dd {
+      flex: 1;
+      font-weight: 400;
+    }
+  }
+  .copyright {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5em;
+    font-weight: 400;
+  }
+}
+
+[viewport-device="desktop"] {
+  #pageFooter {
+    .page-footer-section {
+      display: flex;
+    }
+    .logo-box {
+      font-size: 0;
+      figure {
+        width: 153px;
+      }
+      figcaption {
+        font-size: 16px;
+      }
+    }
+    dl {
+      font-size: 16px;
+      align-items: center;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .company-info-item {
+      dt {
+        width: 120px;
+      }
+    }
+    .address-info-item {
+      margin-bottom: 10px;
+      justify-content: flex-end;
+    }
+  }
+}

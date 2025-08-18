@@ -1,0 +1,22 @@
+{
+  "full_time": {
+    "days": "주 5일(월~금)",
+    "hours": "09:00~18:00",
+    "benefits": "재택근무 가능, 탄력근무제"
+  },
+  "part_time": {
+    "days": "",
+    "hours": "",
+    "benefits": null
+  },
+  "contract": {
+    "days": "주 5일(월~금)",
+    "hours": "09:00~18:00",
+    "benefits": null
+  },
+  "internship": {
+    "days": "주 5일(월~금)",
+    "hours": "09:00~18:00",
+    "benefits": "재택근무 가능, 탄력근무제"
+  }
+}

@@ -8,7 +8,7 @@ import PageMainVisualBackground from "./Background";
 import PageMainVisualEarth from "./Earth";
 
 import useLocale from "@/hooks/useLocale";
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 
 export default function PageMainVisualContainer() {
   const { t } = useLocale();

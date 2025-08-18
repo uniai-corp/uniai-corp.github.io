@@ -1,5 +1,7 @@
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+"use client";
+
 import { useRef } from "react";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 
 export default function PageSolutionProductFeatureDetailItem({
   classifyKey,

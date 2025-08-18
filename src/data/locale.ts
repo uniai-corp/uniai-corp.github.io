@@ -15,6 +15,7 @@ const localeData: LocaleDataCollectionType = {
   // ------------------ 페이지 메뉴
   "page/about": { ko: "회사소개", en: "About" },
   "page/solution": { ko: "솔루션", en: "Solutions" },
+  "page/career": { ko: "인재채용", en: "Career" },
   "page/inquiry": { ko: "서비스문의", en: "Contact Us" },
   "page/privacy": { ko: "개인정보 처리방침", en: "Policy of Privacy" },
   "page/terms": { ko: "이용약관", en: "Terms and Conditions of Use" },

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 import useLocale from "@/hooks/useLocale";
 
 export default function PageAboutVisionContentsTitle() {

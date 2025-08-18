@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import PageAboutPartnersCategoryItem from "./Item";
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 
 export default function PageAboutPartnersCategoryList({
   title,

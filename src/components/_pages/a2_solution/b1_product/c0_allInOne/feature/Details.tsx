@@ -2,9 +2,10 @@
 
 import { useRef } from "react";
 
-import useScrollAnimation from "@/hooks/useScrollAnimation";
-import useLocale from "@/hooks/useLocale";
 import PageSolutionProductFeatureDetailItem from "./DetailItem";
+
+import useLocale from "@/hooks/useLocale";
+import useScrollAnimation from "@/hooks/interaction/useScrollAnimation";
 
 export default function PageSolutionProductFeatureDetails({
   classifyKey,
