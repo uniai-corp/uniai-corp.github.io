@@ -8,8 +8,10 @@ import { localeSegment } from "@/data/locale";
 export function generateStaticParams() {
   return localeSegment.length ? localeSegment : [{ locale: "en" }];
 }
-export async function generateMetadata({ params }: { params: Promise<LocalePropsType> }) {
-  const locale = (await params).locale || "en";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const localeParam = (await params).locale;
+  const locale: LocaleType = localeParam === "ko" || localeParam === "en" ? localeParam : "en";
   return nextjs_metadata(locale);
 }
 
@@ -18,8 +20,9 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<LocalePropsType>;
+  params: Promise<{ locale: string }>;
 }) {
-  const locale = (await params).locale || "en";
+  const localeParam = (await params).locale;
+  const locale: LocaleType = localeParam === "ko" || localeParam === "en" ? localeParam : "en";
   return <LocaleProvider locale={locale}>{children}</LocaleProvider>;
 }
