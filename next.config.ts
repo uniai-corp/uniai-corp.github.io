@@ -1,14 +1,14 @@
 import type { NextConfig } from "next";
-import path from "node:path";
-import { openBrowser, svgrConfigNextjs } from "./config";
+// import path from "node:path";
+import { svgrConfigNextjs } from "./config";
 
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: false,
   reactStrictMode: true,
-  sassOptions: {
-    loadPaths: [path.join(process.cwd(), "src/styles")],
-  },
+  // sassOptions: {
+  //   loadPaths: [path.join(process.cwd(), "src/styles")],
+  // },
   // svg 컴포넌트 변환을 위한 설정
   webpack: svgrConfigNextjs,
   turbopack: {
@@ -24,12 +24,12 @@ const nextConfig: NextConfig = {
   //   locales: ["ko", "en"],
   //   defaultLocale: "ko",
   // },
-  async redirects() {
-    // 로컬 서버 구동 시, 브라우저 창 열기
-    openBrowser({ port: 3100 });
+  // async redirects() {
+  //   // 로컬 서버 구동 시, 브라우저 창 열기
+  //   openBrowser({ port: 3100 });
 
-    return [];
-  },
+  //   return [];
+  // },
 };
 
 export default nextConfig;
