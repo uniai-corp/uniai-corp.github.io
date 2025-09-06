@@ -334,6 +334,21 @@ const localeData: LocaleDataCollectionType = {
     ko: "사양관리 + 체중관리 + 통합제어를 이용하실 수 있습니다.",
     en: "which offers Feeding Management + Weight Management + Integrated Control.",
   },
+
+  // ------------------ Pre-order 페이지
+  // 사전구매; 비주얼
+  "page/pre-order/visual/title/upper": {
+    ko: "치킨몽거 스마트 플러스",
+    en: "Pre-order",
+  },
+  "page/pre-order/visual/title/lower": {
+    ko: "사전구매",
+    en: "ChickenMonger Smart Plus",
+  },
+  "page/pre-order/visual/description": {
+    ko: "더 쉽고 똑똑하게, 양계 스마트 축사의 새로운 기준!",
+    en: "Smarter & Simpler - The New Standard for Smart Poultry Farming!",
+  },
 };
 
 export default localeData;
