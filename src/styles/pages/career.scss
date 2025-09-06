@@ -1,12 +1,4 @@
-h2,
-h3,
-h4,
-span,
-strong,
-i,
-p {
-  letter-spacing: 0;
-}
+@use "../common/renewal-base.scss";
 
 .page-career-visual {
   height: 700px;
