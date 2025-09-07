@@ -32,9 +32,15 @@
 }
 .page-pre-order-feature-header {
   margin-bottom: 120px;
+
   display: flex;
   align-items: center;
   justify-self: center;
+
+  figure {
+    width: calc(427px / 1340px * 100vw);
+    max-width: 427px;
+  }
 }
 
 .page-pre-order-feature-list-container {
@@ -60,6 +66,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  figure {
+    width: calc(391px / 1340px * 100vw);
+    max-width: 391px;
+  }
 }
 
 .page-pre-order-product-packages {

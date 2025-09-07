@@ -34,7 +34,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "./config/svgr/svgr.d.ts",
-    "./config/svgr/webpack.d.ts"
+    "./config/svgr/webpack.d.ts",
+    "./initialize.ts"
   ],
   "exclude": ["node_modules"]
 }
