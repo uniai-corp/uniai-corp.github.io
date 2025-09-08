@@ -71,9 +71,9 @@
     font-weight: 700;
   }
 
-  @media only screen and (min-width: 1280px) {
-    margin-left: auto;
-  }
+  // @media only screen and (min-width: 1280px) {
+  //   margin-left: auto;
+  // }
 }
 
 .page-nav-menu-list {
@@ -93,6 +93,7 @@
   }
 
   @media only screen and (min-width: 1280px) {
+    margin-right: auto;
     display: flex;
     align-items: center;
     gap: 30px;
