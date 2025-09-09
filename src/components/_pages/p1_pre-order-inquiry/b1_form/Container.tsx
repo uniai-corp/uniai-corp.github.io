@@ -1,26 +1,12 @@
 import PageSectionWrapper from "@/components/section/Wrapper";
+import PagePreOrderInquiryForm from "./Form";
 
-export default function PagePreOrderInquiryForm() {
+export default function PagePreOrderInquiryFormContainer() {
   return (
-    <div style={{ padding: `200px 0` }}>
+    <div className="page-pre-order-inquiry-form-container">
       <PageSectionWrapper>
-        <p style={{ fontSize: 48, fontWeight: 700, textAlign: "center", lineHeight: 1.4 }}>
-          사전구매 입력 페이지가
-          <br /> 곧 공개됩니다!
-        </p>
+        <PagePreOrderInquiryForm />
       </PageSectionWrapper>
     </div>
   );
-  // return (
-  //   <iframe
-  //     src="https://chickenmonger.com/inquiry"
-  //     title="Pre-order Inquiry Form"
-  //     width="100%"
-  //     height="600"
-  //     style={{ border: "none" }}
-  //     allow="clipboard-write"
-  //     loading="lazy"
-  //     referrerPolicy="no-referrer"
-  //   ></iframe>
-  // );
 }

@@ -349,6 +349,131 @@ const localeData: LocaleDataCollectionType = {
     ko: "더 쉽고 똑똑하게, 양계 스마트 축사의 새로운 기준!",
     en: "Smarter & Simpler - The New Standard for Smart Poultry Farming!",
   },
+  // 사전구매; 신청서
+  "page/pre-order/form/inquiry-type": {
+    ko: "문의 종류",
+    en: "Inquiry Type",
+  },
+  "page/pre-order/form/inquiry-type/exist": {
+    ko: "기존 사용자",
+    en: "Existing User",
+  },
+  "page/pre-order/form/inquiry-type/new": {
+    ko: "신규 사용자",
+    en: "New User",
+  },
+  "page/pre-order/form/inquiry-type/other": {
+    ko: "기타",
+    en: "Other",
+  },
+  "page/pre-order/form/name": {
+    ko: "이름",
+    en: "Name",
+  },
+  "page/pre-order/form/name/placeholder": {
+    ko: "이름을 입력해 주세요.",
+    en: "Enter your name.",
+  },
+  "page/pre-order/form/contact": {
+    ko: "연락처",
+    en: "Phone Number",
+  },
+  "page/pre-order/form/contact/placeholder": {
+    ko: "연락처를 입력해 주세요.",
+    en: "Enter your phone number.",
+  },
+  "page/pre-order/form/email": {
+    ko: "이메일",
+    en: "E-mail",
+  },
+  "page/pre-order/form/email/placeholder": {
+    ko: "이메일을 입력해 주세요.",
+    en: "Enter your e-mail.",
+  },
+  "page/pre-order/form/address": {
+    ko: "주소",
+    en: "Address",
+  },
+  "page/pre-order/form/address/placeholder": {
+    ko: "주소를 입력해 주세요.",
+    en: "Enter your address.",
+  },
+  "page/pre-order/form/packages": {
+    ko: "서비스 패키지",
+    en: "Service Package",
+  },
+  "page/pre-order/form/packages/basic": {
+    ko: "스마트 플러스 기본 패키지",
+    en: "Smart Plus Basic Package",
+  },
+  "page/pre-order/form/packages/weight": {
+    ko: "체중 분석 패키지",
+    en: "Weight Analysis Package",
+  },
+  "page/pre-order/form/packages/ai-management": {
+    ko: "인공지능 맞춤형 사양 매니저 패키지",
+    en: "AI-Powered Feeding Manager Package",
+  },
+  "page/pre-order/form/packages/robot": {
+    ko: "로봇 패키지",
+    en: "Robot Package",
+  },
+  "page/pre-order/form/breed-type": {
+    ko: "사육 구분",
+    en: "Farming Type",
+  },
+  "page/pre-order/form/breed-type/broiler": {
+    ko: "육계",
+    en: "Broilers",
+  },
+  "page/pre-order/form/breed-type/layer": {
+    ko: "산란계",
+    en: "Layers",
+  },
+  "page/pre-order/form/breed-type/ps": {
+    ko: "종계",
+    en: "Parent Stock (Breeders)",
+  },
+  "page/pre-order/form/breed-type/gps": {
+    ko: "원종계",
+    en: "Grandparent Stock",
+  },
+  "page/pre-order/form/breed-type/other": {
+    ko: "기타",
+    en: "Other",
+  },
+  "page/pre-order/form/breed-scale": {
+    ko: "총 사육 규모",
+    en: "Farming Scale",
+  },
+  "page/pre-order/form/breed-scale/notice": {
+    ko: "(총 계사동 수, 총 사육 수수)",
+    en: "(total barns, total birds)",
+  },
+  "page/pre-order/form/breed-scale/placeholder": {
+    ko: "총 계사동 수, 총 사육 수수를 입력해 주세요.",
+    en: "Enter your total barns and birds.",
+  },
+  "page/pre-order/form/contents": {
+    ko: "문의 내용",
+    en: "Inquiry Details",
+  },
+  "page/pre-order/form/contents/placeholder": {
+    ko: "문의 내용을 입력해 주세요.",
+    en: "Enter your inquiry details.",
+  },
+  "page/pre-order/form/policy-agree/notice": {
+    ko: "개인정보 수집 및 이용에 동의합니다.",
+    en: "I agree to the collection and use of my personal information",
+  },
+  "page/pre-order/form/policy-agree/view-detail": {
+    ko: "상세보기",
+    en: "View Details",
+  },
+  "page/pre-order/form/send": {
+    ko: "문의하기",
+    en: "Submit",
+  },
 };
 
 export default localeData;
