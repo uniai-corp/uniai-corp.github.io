@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export const postPreOrderInquiry = async (queryData: API_Req_PreOrderInquiry) =>
   await (
-    await fetch("http://dev-api.uniai.co.kr/inquiry/pre-order", {
+    await fetch("https://api.uniai.co.kr/inquiry/pre-order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
