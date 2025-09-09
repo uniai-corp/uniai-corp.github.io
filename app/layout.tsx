@@ -10,6 +10,7 @@ import { nextjs_metadata } from "@/data/metadata";
 export const generateMetadata = () => nextjs_metadata("ko");
 
 // components
+import ReactQueryProvider from "@/components/roots/ReactQueryProvider";
 import JotaiProvider from "@/components/roots/JotaiProvider";
 import ViewportDeviceChecker from "@/components/roots/ViewportDeviceChecker";
 // import LanguageRedirect from "@/components/roots/LanguageRedirect";
@@ -25,10 +26,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* <Suspense fallback={null}>
           <LanguageRedirect />
         </Suspense> */}
-        <JotaiProvider>
-          <ViewportDeviceChecker />
-          {children}
-        </JotaiProvider>
+        <ReactQueryProvider>
+          <JotaiProvider>
+            <ViewportDeviceChecker />
+            {children}
+          </JotaiProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

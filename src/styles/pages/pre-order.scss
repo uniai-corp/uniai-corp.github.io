@@ -96,3 +96,252 @@
     font-weight: 700;
   }
 }
+
+.page-pre-order-form {
+  width: 100%;
+  max-width: 715px;
+  padding: 100px 0;
+  margin: 0 auto;
+
+  --field-title-width: 160px;
+  --field-height: 36px;
+  --field-height-clickable: 24px;
+  --field-check-size: 20px;
+  --field-check-color-default: #a8b3bd;
+  --field-radio-size: 20px;
+  --field-radio-color-default: #a8b3bd;
+  --field-required: #e22a21;
+  --field-title: #181a1b;
+  --field-border: #dce0e5;
+  --field-placeholder: #a8b3bd;
+  --field-content-text-color: #66707a;
+}
+
+.pre-order-inquiry-field-container {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.pre-order-inquiry-field-title {
+  width: var(--field-title-width);
+  height: var(--field-height);
+  display: flex;
+  align-items: center;
+  span {
+    font-size: 16px;
+    color: var(--field-title);
+  }
+  &.required {
+    &:after {
+      content: "*";
+      margin-left: 4px;
+      font-size: 16px;
+      color: var(--field-required);
+    }
+  }
+}
+
+.pre-order-inquiry-field-body {
+  width: calc(100% - var(--field-title-width));
+}
+
+.pre-order-inquiry-input {
+  width: 100%;
+  height: var(--field-height);
+  border: 1px solid var(--field-border);
+  border-radius: 4px;
+  padding: 0 12px;
+  font-size: 16px;
+  color: var(--field-title);
+  font-weight: 500;
+  &::placeholder {
+    color: var(--field-placeholder);
+  }
+  &::-webkit-input-placeholder {
+    color: var(--field-placeholder);
+  }
+  &::-moz-placeholder {
+    color: var(--field-placeholder);
+  }
+  &.textarea {
+    height: 260px;
+    padding: 12px;
+    resize: none;
+  }
+}
+.pre-order-inquiry-clickable-list {
+  width: 100%;
+  padding: 10px 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pre-order-inquiry-clickable-label {
+  width: 100%;
+  height: var(--field-height-clickable);
+
+  display: flex;
+  align-items: center;
+
+  span {
+    font-size: 16px;
+    color: var(--field-title);
+    font-weight: 500;
+    line-height: 1em;
+
+    user-select: none;
+    cursor: pointer;
+  }
+}
+.pre-order-inquiry-clickable {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.pre-order-inquiry-clickable-input {
+  width: var(--field-radio-size);
+  height: var(--field-radio-size);
+  border: 2px solid var(--field-radio-color-default);
+
+  &:checked {
+    border-color: var(--brand-purple);
+  }
+  &.input-radio {
+    appearance: none;
+    border-radius: calc(var(--field-radio-size) / 2);
+
+    &:checked {
+      &:after {
+        content: "";
+        display: block;
+        width: calc(var(--field-radio-size) / 2);
+        height: calc(var(--field-radio-size) / 2);
+        border-radius: calc(var(--field-radio-size) / 2);
+        background-color: var(--brand-purple);
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &.input-checkbox {
+    appearance: none;
+    border-radius: 4px;
+
+    &:checked {
+      background-color: var(--brand-purple);
+    }
+  }
+}
+
+.pre-order-checkbox-icon {
+  width: 16px;
+  height: 16px;
+  font-size: 0px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pre-order-inquiry-policy {
+  width: 100%;
+  margin-top: 20px;
+  border-top: 1px solid var(--field-border);
+  border-bottom: 1px solid var(--field-border);
+  &[open] {
+    .pre-order-inquiry-policy-right {
+      .pre-order-expand-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.pre-order-inquiry-policy-header {
+  width: 100%;
+  padding: 20px 0;
+
+  display: flex;
+  align-items: center;
+}
+.pre-order-inquiry-policy-side {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  .checkbox-label {
+    width: fit-content;
+  }
+
+  span {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1em;
+  }
+
+  .pre-order-inquiry-policy-required {
+    margin-left: 4px;
+    color: var(--brand-purple);
+  }
+
+  .pre-order-inquiry-policy-detail {
+    margin-right: 5px;
+    color: var(--field-content-text-color);
+  }
+}
+
+.pre-order-inquiry-policy-right {
+  margin-left: auto;
+  user-select: none;
+  cursor: pointer;
+}
+
+.pre-order-inquiry-policy-terms {
+  width: 100%;
+  height: 300px;
+  border-top: 1px solid var(--field-border);
+  padding: 24px;
+
+  overflow: auto;
+
+  p {
+    font-size: 14px;
+    color: var(--field-content-text-color);
+    line-height: 1em;
+    font-weight: 500;
+  }
+}
+
+.pre-order-inquiry-submit {
+  width: 300px;
+  height: 48px;
+  margin: 20px auto 0;
+  border-radius: 8px;
+  background-color: var(--brand-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    font-size: 19px;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1em;
+  }
+}
