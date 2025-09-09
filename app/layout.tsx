@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+// import { Suspense } from "react";
 
 // SEO를 위한 메타데이터
 export {
@@ -9,22 +9,22 @@ export {
 import { nextjs_metadata } from "@/data/metadata";
 export const generateMetadata = () => nextjs_metadata("ko");
 
-// styles
-import "pretendard/dist/web/static/pretendard.css";
-import "@/styles/style.scss";
-
 // components
 import JotaiProvider from "@/components/roots/JotaiProvider";
 import ViewportDeviceChecker from "@/components/roots/ViewportDeviceChecker";
-import LanguageRedirect from "@/components/roots/LanguageRedirect";
+// import LanguageRedirect from "@/components/roots/LanguageRedirect";
+
+// styles
+import "pretendard/dist/web/static/pretendard.css";
+import "@/styles/style.scss";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" viewport-device="desktop" is-apple="false">
       <body>
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           <LanguageRedirect />
-        </Suspense>
+        </Suspense> */}
         <JotaiProvider>
           <ViewportDeviceChecker />
           {children}
