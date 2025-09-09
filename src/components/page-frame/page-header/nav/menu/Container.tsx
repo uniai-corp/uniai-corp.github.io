@@ -4,7 +4,7 @@ import { useAtomValue } from "jotai";
 import clsx from "clsx";
 
 import PageNavWrapper from "./Wrapper";
-import PageNavLanguage from "./Language";
+// import PageNavLanguage from "./Language";
 
 import useClientRouteChange from "@/hooks/util/useClientRouteChange";
 
@@ -18,7 +18,7 @@ export default function PageNavMenuContainer() {
   return (
     <div className={clsx("page-nav-menu-container", { open: isNavOpen })}>
       <PageNavWrapper />
-      <PageNavLanguage />
+      {/* {process.env.NODE_ENV === "development" && <PageNavLanguage />} */}
     </div>
   );
 }
