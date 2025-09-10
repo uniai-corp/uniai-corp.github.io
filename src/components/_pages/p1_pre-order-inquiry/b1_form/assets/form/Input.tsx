@@ -3,6 +3,7 @@ import type { UseFormRegisterReturn } from "react-hook-form";
 
 export default function PreOrderFormInput({
   className,
+  type = "text",
   label,
   selectorId,
   register,
@@ -11,13 +12,14 @@ export default function PreOrderFormInput({
   label: string;
   register: UseFormRegisterReturn;
 } & Partial<{
+  type: React.HTMLInputTypeAttribute;
   className: string;
   selectorId: string;
   placeholder: string;
 }>) {
   return (
     <input
-      type="text"
+      type={type}
       autoComplete="off"
       className={clsx("pre-order-inquiry-input", className)}
       aria-label={label}

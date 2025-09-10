@@ -279,6 +279,7 @@
 
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .pre-order-inquiry-policy-side {
   width: fit-content;
@@ -326,6 +327,17 @@
     color: var(--field-content-text-color);
     line-height: 1em;
     font-weight: 500;
+  }
+}
+
+.pre-order-inquiry-error {
+  width: 100%;
+  margin-top: 8px;
+  p {
+    font-size: 12px;
+    color: var(--field-required);
+    font-weight: 400;
+    line-height: 1em;
   }
 }
 

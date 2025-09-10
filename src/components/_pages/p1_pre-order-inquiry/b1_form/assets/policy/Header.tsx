@@ -7,7 +7,10 @@ import Expand from "@renew-img/pre-order/form/expand.svg";
 
 export default function PreOrderFormPrivatePolicyHeader() {
   const { locale, t } = useLocale();
-  const { register } = useFormContext();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<PreOrderInquiryForm>();
 
   return (
     <summary className="pre-order-inquiry-policy-header">
@@ -18,7 +21,12 @@ export default function PreOrderFormPrivatePolicyHeader() {
             "page/pre-order/form/policy-agree/notice",
             "개인정보 수집 및 이용에 동의합니다.",
           )}
-          register={register("privacy_agreement", { required: true })}
+          register={register("privacy_agreement", {
+            required: t(
+              "page/pre-order/form/validation/policy-agree",
+              "연락처 수집을 위해 동의해주셔야 합니다.",
+            ) as string,
+          })}
         />
         <span className="pre-order-inquiry-policy-required">
           ({locale === "ko" ? "필수" : "Required"})
@@ -32,6 +40,11 @@ export default function PreOrderFormPrivatePolicyHeader() {
           <Expand width={24} height={24} viewBox="0 0 24 24" />
         </figure>
       </div>
+      {errors.privacy_agreement && (
+        <div className="pre-order-inquiry-error">
+          <p>{errors.privacy_agreement.message}</p>
+        </div>
+      )}
     </summary>
   );
 }

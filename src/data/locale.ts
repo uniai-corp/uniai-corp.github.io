@@ -474,6 +474,30 @@ const localeData: LocaleDataCollectionType = {
     ko: "문의하기",
     en: "Submit",
   },
+  "page/pre-order/form/validation/required": {
+    ko: "필수 입력입니다.",
+    en: "This field is required.",
+  },
+  "page/pre-order/form/validation/policy-agree": {
+    ko: "연락처 수집을 위해 동의해 주세요.",
+    en: "Please agree to the collection of your contact information.",
+  },
+  "page/pre-order/form/validation/check/service-package": {
+    ko: "서비스 패키지를 선택해 주세요.",
+    en: "Please select a service package.",
+  },
+  "page/pre-order/form/validation/check/breed-type": {
+    ko: "사육 구분을 선택해 주세요.",
+    en: "Please select a farming type.",
+  },
+  "page/pre-order/form/send/success": {
+    ko: "문의가 성공적으로 전송되었습니다.",
+    en: "Your inquiry has been sent successfully.",
+  },
+  "page/pre-order/form/send/error": {
+    ko: "전송에 실패했습니다. 다시 시도해 주세요.",
+    en: "Failed to send. Please try again.",
+  },
 };
 
 export default localeData;

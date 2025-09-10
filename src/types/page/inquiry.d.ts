@@ -70,7 +70,9 @@ type API_Res_PreOrderInquiry = {
   error: string;
 };
 
-type PreOrderInquiryForm = Omit<API_Req_PreOrderInquiry, "service_package" | "breed_type"> & {
+type PreOrderInquiryForm = API_Req_PreOrderInquiry & {
   service_package_check: Record<string, boolean>;
+  service_package_list: string;
   breed_type_check: Record<string, boolean>;
+  breed_type_list: string;
 };

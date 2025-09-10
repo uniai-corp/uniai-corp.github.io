@@ -9,15 +9,25 @@ import useLocale from "@/hooks/useLocale";
 
 export default function PreOrderFormName() {
   const { t } = useLocale();
-  const { register } = useFormContext();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<PreOrderInquiryForm>();
 
   return (
     <PreOrderFormField title={t("page/pre-order/form/name", "이름")} required={true}>
       <PreOrderFormInput
-        register={register("name", { required: true })}
+        register={register("name", {
+          required: t("page/pre-order/form/validation/required", "필수 입력입니다.") as string,
+        })}
         label={t("page/pre-order/form/name", "이름")}
         placeholder={t("page/pre-order/form/name/placeholder", "이름을 입력해 주세요.") as string}
       />
+      {errors.name && (
+        <div className="pre-order-inquiry-error">
+          <p>{errors.name.message}</p>
+        </div>
+      )}
     </PreOrderFormField>
   );
 }

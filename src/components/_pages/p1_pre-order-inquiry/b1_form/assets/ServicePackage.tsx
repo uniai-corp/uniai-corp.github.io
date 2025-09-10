@@ -1,16 +1,16 @@
 "use client";
 
 import { useMemo } from "react";
-import { useFormContext } from "react-hook-form";
 
 import PreOrderFormField from "./form/Field";
 import PreOrderInquiryCheckbox from "./form/Check";
 
 import useLocale from "@/hooks/useLocale";
+import usePreOrderFormContext from "@/hooks/form/useContext";
 
 export default function PreOrderFormServicePackage() {
   const { t } = useLocale();
-  const { register } = useFormContext();
+
   const list = useMemo(
     () => [
       {
@@ -44,17 +44,38 @@ export default function PreOrderFormServicePackage() {
     [t],
   );
 
+  const { register, onCheck, errors } = usePreOrderFormContext({
+    checkListKey: "service_package_list",
+    checkList: list.map(item => item.value),
+  });
+
   return (
     <PreOrderFormField title={t("page/pre-order/form/packages", "서비스 패키지")} required={true}>
+      <input
+        type="hidden"
+        {...register("service_package_list", {
+          required: t(
+            "page/pre-order/form/validation/check/service-package",
+            "서비스 패키지를 선택해 주세요.",
+          ) as string,
+        })}
+      />
       <div className="pre-order-inquiry-clickable-list">
         {list.map(item => (
           <PreOrderInquiryCheckbox
             key={item.renderKey}
             selectorId={item.selectorId}
             label={item.name}
+            value={item.value}
             register={register(`service_package_check.${item.value}`)}
+            onChange={onCheck}
           />
         ))}
+        {errors.service_package_list && (
+          <div className="pre-order-inquiry-error">
+            <p>{errors.service_package_list.message}</p>
+          </div>
+        )}
       </div>
     </PreOrderFormField>
   );
