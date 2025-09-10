@@ -10,7 +10,11 @@ import useLocale from "@/hooks/useLocale";
 
 export default function PreOrderFormInquiryType() {
   const { t } = useLocale();
-  const { register } = useFormContext();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<PreOrderInquiryForm>();
+
   const list = useMemo(
     () => [
       {
@@ -44,9 +48,16 @@ export default function PreOrderFormInquiryType() {
             selectorId={item.selectorId}
             label={item.name}
             value={item.value}
-            register={register("inquiry_type", { required: true })}
+            register={register("inquiry_type", {
+              required: t("page/pre-order/form/validation/required", "필수 입력입니다.") as string,
+            })}
           />
         ))}
+        {errors.inquiry_type && (
+          <div className="pre-order-inquiry-error">
+            <p>{errors.inquiry_type.message}</p>
+          </div>
+        )}
       </div>
     </PreOrderFormField>
   );

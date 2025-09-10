@@ -1,16 +1,16 @@
 "use client";
 
 import { useMemo } from "react";
-import { useFormContext } from "react-hook-form";
 
 import PreOrderFormField from "./form/Field";
 import PreOrderInquiryCheckbox from "./form/Check";
 
 import useLocale from "@/hooks/useLocale";
+import usePreOrderFormContext from "@/hooks/form/useContext";
 
 export default function PreOrderFormBreedType() {
   const { t } = useLocale();
-  const { register } = useFormContext();
+
   const list = useMemo(
     () => [
       {
@@ -47,17 +47,38 @@ export default function PreOrderFormBreedType() {
     [t],
   );
 
+  const { register, onCheck, errors } = usePreOrderFormContext({
+    checkListKey: "breed_type_list",
+    checkList: list.map(item => item.value),
+  });
+
   return (
-    <PreOrderFormField title={t("page/pre-order/form/breed-type", "서비스 패키지")} required={true}>
+    <PreOrderFormField title={t("page/pre-order/form/breed-type", "사육 구분")} required={true}>
+      <input
+        type="hidden"
+        {...register("breed_type_list", {
+          required: t(
+            "page/pre-order/form/validation/check/breed-type",
+            "사육 구분를 선택해 주세요.",
+          ) as string,
+        })}
+      />
       <div className="pre-order-inquiry-clickable-list">
         {list.map(item => (
           <PreOrderInquiryCheckbox
             key={item.renderKey}
             selectorId={item.selectorId}
             label={item.name}
+            value={item.value}
             register={register(`breed_type_check.${item.value}`)}
+            onChange={onCheck}
           />
         ))}
+        {errors.breed_type_list && (
+          <div className="pre-order-inquiry-error">
+            <p>{errors.breed_type_list.message}</p>
+          </div>
+        )}
       </div>
     </PreOrderFormField>
   );

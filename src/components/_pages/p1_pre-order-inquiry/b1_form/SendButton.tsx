@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 
@@ -9,23 +10,25 @@ import { useMutatePreOrderInquiry } from "@/api/pre-order";
 
 export default function PreOrderFormSendButton() {
   const { t } = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
   const { handleSubmit } = useFormContext<PreOrderInquiryForm>();
 
   const { mutate, status, data, reset } = useMutatePreOrderInquiry();
   const onSend = useCallback(
     (formData: PreOrderInquiryForm) => {
-      // console.log("formData", formData);
-
-      const { service_package_check, breed_type_check, ...rest } = formData;
-
-      const getCheckedKeys = (checkList: Record<string, boolean>): string[] =>
-        Object.entries(checkList)
-          .filter(([, checked]) => checked)
-          .map(([key]) => key);
-
-      const service_package = getCheckedKeys(service_package_check);
-      const breed_type = getCheckedKeys(breed_type_check);
-      const sendData: API_Req_PreOrderInquiry = { ...rest, service_package, breed_type };
+      const sendData: API_Req_PreOrderInquiry = {
+        inquiry_type: formData.inquiry_type,
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        address: formData.address,
+        service_package: JSON.parse(formData.service_package_list),
+        breed_type: JSON.parse(formData.breed_type_list),
+        total_breeding_scale: formData.total_breeding_scale,
+        contents: formData.contents,
+        privacy_agreement: formData.privacy_agreement,
+      };
 
       // console.log("sendData", sendData);
       // return;
@@ -42,13 +45,15 @@ export default function PreOrderFormSendButton() {
     if (status !== "success" || typeof data === "undefined") return;
 
     if (!data.is_ok) {
-      alert("전송에 실패했습니다. 다시 시도해 주세요.");
+      alert(t("page/pre-order/form/send/error", "전송에 실패했습니다. 다시 시도해 주세요."));
       reset();
       return;
     }
-    alert("성공적으로 전송되었습니다.\n빠른 시일 내에 답변 드리겠습니다.");
+    alert(t("page/pre-order/form/send/success", "문의가 성공적으로 전송되었습니다."));
     reset();
-  }, [data, reset, status]);
+
+    router.replace(pathname.replace("/inquiry", ""));
+  }, [data, reset, status, t, router, pathname]);
 
   return (
     <button type="button" onClick={onSubmit} className="pre-order-inquiry-submit">
