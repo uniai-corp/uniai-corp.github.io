@@ -60,6 +60,7 @@ export default function PageCareerJobPostHeader({
         </div>
         <div className="period">
           <time>{dateFormat(period[0])}</time>
+          <span>-</span>
           <time>
             {dateFormat(period[1])}({timeFormat(period[1])})
           </time>
