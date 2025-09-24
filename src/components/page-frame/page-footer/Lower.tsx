@@ -45,6 +45,12 @@ export default function PageFooterLower() {
             </address>
           </dd>
         </dl>
+        <dl className="address-info-item">
+          <dt>TEL</dt>
+          <dd>
+            <a href="tel:070-8657-0073">070-8657-0073</a>
+          </dd>
+        </dl>
       </div>
     </div>
   );
