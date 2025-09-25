@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import useLocale from "@/hooks/useLocale";
+import PageFooterPhone from "./Phone";
 
 export default function PageFooterLower() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
 
   return (
     <div className="page-footer-section page-footer-lower">
@@ -45,12 +46,7 @@ export default function PageFooterLower() {
             </address>
           </dd>
         </dl>
-        <dl className="address-info-item">
-          <dt>TEL</dt>
-          <dd>
-            <a href="tel:070-8657-0073">070-8657-0073</a>
-          </dd>
-        </dl>
+        {locale === "ko" && <PageFooterPhone locale="ko" />}
       </div>
     </div>
   );
