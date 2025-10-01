@@ -1,7 +1,7 @@
 "use client";
 
-import PageSectionWrapper from "@/components/section/Wrapper";
 import { useCallback } from "react";
+import PageSectionWrapper from "@/components/section/Wrapper";
 
 export default function PageCareerJobPostHeader({
   title,
@@ -10,12 +10,19 @@ export default function PageCareerJobPostHeader({
   title: string;
   period: string[];
 }) {
+  const isValidDate = useCallback((date: string) => {
+    const d = new Date(date);
+    return !isNaN(d.getTime());
+  }, []);
+
   const format = useCallback(
     (date: string, options: Intl.DateTimeFormatOptions) =>
-      new Intl.DateTimeFormat("ko-KR", {
-        ...options,
-      }).format(new Date(date)),
-    [],
+      isValidDate(date)
+        ? new Intl.DateTimeFormat("ko-KR", {
+            ...options,
+          }).format(new Date(date))
+        : date,
+    [isValidDate],
   );
   const dateFormat = useCallback(
     (date: string) =>
@@ -51,7 +58,7 @@ export default function PageCareerJobPostHeader({
         <p className="article-slogan">Looking forward to growing together</p>
         <div className="title">
           <div className="d-day">
-            <span>{dDayFormat(period[1])}</span>
+            <span>{isValidDate(period[1]) ? dDayFormat(period[1]) : "모집중"}</span>
           </div>
           <h3>
             <span className="title-text">[{period[1].split("-")[0]} 유니아이]</span>
@@ -62,7 +69,8 @@ export default function PageCareerJobPostHeader({
           <time>{dateFormat(period[0])}</time>
           <span>-</span>
           <time>
-            {dateFormat(period[1])}({timeFormat(period[1])})
+            {dateFormat(period[1])}
+            {isValidDate(period[1]) && `(${timeFormat(period[1])})`}
           </time>
         </div>
       </PageSectionWrapper>
