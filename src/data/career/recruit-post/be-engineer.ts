@@ -11,7 +11,7 @@ export const recruit_be_engineer: RecruitPost = {
   key: "career/recruit-post/be/engineer",
   code: "be_engineer",
   title: `${trackData.be.name} ${roleData.engineer.name} 채용`,
-  period: ["2025-08-01T09:00:00", "2025-09-30T23:59:59"],
+  period: ["2025-10-01T09:00:00", "채용 완료시 까지"],
   position: {
     name: `${trackData.be.name} ${roleData.engineer.name}`,
     track: trackData.be,
