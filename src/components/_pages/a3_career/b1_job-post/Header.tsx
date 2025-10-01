@@ -61,7 +61,9 @@ export default function PageCareerJobPostHeader({
             <span>{isValidDate(period[1]) ? dDayFormat(period[1]) : "모집중"}</span>
           </div>
           <h3>
-            <span className="title-text">[{period[1].split("-")[0]} 유니아이]</span>
+            <span className="title-text">
+              [{isValidDate(period[1]) ? `${period[1].split("-")[0]} ` : ""}유니아이]
+            </span>
             <span className="title-text">{title}</span>
           </h3>
         </div>
