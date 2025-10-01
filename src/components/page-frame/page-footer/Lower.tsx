@@ -5,7 +5,7 @@ import Link from "next/link";
 import useLocale from "@/hooks/useLocale";
 
 export default function PageFooterLower() {
-  const { t, locale } = useLocale();
+  const { t } = useLocale();
 
   return (
     <div className="page-footer-section page-footer-lower">
