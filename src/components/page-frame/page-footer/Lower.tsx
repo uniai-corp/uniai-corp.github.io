@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
+// import PageFooterPhone from "./Phone";
 import useLocale from "@/hooks/useLocale";
-import PageFooterPhone from "./Phone";
 
 export default function PageFooterLower() {
   const { t, locale } = useLocale();
@@ -46,7 +46,7 @@ export default function PageFooterLower() {
             </address>
           </dd>
         </dl>
-        {locale === "ko" && <PageFooterPhone locale="ko" />}
+        {/* {locale === "ko" && <PageFooterPhone locale="ko" />} */}
       </div>
     </div>
   );
